@@ -1,0 +1,126 @@
+li {
+  list-style: none; }
+
+em {
+  font-style: italic;
+  text-transform: none; }
+
+.block {
+  display: block; }
+
+.bold {
+  font-weight: bold; }
+
+.optional-new-line {
+  display: inline; }
+
+section {
+  transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+  opacity: 1;
+  transform: translate3d(0px, 0px, 0px); }
+
+.will-reveal {
+  opacity: 0;
+  transform: translate3d(0px, 50px, 0px); }
+
+/**
+ * No Script States
+ */
+.no-js .answer {
+  display: block; }
+.no-js .question .arrow,
+.no-js .invisible {
+  display: none; }
+.no-js .introduction .large-text {
+  padding-top: 12em; }
+
+/* Removed with JS for noscript support*/
+.hidden {
+  display: none; }
+
+.lazy-load {
+  transition: opacity .25s ease-in-out; }
+
+::selection {
+  background: #F5F6F9; }
+
+::-moz-selection {
+  background: #F5F6F9; }
+
+::-webkit-input-placeholder {
+  /* WebKit, Blink, Edge */
+  color: #b1b1b1; }
+
+:-moz-placeholder {
+  /* Mozilla Firefox 4 to 18 */
+  color: #b1b1b1;
+  opacity: 1; }
+
+::-moz-placeholder {
+  /* Mozilla Firefox 19+ */
+  color: #b1b1b1;
+  opacity: 1; }
+
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: #b1b1b1; }
+
+:placeholder-shown {
+  color: #b1b1b1; }
+
+.noselect {
+  -webkit-touch-callout: none;
+  /* iOS Safari */
+  -webkit-user-select: none;
+  /* Safari */
+  -khtml-user-select: none;
+  /* Konqueror HTML */
+  -moz-user-select: none;
+  /* Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+  user-select: none;
+  /* Non-prefixed version, currently
+     supported by Chrome and Opera */ }
+
+img {
+  transition: opacity .2s ease-out, transform .2s ease-in-out;
+  transform: translate3d(0px, 0px, 0px);
+  -webkit-transform: translate3d(0px, 0px, 0px);
+  -moz-transform: translate3d(0px, 0px, 0px);
+  -ms-transform: translate3d(0px, 0px, 0px);
+  opacity: 1; }
+  img.invisible {
+    opacity: 0; }
+  img.full-width {
+    width: 100%; }
+
+/** Global Elements **/
+section {
+  overflow: hidden;
+  padding: 4em 0; }
+  section:after {
+    content: "";
+    clear: both;
+    display: block; }
+  section.has-background {
+    padding: 2em 0; }
+
+h1, h2, h3, h4 {
+  line-height: 1em;
+  color: #383938; }
+
+h1 {
+  font-size: 2em;
+  line-height: 1em;
+  letter-spacing: -.06em;
+  font-weight: 600; }
+
+h2, h3 {
+  font-size: 1.6em;
+  line-height: 1.35em;
+  letter-spacing: -.04em; }
+
+p {
+  font-size: 1em;
+  line-height: 1.8; }

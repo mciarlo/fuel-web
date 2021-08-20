@@ -1,0 +1,63 @@
+@mixin aliasing {
+  -webkit-font-smoothing: antialiased;
+
+  &:before {
+    -webkit-font-smoothing: subpixel-antialiased;
+  }
+}
+
+@mixin borderRadius($radius) {
+  border-radius: $radius;
+  -moz-border-radius: $radius;
+  -webkit-border-radius: $radius;
+  -ms-border-radius: $radius;
+}
+
+@mixin fontFamily {
+  font-family: "Avenir Next", "Poppins", -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Helvetica", "Helvetica", "Gill Sans", sans-serif;
+}
+
+@mixin transition($property, $duration, $easing) {
+  transition: $property $duration $easing;
+  -webkit-transition: $property $duration $easing;
+  -moz-transition: $property $duration $easing;
+  -ms-transition: $property $duration $easing;
+  -o-transition: $property $duration $easing;
+}
+
+@mixin transition-delay($delay) {
+  transition-delay: $delay;
+  -webkit-transition-delay: $delay;
+  -moz-transition-delay: $delay;
+  -ms-transition-delay: $delay;
+  -o-transition-delay: $delay;
+}
+
+@mixin translate3d($x, $y, $z) {
+  transform: translate3d($x, $y, $z);
+  -webkit-transform: translate3d($x, $y, $z);
+  -moz-transform: translate3d($x, $y, $z);
+  -ms-transform: translate3d($x, $y, $z);
+}
+
+@mixin rotate($value) {
+  transform: rotate3d(0, 0, 1, $value);
+  -webkit-transform: rotate3d(0, 0, 1, $value);
+  -moz-transform: rotate3d(0, 0, 1, $value);
+  -ms-transform: rotate3d(0, 0, 1, $value);
+}
+
+@mixin overflowfix {
+  &:after {
+    content: "";
+    clear: both;
+    display: block;
+  }
+}
+
+@mixin box-sizing {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+}

@@ -643,6 +643,12 @@ blockquote {
   max-width: 240px;
   margin: 0 auto; }
 
+.iphone .theme_preview.active {
+  display: block; }
+
+.iphone .theme_preview {
+  display: none; }
+
 .theme-selector li {
   display: inline-block;
   margin: 10px; }

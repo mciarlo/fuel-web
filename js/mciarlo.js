@@ -77,8 +77,8 @@ $(function () {
 		$target.addClass("selected");
 
 		var targetClass = $target.attr("data-attr-class");
-		$("img.theme_preview").hide();
-		$("img." + targetClass).show();
+		$("img.theme_preview").removeClass("active");
+		$("img." + targetClass).addClass("active");
 	});
 
 	var scrollHandling = {

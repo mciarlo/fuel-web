@@ -49,25 +49,28 @@ section {
   transform: translate3d(0px, 50px, 0px);
 }
 
-a.button {
+a.button,
+button {
+  background:transparent;
+  cursor: pointer;
+  font-size: 0.85em;
   padding: 1em 2em;
-  background: $darkBackground;
-  color: white;
+  border: 1px solid $borderColor;
+  color: $textColorPrimary;
   display: inline-block;
   box-shadow: 0 3px 3px rgba(0, 0, 0, 0);
-  @include borderRadius(30px);
   @include transition(all, 200ms, ease-in-out);
 
-  &.light {
-    background: $lightBackground;
+  &.dark {
+    border-color: $textColorPrimary;
     color: $textColorPrimary;
   }
 
   &:hover {
-    background: #454545;
+    background: $darkBackground;
     color: white;
+    border-color: $darkBackground;
     text-decoration: none;
-    box-shadow: 0 7px 20px rgba(0, 0, 0, 0.3);
   }
 }
 
@@ -173,14 +176,13 @@ img {
 /** Global Elements **/
 section {
   overflow: hidden;
-  padding: 6em 0;
-  background: $lightBackground;
+  padding: 4em 0;
   position: relative;
   z-index: 1;
   @include overflowfix;
 
   &.has-background {
-    padding: 4em 0;
+    padding: 3em 0;
   }
 
   &.no-padding {
@@ -218,24 +220,24 @@ hr {
   }
 
   section {
-    padding: 8em 0;
+    padding: 6em 0;
 
     &.has-background {
-      padding: 5em 0;
+      padding: 4em 0;
     }
   }
 
   .content-wrapper.padding-top {
-    padding-top: 5em;
+    padding-top: 4em;
   }
 }
 
 @media screen and (min-width:1200px) {
   section {
-    padding: 10em 0;
+    padding: 8em 0;
 
     &.has-background {
-      padding: 6em 0;
+      padding: 5em 0;
     }
   }
 

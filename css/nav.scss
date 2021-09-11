@@ -36,7 +36,6 @@ nav {
 
   .content-wrapper {
     padding: 1em 0;
-    border-bottom: 1px solid #eaeaea;
   }
 
   &.dark {
@@ -169,27 +168,52 @@ nav.active {
 
   nav {
     height: auto;
+    text-align: center;
 
     .content-wrapper {
       padding: 0;
     }
 
-    .logo {
-      margin-top: 1.6em;
-      width: 40px;
-      height: 40px;
-      position: relative;
-      top: auto;
-      left: auto;
+    .logo-link {
+      width: 32px;
+      height: 28px;
+      position: absolute;;
+      top: 1em;
+      left: 0;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    .button {
+      position: absolute;
+      top: 2em;
+      right: 0;
     }
 
     &.slim {
-      ul:first-child li:first-child a {
-        background: transparent url("../images/back_arrow.svg") 0 .5em no-repeat;
-        padding-left: 18px;
+      text-align: left;
 
-        &:hover {
-          background-image:url("../images/back_arrow_hover.svg");
+      .content-wrapper {
+        border-bottom: 1px solid $borderColor;
+      }
+
+      .logo-link {
+        left: 50%;
+        margin-left: -16px;
+      }
+
+      ul:first-child {
+        margin: 0;
+
+        li:first-child a {
+          background: transparent url("../images/back_arrow.svg") 0 .5em no-repeat;
+          padding-left: 18px;
+
+          &:hover {
+            background-image:url("../images/back_arrow_hover.svg");
+          }
         }
       }
     }
@@ -198,34 +222,10 @@ nav.active {
       opacity: 1;
       pointer-events: all;
 
-      &:first-child {
-        text-align: left;
-        margin-top: 0;
-
-        li {
-          margin-right: 2em;
-        }
-      }
-
-      &:last-child {
-        text-align: right;
-
-        li {
-          margin-left: 2em;
-        }
-      }
-
-      &:last-child {
-        text-align: right;
-
-        li {
-          margin-left: 2em;
-        }
-      }
-
       li {
         display: inline-block;
         padding: 2em 0;
+        margin: 0 1em;
       }
 
       a:link, a:visited {

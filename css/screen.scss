@@ -6,13 +6,12 @@ html,
 body {
   color: $textColorPrimary;
   font-size: 16px;
-  background-color: $darkBackground;
+  background-color: $lightBackground;
   @include fontFamily;
   /* Fix for bolder font rendering on Firefox */
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
   width: 100vw;
-  overflow-x: hidden;
 }
 
 body {
@@ -40,7 +39,7 @@ p {
 
 h1, h2, h3, h4 {
   line-height: 1.1em;
-  font-weight: 400;
+  font-weight: 500;
 }
 
 h1 {
@@ -61,6 +60,10 @@ h4 {
 p {
   font-size: 1em;
   line-height: 1.4;
+}
+
+p.small {
+  font-size: 0.8em;
 }
 
 @media screen and (min-width:768px) {
@@ -132,22 +135,8 @@ Y8b d88P
   }
 }
 
-.xlarge {
-  font-size: 1.3em;
-  letter-spacing: -0.01em;
-}
-
-.large {
-  font-size: 1.1em;
-  letter-spacing: -0.01em;
-}
-
-.small {
-  font-size: 0.8em;
-}
-
 hr.single {
-  width: 76%;
+  width: 91%;
   margin: 0 auto;
   border-top: 1pox solid $borderColor
 }
@@ -162,12 +151,21 @@ h1 + h2 {
   margin-top: 1em;
 }
 
+h1 + p {
+  margin-top: 1em;
+}
+
 h2 + p {
   margin-top: 1em;
 }
 
 p + h2 {
   margin-top: 1em;
+}
+
+.heading-label + h1,
+.heading-label + h2 {
+  margin-top: 0.3em;
 }
 
 p {
@@ -186,67 +184,10 @@ p {
   }
 }
 
-.card {
-  display: table;
-  padding: 30px;
-  background: #EAF1FF;
-  @include borderRadius(12px);
-
-  h4 {
-    padding-bottom: 4em;
-    line-height: 1.3;
-  }
-
-  ul {
-    color: $textColorSecondary;
-
-    li {
-      line-height: 1.5;
-    }
-
-    &:last-child {
-      padding-top: 1em;
-      border-top: 1px solid rgba(0,0,0,.1);
-
-      .value {
-        color: $textColorPrimary;
-        font-weight: 600;
-      }
-
-      .label {
-        display: block;
-      }
-    }
-  }
-}
-
-.table {
-  display: table;
-  width: 100%;
-
-  li {
-    display: table-row;
-  }
-
-  .value,
-  .label {
-    padding-bottom: 1em;
-    display: table-cell;
-  }
-
-  .label {
-    color: $textColorSecondary;
-  }
-
-  .value {
-    text-align: right;
-    color: $textColorPrimary;
-  }
-}
-
-h2.large {
-  font-size: 3.6em;
-  letter-spacing: -0.04em;
+.heading-label {
+  text-transform: uppercase;
+  font-size: 0.8em;
+  letter-spacing: 4%;
 }
 
 .mobile {
@@ -264,6 +205,49 @@ blockquote {
   line-height: 1.4;
   font-size: 1.2em;
   margin-bottom: 1em;
+}
+
+.display-block {
+  display: block;
+}
+
+.purple {
+  color: #8F00FF;
+}
+
+.blue {
+  color: #0047FF;
+}
+
+#loading-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  z-index: 1;
+  @include transition(transform, 100ms, ease-in-out);
+
+  &.hidden {
+    transform: translate3d(0, 10px, 0);
+  }
+
+  span {
+    flex: 1;
+    height: 10px;
+
+    &:first-child {
+      background: #0041EA;
+    }
+
+    &:nth-child(2) {
+      background: #7100C9;
+    }
+
+    &:last-child {
+      background: #B81DB1;
+    }
+  }
 }
 
 @media screen and (min-width:768px) {
@@ -288,20 +272,12 @@ blockquote {
  *********************************************
  */
 .introduction {
-  background: $darkBackground;
   overflow: visible;
   z-index: 2;
 
-  .intro-text {
-    h1 {
-      color: white;
-    }
-
-    p {
-      color: #909090;
-      padding: 1em 0;
-      width: 70%;
-    }
+  h3, p {
+    max-width: 500px;
+    margin: 0 auto;
   }
 }
 
@@ -313,6 +289,24 @@ blockquote {
   .card {
     margin: 6em 0;
   }
+}
+
+.scroll-container,
+#how-it-works {
+  position: unset;
+  overflow: visible;
+}
+
+section {
+  z-index: 2;
+}
+
+#story-container.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 50%;
+  transform: translate(0, -50%);
+  overflow: visible;
 }
 
 .theme-selector {
@@ -328,70 +322,6 @@ blockquote {
 
 .iphone .theme_preview {
   display: none;
-}
-
-.theme-selector li {
-  display: inline-block;
-  margin: 10px;
-
-  &:nth-child(1) a {
-    background: #EEEEEE;
-  }
-
-  &:nth-child(2) a {
-    background: #F9F7EE;
-  }
-
-  &:nth-child(3) a {
-    background: #F0F0F0;
-  }
-
-  &:nth-child(4) a {
-    background: #F1E8E5;
-  }
-
-  &:nth-child(5) a {
-    background: #DDDEDF;
-  }
-
-  &:nth-child(6) a {
-    background: #1E283B;
-  }
-
-  &:nth-child(7) a {
-    background: #101010;
-  }
-
-  &:nth-child(8) a {
-    background: #322865;
-  }
-
-  &:nth-child(9) a {
-    background: #465471;
-  }
-
-  &:nth-child(10) a {
-    background: #595B81;
-  }
-
-  a:link, a:visited {
-    width: 20px;
-    height: 20px;
-    text-indent: -9999px;
-    font-size: 0;
-    display: block;
-    @include borderRadius(24px);
-    border: 2px solid #ffffff;
-    @include transition(border-color, 150ms, ease-in-out);
-  }
-
-  a.selected {
-    border-color: #000;
-  }
-
-  a:hover {
-    border-color: #656565;
-  }
 }
 
 .dashboard {
@@ -509,11 +439,6 @@ blockquote {
   }
 }
 
-.lifestyle li:nth-child(1),
-.lifestyle li:nth-child(2) {
-  border-bottom: 1px solid $borderColor;
-}
-
 .food-library {
   h2 {
     padding-bottom: 2em;
@@ -561,12 +486,6 @@ blockquote {
   }
 }
 
-.apple-health {
-  img {
-    margin: 2em 0;
-  }
-}
-
 .awards {
   img {
     padding-top: 2em;
@@ -606,7 +525,7 @@ blockquote {
 
 .pricing {
   .price {
-    font-size: 3em;
+    font-size: 2em;
     letter-spacing: -0.08em;
     display: block;
     padding: .5em 0;
@@ -681,15 +600,15 @@ blockquote {
 }
 
 #faq {
-  background-color: #f1f2f7;
+  background-color: #fff;
 
   li {
-    background-color: #f1f2f7;
-    border-bottom: 1px solid #ccc;
+    background-color: #fff;
+    border-bottom: 1px solid #DBDBDB;
   }
 }
 
-.frequently-asked {
+#faq.frequently-asked {
   .left-content {
     flex: none;
   }
@@ -709,6 +628,10 @@ blockquote {
     &:last-child {
       border: 0;
     }
+
+    &:first-child {
+      padding-top: 1em;
+    }
   }
 }
 
@@ -722,51 +645,63 @@ blockquote {
     padding-bottom: 1em;
   }
 
-  h2{
-    margin-bottom: 2em;
+  h2, p {
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
-  &.has-color {
-    background: #ECF4FF;
+  form {
+    width: 40%;
+    margin: 4em auto 0;
+  }
 
-    input {
-      background: white;
+  input,
+  button {
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  button {
+    background: $textColorPrimary;
+    border: 0;
+    color: white;
+    margin-top: 1em;
+    font-size: 1.1em;
+    @include fontFamily;
+
+    &:hover {
+      background: $textColorSecondary;
     }
   }
+
 }
 
 footer {
-  background: $darkBackground;
-  color: white;
   padding: 5em 0;
 
-  .logo {
-    width: 30px;
-    height: 30px;
-    padding-bottom: 2em;
+  p {
+    font-size: 1em;
+    color: $textColorPrimary;
   }
 
-  p {
-    color: white;
+  .logo {
+    position: absolute;
+    top: 2em;
+    left: 0;
+    width: 20px;
+    height: 20px;
   }
 
   ul {
     li {
       line-height: 2;
     }
-
-    a:link, a:visited {
-      color: white;
-    }
-
-    a:hover {
-      color: #ffffff;
-    }
   }
 
   p.small {
     margin-bottom: 5em;
-    color: #909090;
   }
 }
 
@@ -776,25 +711,10 @@ select,
 textarea {
   padding: 20px;
   font-size: 1.1em;
-  border: 0;
-  background: #f1f1f1;
-  width: 22%;
+  border: 1px solid $borderColor;
+  background: #fff;
   @include fontFamily;
   @include box-sizing;
-}
-
-button {
-  color: white;
-  background: #1C71D5;
-  border: 0;
-  padding: 20px 30px;
-  font-size: 1.1em;
-  cursor: pointer;
-  @include fontFamily;
-
-  &:hover {
-    background: #0d59b4;
-  }
 }
 
 .faq {
@@ -969,6 +889,93 @@ button {
   *********************************************
   *********************************************
   *********************************************
+  * Features
+  *********************************************
+  *********************************************
+  *********************************************
+  *********************************************
+  */
+.features {
+  padding: 6em 0;
+
+  > .centered {
+      padding-bottom: 6em;
+  }
+}
+
+.feature-row {
+  display: flex;
+  flex-wrap: nowrap;
+  line-height: 1.4;
+  font-size: 0.9em;
+
+  .feature-name {
+    display: block;
+    font-weight: 600;
+    margin-top: 1em;
+  }
+
+  span {
+    max-width: 200px;
+  }
+
+  li {
+    width: 25%;
+    padding-right: 20px;
+    padding-bottom: 10em;
+    position: relative;
+    @include box-sizing;
+
+    .feature-text {
+      position: absolute;
+      top: 100%;
+      margin-top: -9.5em;
+    }
+
+    &.col-2 {
+      width: 50%;
+    }
+
+    &.hero {
+      width: 50%;
+    }
+  }
+
+  &.half-width {
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 50%;
+
+    .feature {
+      width: 50%;
+    }
+
+    .hero {
+      width: 100%;
+      display: flex;
+      flex-flow: column;
+      height: 100%;
+
+      .image-container {
+        flex: 1 1 auto;
+      }
+    }
+  }
+
+  .image-container {
+    background: #F4F4F4;
+    @include borderRadius(24px);
+
+    img {
+      width: 100%;
+    }
+  }
+}
+
+ /*********************************************
+  *********************************************
+  *********************************************
+  *********************************************
   * Tips
   *********************************************
   *********************************************
@@ -1028,93 +1035,111 @@ button {
     }
   }
 
-  .introduction {
-    height: 46em;
-
-    .intro-text {
-      padding: 4em 0 4em 0;
-      margin-left: 20%;
-      max-width: 500px;
-    }
-
-    p {
-      padding: 2em 0;
-    }
-  }
-
-  .hero-left {
-    position: absolute;
-    top: 20em;
-    left: 10%;
-    width: 50%;
-  }
-
-  .hero-right {
-    position: absolute;
-    top: 10em;
-    right: 10%;
-    width: 48%;
-  }
-
   .how-it-works {
-    padding-left: $col-1;
-    padding-right: $col-1;
+    .scroll-container {
+      height: 400vh;
 
-    h2 {
-      padding-bottom: 2em;
-    }
-  }
-
-  .calorie-tracking {
-    .left-content {
-      flex: none;
-      margin-right: $col-2;
-      width: $col-6-content;
-      vertical-align: center;
-
-      .card {
-        margin-top: 100px;
-        margin-bottom: 0;
+      .content-wrapper {
+        margin-top: 4em;
+        height: 1vh;
+        min-height: 800px;
       }
     }
 
-    .right-content {
-      width: $col-5-content;
+    .off-day-text {
+      max-width: 320px;
+      position: absolute;
+      top: 400px;
+      left: 0;
+      top: 50%;
+      transform: translate(0, -50%)
+    }
+
+    .iphone {
+      position: absolute;
+      top: 50%;
+      transform: translate(0, -50%);
+      left: 50%;
+      margin-left: -15%;
+      width: 30%;
     }
   }
 
-  .theme-selector {
-    max-width: intrinsic;
+  .guided-setup {
+    text-align: center;
+
+    h2, p {
+      max-width: 400px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  .user-stats {
+    padding-top: 6em;
+
+    .value {
+      font-size: 2em;
+      padding-bottom: .4em;
+      display: block;
+    }
 
     li {
-      margin: 5px;
+      display: inline-block;
+      margin: 0 1em;
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+      transition: transform 800ms ease-in-out, opacity 800ms ease-in-out;
 
-      a:link, a:visited {
-        width: 14px;
-        height: 14px;
-        @include borderRadius(9px);
+      &:nth-child(1) {
+        transition-delay: 0ms;
+      }
+
+      &:nth-child(2) {
+        transition-delay: 150ms;
+      }
+
+      &:nth-child(3) {
+        transition-delay: 300ms;
+      }
+
+      &:nth-child(4) {
+        transition-delay: 450ms;
+      }
+
+      &:nth-child(5) {
+        transition-delay: 600ms;
+      }
+
+      &.will-animate {
+        opacity: 0;
+        transform: translate3d(0, 30px, 0);
       }
     }
-  }
-
-  .lifestyle li:nth-child(1),
-  .lifestyle li:nth-child(2) {
-    border-bottom: 0;
-    border-right: 1px solid $borderColor;
   }
 
   .lifestyle {
+    text-align: left;
     display: flex;
-    flex-wrap: nowrap;
+    padding-top: 4em;
 
     li {
-      flex: 1;
-      margin-right: 4.5%;
-      padding-right: 4.5%;
+      width: 25%;
+      padding-right: 5%;
+      @include box-sizing;
     }
   }
 
   .dashboard {
+
+    .full-width {
+      padding-top: 8em;
+    }
+
+    .content-wrapper:first-child {
+      border-bottom: 1px solid #222;
+    }
+
     .content-wrapper {
       .left-content {
         width: $col-4-content;
@@ -1141,32 +1166,42 @@ button {
           margin-right: 0;
         }
       }
+
+      .iphone {
+        width: 80%;
+        margin-left: 10%;
+      }
+
+      .iphone-container {
+        overflow: hidden;
+        height: 800px;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+      }
     }
   }
 
   .dashboard-presets {
-    padding: 10em 0 5em;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
+    font-size: 3em;
+    padding-bottom: 0;
 
     li {
-      flex: 1;
+      text-align: left;
+      margin: 0;
+      padding: 0.2em 0;
       line-height: 1;
+    }
 
-      strong {
-        padding: 2em 0 0.5em;
-      }
+    a {
+      color: #656565;
+      letter-spacing: -0.05em;
 
-      img {
-        width: 100%;
-        padding-bottom: 0;
-      }
-
-      &:nth-child(1),
-      &:nth-child(2),
-      &:nth-child(3) {
-        margin-right: 6%;
+      &.active {
+        color: #fff;
+        background: transparent url("../images/arrow_forward.svg") 0px 7px no-repeat;
+        background-size: 50px auto;
+        padding-left: 66px;
       }
     }
   }
@@ -1175,7 +1210,7 @@ button {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    padding: 10em 0 10em;
+    padding: 8em 0 10em;
 
     ul {
       width: 25%;
@@ -1193,64 +1228,121 @@ button {
   }
 
   .food-library {
-    background: white url("../images/tomato_bg.jpg") 4% 30% no-repeat;
-    background-size: 300px auto;
-  }
-
-  .food-library {
-    h2 {
-      padding-bottom: 0;
-    }
-
-    h2,
-    .left-content {
-      margin-left: $col-4;
-    }
-
-    h2 {
-      width: $col-5;
-      padding-bottom: 5em;
+    .content-wrapper:first-child {
+      h2 {
+        width: $col-5;
+        padding-bottom: 3em;
+      }
     }
 
     .left-content {
-      width: $col-3;
       margin-right: $col-2;
     }
 
     .right-content {
-      width: $col-2-content;
-      margin-right: $col-1;
-    }
-  }
-
-  .data-highlights {
-    padding-top: 1.5em;
-    margin-top: 0;
-  }
-
-  .apple-health {
-    .left-content {
-      flex: none;
-      margin-right: $col-3-content;
+      padding-top: 6em;
       width: $col-4-content;
-      position: relative;
-    }
-
-    .right-content {
-      flex: 1;
-      width: $col-4-content;
+      margin: 0;
 
       img {
-        vertical-align: bottom;
-        margin: 0;
+        margin-bottom: 3em;
       }
     }
   }
 
-  .awards {
-    p {
-      max-width: $col-5-content;
+  .support-items {
+    padding-top: 4em;
+    padding-left: 0;
+    display: flex;
+    text-align: left;
+
+    img {
+      width: 60px;
+      height: 60px;
+    }
+
+    li {
+      width: 25%;
+      @include box-sizing;
+      margin-right: 5%;
+    }
+  }
+
+  .apple-health {
+    vertical-align: bottom;
+
+    .content-wrapper:first-child {
+      h2,
+      p {
+        max-width: 400px;
+      }
+
+      padding-bottom: 6em;
+    }
+
+    .content-wrapper:last-child {
+      text-align: right;
+    }
+  }
+
+  .apple-watch-screen-1,
+  .apple-watch-screen-2 {
+    display: inline-block;
+    position: relative;
+    @include overflowfix;
+
+    img {
+      float: right;
+    }
+
+    span {
+      position: absolute;
+      top: 30px;
+      left: 30px;
+      width: 120px;
       display: inline-block;
+      font-weight: 500;
+      font-size: .85em;
+      line-height: 1.3;
+      text-align: left;
+    }
+  }
+
+  .apple-watch-screen-1 {
+    background: #F4D1E1;
+    width: 25%;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .apple-watch-screen-2 {
+    background: #8F00FF;
+    color: white;
+    width: 55%;
+
+    img {
+      width: 60%;
+    }
+  }
+
+  .awards {
+    background: white url("../images/awards_bg.jpg") center center no-repeat;
+    background-size: auto 60%;
+    min-height: 800px;
+
+    .content-wrapper {
+      position: absolute;
+      top: 50%;
+      transform: translate(0, -50%);
+      left: 35%;
+      width: 30%;
+    }
+
+    p {
+      display: inline-block;
+      width: 100%;
     }
 
     img {
@@ -1263,29 +1355,37 @@ button {
   .more-features {
     .left-content {
       flex: none;
-      margin-right: $col-3-content;
+      margin-right: $col-4-content;
       width: $col-4-content;
       margin-bottom: 0;
     }
 
     .right-content {
       flex: 1;
-      width: $col-4-content;
+      width: $col-3-content;
     }
 
     li {
       strong {
         font-size:  1.4em;
+        font-weight: 500;
       }
     }
   }
 
   .pricing {
+    h3 {
+      text-transform: uppercase;
+      font-size: 0.75em;
+      letter-spacing: 0.1em;
+      font-weight: 600;
+    }
+
     .price {
-      font-size: 3em;
-      letter-spacing: -0.08em;
+      font-size: 1.8em;
       display: block;
       padding: .5em 0;
+      font-weight: 500;
     }
 
     .price-details {
@@ -1301,21 +1401,36 @@ button {
       }
     }
 
-    .left-content,
-    .right-content {
+    .pricing-basic,
+    .pricing-pro,
+    .pricing-trial {
+      display:inline-block;
+      width: 30%;
       margin: 5em 0 0;
-      width: $col-4-content;
       padding: 40px;
+      @include box-sizing;
+    }
+
+    .pricing-basic {
+      background: #EDEDED;
       flex: 1;
+      vertical-align: bottom;
     }
 
-    .left-content {
-      background: #EBEBEB;
-      margin-right: 20px;
+    .pricing-pro {
+      width: 40%;
+      background: #0047FF;
+      color: white;
     }
 
-    .right-content {
-      background: #FFDFDF;
+    .pricing-trial {
+      background: #DAE5FF;
+      flex: 1;
+      vertical-align: top;
+
+      .button {
+        margin-top: 4em;
+      }
     }
   }
 
@@ -1369,32 +1484,38 @@ button {
 
   footer {
     position: relative;
-    padding: 10em 0 5em;
+    padding: 0 0 5em;
 
     .logo {
       position: absolute;
-      top: -4em;
+      top: 5em;
       left: 0;
-      width: 40px;
-      height: 40px;
+      width: 30px;
+      height: 30px;
+    }
+
+    .content-wrapper {
+      padding-top: 5em;
+      border-top: 1px solid $borderColor;
     }
 
     .content-wrapper.display-flex .left-content {
       flex: none;
       width: 25%;
-      margin-right: 25%;
+      margin-right: 15%;
+      margin-left: $col-1;
     }
 
     ul {
       margin-right: $col-1;
-      width: $col-2-content;
+      width: $col-3-content;
 
       li {
         line-height: 2;
       }
 
       &:last-child {
-        margin-right: $col-2;
+        margin-right: $col-1;
       }
     }
 
@@ -1610,20 +1731,6 @@ button {
 }
 
 @media screen and (min-width:1200px) {
-  .introduction {
-    height: 52em;
-  }
-
-  .hero-left {
-    top: 24em;
-    max-width: 649px;
-  }
-
-  .hero-right {
-    top: 14em;
-    max-width: 623px;
-  }
-
   .free-trial {
     .left-content {
       padding: 6em 0;

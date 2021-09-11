@@ -30,63 +30,84 @@
     <link rel="icon" type="image/png" sizes="192x192" href="../images/favicon192.png">
   </head>
   <body class="no-js">
-    <nav class="dark">
+    <nav>
       <a id="hamburger-icon" href="#nav-links">
         <span class="top"></span>
         <span class="middle"></span>
         <span class="bottom"></span>
       </a>
 
-      <div class="content-wrapper display-flex">
-        <ul>
-          <li><a class="jump-link" data-attr-id="why-fuel" href="#">Why Fuel</a></li>
-          <li><a class="jump-link" data-attr-id="pricing" href="#">Pricing</a></li>
-          <li><a class="jump-link" data-attr-id="faq" href="#">FAQ</a></li>
-        </ul>
-
+      <div class="content-wrapper">
         <a class="logo-link" href="/" title="Go back to the Doo homepage">
           <img class="logo" src="../images/logo.svg"/>
         </a>
 
         <ul>
-          <li><a href="/contact">Contact</a></li>
-          <li><a href="/about">About</a></li>
-          <li><a href="#">Download</a></li>
+          <li><a class="jump-link" data-attr-id="how-it-works" href="#">How it works</a></li>
+          <li><a class="jump-link" data-attr-id="make-it-yours" href="#">Make it yours</a></li>
+          <li><a class="jump-link" data-attr-id="backstory" href="#">The backstory</a></li>
+          <li><a class="jump-link" data-attr-id="pricing" href="#">Pricing</a></li>
+          <li><a class="jump-link" data-attr-id="faq" href="#">FAQ</a></li>
         </ul>
+
+        <a class="button" href="/" title="Go back to the Doo homepage">Download the app</a>
       </div>
     </nav>
 
-    <section class="introduction has-background">
-      <div class="content-wrapper">
-        <div class="intro-text">
-          <h1>Modern calorie &amp; nutrient tracking</h1>
-          <p class="large">Reward consistency and use data to create long-lasting change.</p>
+    <div id="loading-bar">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <section id="how-it-works" class="how-it-works">
+      <div class="content-wrapper display-block centered">
+        <span class="heading-label">Meet Fuel</span>
+        <h1>A guilt-free calorie &amp;<br/>nutrient tracker</h1>
+        <p class="large">Reward consistency &amp; use data to create long-lasting change.</p>
+      </div>
+
+      <div class="scroll-container">
+        <div class="content-wrapper" id="story-container">
+          <div class="off-day-text">
+            <h2>Have an off-day? <span class="display-block purple">No worries</span></h2>
+            <p>Stay within your calorie window each day to achieve success. Have an off day? Stay within the lower end of your window for a day or two and watch your off day blend into another successful week.</p>
+          </div>
+
+          <div class="iphone">
+            <img class="lazy-load device-bezel" src="images/placeholder.png" data-src="images/iphone_frame.png" data-src-retina="../images/iphone_frame@2x.png">
+            <img class="lazy-load device-media theme_01 theme_preview active" src="images/placeholder.png" data-src="images/calorie_tracking_theme_01.jpg" data-src-retina="../images/calorie_tracking_theme_01@2x.jpg">
+
+            <noscript>
+              <img class="device-bezel" src="images/iphone_frame@2x.png">
+              <img class="device-media theme_01 theme_preview" src="../images/calorie_tracking_theme_01@2x.jpg">
+            </noscript>
+          </div>
         </div>
-
-        <img class="lazy-load invisible hero-left desktop" src="../images/placeholder.png" data-src="../images/hero_left.png" data-src-retina="../images/hero_left@2x.png"/>
-        <img class="lazy-load invisible hero-right desktop" src="../images/placeholder.png" data-src="../images/hero_right.png" data-src-retina="../images/hero_right@2x.png"/>
-        <img class="lazy-load invisible hero mobile" src="../images/placeholder.png" data-src="../images/hero_mobile.png" data-src-retina="../images/hero_mobile@2x.png"/>
-
-        <noscript>
-          <img class="hero-left desktop" src="../images/hero_left@2x.png"/>
-          <img class="hero-right desktop" src="../images/hero_right@2x.png"/>
-          <img class="hero mobile" src="../images/hero_mobile@2x.png"/>
-        </noscript>
       </div>
     </section>
 
-    <section id="why-fuel" class="how-it-works has-background">
-      <div class="content-wrapper centered col-3">
-        <h2>Build a lifestyle that fits your goals.</h2>
-
-        <ul class="lifestyle">
+    <section class="guided-setup">
+      <div class="content-wrapper">
+        <span class="heading-label">Not into numbers?</span>
+        <h2>Guided setup calculates a calorie target for your lifestyle, goals &amp; stats.</h2>
+        <ul class="user-stats">
           <li>
-            <img src="images/process_01.png" />
-            <strong>Learn</strong>Understand portion sizes and nutrition that fits your lifestyle.</li><li>
-            <img src="images/process_02.png" />
-            <strong>Adapt</strong>Understand portion sizes and nutrition that fits your lifestyle.</li><li>
-            <img src="images/process_03.png" />
-            <strong>Succeed</strong>Understand portion sizes and nutrition that fits your lifestyle.</li>
+            <span class="value">5'5"</span>
+            <span class="label">Height</span>
+          </li><li>
+            <span class="value">33</span>
+            <span class="label">Age</span>
+          </li><li>
+            <span class="value">Female</span>
+            <span class="label">Sex</span>
+          </li><li>
+            <span class="value">Moderate</span>
+            <span class="label">Activity level</span>
+          </li><li>
+            <span class="value purple">1,300 - 1,800</span>
+            <span class="label">Your suggested calorie window</span>
+          </li>
         </ul>
       </div>
     </section>
@@ -95,101 +116,18 @@
       <hr class="single"/>
     </section>
 
-    <section class="calorie-tracking has-background">
-      <div class="content-wrapper display-flex col-2">
-        <div class="left-content">
-          <h2>Calorie tracking that rewards consistency.</h2>
-
-          <p>Stay within your calorie window each day to achieve success. Have an off day? Stay within the lower end of your window for a day or two and watch your off day blend into another successful week.</p>
-
-          <div class="card">
-            <h4>Not into numbers? Guided setup calculates a calorie target made for your lifestyle, goals, and stats.</h4>
-            <ul class="table">
-              <li>
-                <span class="label">Height</span>
-                <span class="value">5'5"</span>
-              </li><li>
-                <span class="label">Age</span>
-                <span class="value">33</span>
-              </li><li>
-                <span class="label">Sex</span>
-                <span class="value">Female</span>
-              </li><li>
-                <span class="label">Activity level</span>
-                <span class="value">Moderate</span>
-              </li>
-            </ul>
-
-            <ul>
-              <li>
-                <span class="label">Suggested calories</span>
-                <span class="value">1,300 - 1,800</span>
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="right-content">
-          <div class="iphone">
-            <img class="lazy-load device-bezel" src="images/placeholder.png" data-src="images/iphone_frame.png" data-src-retina="../images/iphone_frame@2x.png">
-            <img class="lazy-load device-media theme_01 theme_preview active" src="images/placeholder.png" data-src="images/calorie_tracking_theme_01.jpg" data-src-retina="../images/calorie_tracking_theme_01@2x.jpg">
-            <img class="lazy-load device-media theme_02 theme_preview" src="images/placeholder.png" data-src="images/calorie_tracking_theme_02.jpg" data-src-retina="../images/calorie_tracking_theme_02@2x.jpg">
-            <img class="lazy-load device-media theme_03 theme_preview" src="images/placeholder.png" data-src="images/calorie_tracking_theme_03.jpg" data-src-retina="../images/calorie_tracking_theme_03@2x.jpg">
-            <img class="lazy-load device-media theme_04 theme_preview" src="images/placeholder.png" data-src="images/calorie_tracking_theme_04.jpg" data-src-retina="../images/calorie_tracking_theme_04@2x.jpg">
-            <img class="lazy-load device-media theme_05 theme_preview" src="images/placeholder.png" data-src="images/calorie_tracking_theme_05.jpg" data-src-retina="../images/calorie_tracking_theme_05@2x.jpg">
-            <img class="lazy-load device-media theme_06 theme_preview" src="images/placeholder.png" data-src="images/calorie_tracking_theme_06.jpg" data-src-retina="../images/calorie_tracking_theme_06@2x.jpg">
-            <img class="lazy-load device-media theme_07 theme_preview" src="images/placeholder.png" data-src="images/calorie_tracking_theme_07.jpg" data-src-retina="../images/calorie_tracking_theme_07@2x.jpg">
-            <img class="lazy-load device-media theme_08 theme_preview" src="images/placeholder.png" data-src="images/calorie_tracking_theme_08.jpg" data-src-retina="../images/calorie_tracking_theme_08@2x.jpg">
-            <img class="lazy-load device-media theme_09 theme_preview" src="images/placeholder.png" data-src="images/calorie_tracking_theme_09.jpg" data-src-retina="../images/calorie_tracking_theme_09@2x.jpg">
-            <img class="lazy-load device-media theme_10 theme_preview" src="images/placeholder.png" data-src="images/calorie_tracking_theme_10.jpg" data-src-retina="../images/calorie_tracking_theme_10@2x.jpg">
-
-            <noscript>
-              <img class="device-bezel" src="images/iphone_frame@2x.png">
-              <img class="device-media theme_01 theme_preview" src="../images/calorie_tracking_theme_01@2x.jpg">
-              <img class="device-media theme_02 theme_preview" src="../images/calorie_tracking_theme_02@2x.jpg">
-              <img class="device-media theme_03 theme_preview" src="../images/calorie_tracking_theme_03@2x.jpg">
-              <img class="device-media theme_04 theme_preview" src="../images/calorie_tracking_theme_04@2x.jpg">
-              <img class="device-media theme_05 theme_preview" src="../images/calorie_tracking_theme_05@2x.jpg">
-              <img class="device-media theme_06 theme_preview" src="../images/calorie_tracking_theme_06@2x.jpg">
-              <img class="device-media theme_07 theme_preview" src="../images/calorie_tracking_theme_07@2x.jpg">
-              <img class="device-media theme_08 theme_preview" src="../images/calorie_tracking_theme_08@2x.jpg">
-              <img class="device-media theme_09 theme_preview" src="../images/calorie_tracking_theme_09@2x.jpg">
-              <img class="device-media theme_10 theme_preview" src="../images/calorie_tracking_theme_10@2x.jpg">
-            </noscript>
-          </div>
-
-          <ul class="theme-selector">
-            <li>
-              <a href="#" data-attr-class="theme_01" class="selected">Theme 01</a>
-            </li><li>
-              <a href="#" data-attr-class="theme_02">Theme 02</a>
-            </li>
-            <li>
-              <a href="#" data-attr-class="theme_03">Theme 03</a>
-            </li>
-            <li>
-              <a href="#" data-attr-class="theme_04">Theme 04</a>
-            </li>
-            <li>
-              <a href="#" data-attr-class="theme_05">Theme 05</a>
-            </li>
-            <li>
-              <a href="#" data-attr-class="theme_06">Theme 06</a>
-            </li>
-            <li>
-              <a href="#" data-attr-class="theme_07">Theme 07</a>
-            </li>
-            <li>
-              <a href="#" data-attr-class="theme_08">Theme 08</a>
-            </li>
-            <li>
-              <a href="#" data-attr-class="theme_09">Theme 09</a>
-            </li>
-            <li>
-              <a href="#" data-attr-class="theme_10">Theme 10</a>
-            </li>
-          </ul>
-        </div>
+    <section>
+      <div class="content-wrapper">
+        <h2>Build long term habits <span class="display-block">that hit your goals.</span></h2>
+        <ul class="lifestyle">
+          <li>
+            <img src="images/learn_icon.svg" />
+            <strong>Learn</strong>Understand portion sizes and nutrition that fits your lifestyle.</li><li>
+            <img src="images/adapt_icon.svg" />
+            <strong>Adapt</strong>Understand portion sizes and nutrition that fits your lifestyle.</li><li>
+            <img src="images/succeed_icon.svg" />
+            <strong>Succeed</strong>Understand portion sizes and nutrition that fits your lifestyle.</li>
+        </ul>
       </div>
     </section>
 
@@ -197,37 +135,44 @@
       <div class="content-wrapper display-flex">
         <div class="left-content">
           <h2 class="large">Your dashboard.<br/>Your way.</h2>
+          <p class="xlarge">Use your food log to fuel insights that build better habits. Macronutrient trends, weight timelines, and integrations like Apple Health give you a birds-eye view into your progress and help you dial in on where you need improvement.</p>
+
+          <ul class="dashboard-presets">
+            <li>
+              <a href="#" class="active">Athletic training</a>
+            </li><li>
+              <a href="#">Blood sugar</a>
+            </li><li>
+              <a href="#">Weight loss</a>
+            </li><li>
+              <a href="#">Habit building</a>
+            </li>
+          </ul>
         </div>
 
         <div class="right-content">
-          <p class="xlarge">Use your food log to fuel insights that build better habits. Macronutrient trends, weight timelines, and integrations like Apple Health give you a birds-eye view into your progress and help you dial in on where you need improvement.</p>
+          <div class="iphone-container">
+            <div class="iphone">
+              <img class="lazy-load device-bezel" src="images/placeholder.png" data-src="images/iphone_frame.png" data-src-retina="../images/iphone_frame@2x.png">
+              <img class="lazy-load device-media theme_01 theme_preview active" src="images/placeholder.png" data-src="images/calorie_tracking_theme_01.jpg" data-src-retina="../images/calorie_tracking_theme_01@2x.jpg">
+
+              <noscript>
+                <img class="device-bezel" src="images/iphone_frame@2x.png">
+                <img class="device-media theme_01 theme_preview" src="../images/calorie_tracking_theme_01@2x.jpg">
+              </noscript>
+            </div>
+          </div>
         </div>
       </div>
 
-      <div class="content-wrapper">
-        <ul class="dashboard-presets">
-          <li>
-            <img class="lazy-load" src="images/placeholder.png" data-src="images/preset_01.jpg" data-src-retina="../images/preset_01@2x.jpg">
-            <strong>Weight Lifting</strong>
-            Example 1
-          </li><li>
-            <img class="lazy-load" src="images/placeholder.png" data-src="images/preset_02.jpg" data-src-retina="../images/preset_02@2x.jpg">
-            <strong>Blood Sugar</strong>
-            Example 2
-          </li><li>
-            <img class="lazy-load" src="images/placeholder.png" data-src="images/preset_03.jpg" data-src-retina="../images/preset_03@2x.jpg">
-            <strong>Weight Loss</strong>
-            Example 3
-          </li><li>
-            <img class="lazy-load" src="images/placeholder.png" data-src="images/preset_04.jpg" data-src-retina="../images/preset_04@2x.jpg">
-            <strong>General Health</strong>
-            Example 4
-          </li>
-        </ul>
-      </div>
-
       <div class="content-wrapper padding-top">
-        <h2 class="centered">Tune your dashboard from dozens of options.</h3>
+        <h2>Tune your dashboard from dozens of options.</h2>
+
+        <img class="lazy-load full-width" src="images/placeholder.png" data-src="images/cards_preview.png" data-src-retina="../images/cards_preview@2x.png">
+
+        <noscript>
+          <img class="full-width" src="../images/cards_preview@2x.png">
+        </noscript>
 
         <div class="dashboard-options">
           <ul>
@@ -338,102 +283,104 @@
             <li>Recent awards</li>
           </ul>
         </div>
-
-        <hr/>
-
-        <div class="content-wrapper display-flex padding-top col-1">
-          <div class="left-content">
-            <h2>Set your own limits</h2>
-            <p class="large">Use the recommended values from the FDA or customize the values based on your needs.</p>
-          </div>
-
-          <div class="right-content">
-            <img class="lazy-load invisible" src="../images/custom_nutrients.png" data-src="../images/custom_nutrients.png" data-src-retina="../images/custom_nutrients@2x.png"/>
-
-            <noscript>
-              <img class="device-bezel" src="../images/custom_nutrients@2x.png"/>
-            </noscript>
-          </div>
-        </div>
       </div>
     </section>
 
-    <section class="food-library has-background">
+    <section class="food-library">
       <div class="content-wrapper">
-        <h2>On a mission to build the best food library in the world with nutrition data you can trust</h2>
+        <h2>I got tired of calorie tracking apps with incomplete data. <span class="display-block purple">So I made my own.</span></h2>
       </div>
 
       <div class="content-wrapper display-flex">
         <div class="left-content">
-          <p class="large">After over ten years of tracking calories, I got tired of looking for an app with a food library I could trust. So I made my own. The Fuel library will continue to grow and improve for the next decade and beyond.</p>
-          <p class="large">After over ten years of tracking calories, I got tired of looking for an app with a food library I could trust. So I made my own.</p>
+          <img class="lazy-load" src="../images/placeholder.png" data-src="../images/ciarlo.jpg" data-src-retina="../images/ciarlo@2x.jpg">
 
-          <ul class="food-library-features">
-            <li><img src="images/verified_icon.png" />Verified foods only</li>
-            <li><img src="images/universal_icon.png" />Universal foods</li>
-            <li><img src="images/nutrients_icon.png" />Full nutrient profiles</li>
-            <li><img src="images/sync_icon.png" />Auto-update &amp; sync</li>
-          </ul>
+          <noscript>
+            <img src="../images/ciarlo@2x.jpg">
+          </noscript>
         </div>
 
-        <ul class="right-content data-highlights">
+        <div class="right-content">
+          <h2>Fuel is the result of fifteen years of research and experience.</h2>
+
+          <img class="lazy-load" src="../images/placeholder.png" data-src="../images/cake.jpg" data-src-retina="../images/cake@2x.jpg">
+
+          <noscript>
+            <img src="../images/cake@2x.jpg">
+          </noscript>
+
+          <p>The carrot cake above? I enjoy a slice from my favorite bakery almost every week. I’ve learned how to balance my diet and still eat my favorite foods. Fuel helps me monitor my sugar, carbs, and calories so that when I want something sweet, I can do so guilt-free.</p>
+          <p>Each day I track protein, iron, and magnesium to help me approach new challenges at the gym. I My newfound routine over the last year is in large part because of Fuel.</p>
+          <p>I finally found the perfect balance for my goals - mentally and physically. I know Fuel can do the same for you!</p>
+        </div>
+      </div>
+
+      <div class="content-wrapper">
+        <ul class="support-items">
           <li>
-            <span class="label">Brands</span>
-            <span class="value">1,365</span>
-          </li>
-          <li>
-            <span class="label">Major restaurants</span>
-            <span class="value">45</span>
-          </li>
-          <li>
-            <span class="label">Universal items</span>
-            <span class="value">3,842</span>
+            <img src="images/food_icon_01.svg" />
+            <strong>Universal foods</strong>No need to look for a brand. Universal foods have complete nutrient details and are similar calorie counts across different brand names.</li><li>
+            <img src="images/food_icon_02.svg" />
+            <strong>Verified foods only</strong>All user submitted foods go through verification to ensure search results stay meaningful. Missing data is added to ensure all foods are complete.</li><li>
+            <img src="images/food_icon_03.svg" />
+            <strong>Auto-sync</strong>Pro subscribers sync with the food library each week to ensure accurate nutrient profiles and portion sizes.</li><li>
+            <img src="images/food_icon_04.svg" />
+            <strong>Full nutrient profiles</strong>Wherever possible, food nutients include items beyond the nutrition facts label. These items include selenium, choline, copper, and other vitamins & minerals necessary for general health.
           </li>
         </ul>
       </div>
     </section>
 
+    <section class="no-padding">
+      <hr class="single"/>
+    </section>
+
     <section class="apple-health">
-      <div class="content-wrapper display-flex col-2">
-        <div class="left-content">
-          <h2>Integrate with Apple Health & Apple Watch</h2>
-          <p class="large">Leverage the power of Apple Watch to track your average calorie burn over weeks and months. Use workout and activity data to automatically update your calorie window and find new challenges.</p>
+      <div class="content-wrapper">
+        <h2>Integrate with Apple Health & Apple Watch</h2>
+        <p class="large">Leverage the power of Apple Watch to track your average calorie burn over weeks and months. Use workout and activity data to automatically update your calorie window and find new challenges.</p>
+      </div>
 
-          <img class="lazy-load invisible" src="../images/placeholder.png" data-src="../images/apple_health.jpg" data-src-retina="../images/apple_health@2x.jpg"/>
+      <div class="content-wrapper">
+        <div class="apple-watch-screen-1">
+          <span>Send nutrients to Apple Health</span>
+          <img class="lazy-load invisible" src="../images/placeholder.png" data-src="../images/apple_health.png" data-src-retina="../images/apple_health@2x.png"/>
 
           <noscript>
-            <img class="device-bezel" src="../images/apple_health@2x.jpg"/>
+            <img class="device-bezel" src="../images/apple_health@2x.png"/>
           </noscript>
-        </div>
-
-        <div class="right-content">
-          <img class="lazy-load invisible" src="../images/placeholder.png" data-src="../images/apple_watch.jpg" data-src-retina="../images/apple_watch@2x.jpg"/>
+        </div><div class="apple-watch-screen-2">
+          <span>Use workout activity for more accurate calorie adjustments.</span>
+          <img class="lazy-load invisible" src="../images/placeholder.png" data-src="../images/watch.png" data-src-retina="../images/watch@2x.png"/>
 
           <noscript>
-            <img class="device-bezel" src="../images/apple_watch@2x.jpg"/>
+            <img class="device-bezel" src="../images/watch@2x.png"/>
           </noscript>
         </div>
       </div>
+    </section>
+
+    <section class="no-padding">
+      <hr class="single"/>
     </section>
 
     <section class="awards centered">
       <div class="content-wrapper">
         <h2>Have a little fun</h2>
         <p class="large">A carefully curated set of awards shine a spotlight on consistency. Stay motived on week one and week 501.</p>
-
-        <img class="lazy-load invisible" src="../images/placeholder.png" data-src="../images/awards.jpg" data-src-retina="../images/awards@2x.jpg"/>
-
-        <noscript>
-          <img class="device-bezel" src="../images/awards@2x.jpg"/>
-        </noscript>
       </div>
     </section>
 
+    <section class="no-padding">
+      <hr class="single"/>
+    </section>
+
     <section class="more-features">
-      <div class="content-wrapper display-flex col-3">
+      <div class="content-wrapper display-flex">
         <div class="left-content">
           <h2>Even more great features</h2>
           <p class="large">Fuel is designed for people of all athletic levels and goals. A baseline of features make everyones qualifty of life amazing.</p>
+          <a href="#">Browse all features</a>
         </div>
 
         <ul class="right-content">
@@ -470,10 +417,13 @@
       <hr class="single"/>
     </section>
 
-    <section id="pricing" class="pricing has-background">
-      <h2 class="centered">Pricing</h2>
-      <div class="content-wrapper display-flex col-2">
-        <div class="left-content">
+    <section id="pricing" class="pricing">
+      <div class="content-wrapper">
+        <h2>Pricing</h2>
+      </div>
+
+      <div class="content-wrapper">
+        <div class="pricing-basic">
           <h3>Basic</h3>
           <span class="price">$0</span>
           <span class="price-detail">Limited</span>
@@ -484,9 +434,7 @@
             <li>No customization</li>
             <li>No backup or sync</li>
           </ul>
-        </div>
-
-        <div class="right-content">
+        </div><div class="pricing-pro">
           <h3>Pro</h3>
           <span class="price">$3.49</span>
           <span class="price-detail">Per month or $34.99 annually</span>
@@ -499,27 +447,14 @@
             <li>Backup & food sync</li>
             <li>App Lock</li>
           </ul>
+        </div><div class="pricing-trial">
+          <h3>Trial</h3>
+          <span class="price">Unlock the full experience <span class="blue">free</span> for 14 days.</span>
+          <a href="#" class="button dark">Download on the App Store</a>
         </div>
       </div>
 
       <p class="centered small">Prices may vary based on your region because of local tax laws and currency conversion rates.</p>
-    </section>
-
-    <section class="free-trial">
-      <div class="content-wrapper display-flex col-2">
-        <div class="left-content">
-          <h2>Unlock the full experience <span class="block"><span class="bold">free</span> for 14 days.</span></h2>
-
-          <a href="#" class="button">Download on the App Store</a>
-        </div>
-
-        <div class="right-content">
-          <img class="lazy-load invisible" src="../images/placeholder.png" data-src="../images/unlock_image.jpg" data-src-retina="../images/unlock_image@2x.jpg"/>
-
-          <noscript>
-            <img class="device-bezel" src="../images/unlock_image@2x.jpg"/>
-          </noscript>
-      </div>
     </section>
 
     <section class="support">
@@ -541,7 +476,11 @@
       </div>
     </section>
 
-    <section id="faq" class="frequently-asked has-background">
+    <section class="no-padding">
+      <hr class="single"/>
+    </section>
+
+    <section id="faq" class="frequently-asked">
       <div class="content-wrapper display-flex">
         <div class="left-content">
           <h2>Frequently asked questions</h2>
@@ -559,9 +498,13 @@
       </div>
     </section>
 
+    <section class="no-padding">
+      <hr class="single"/>
+    </section>
+
     <section class="newsletter centered">
       <div class="content-wrapper">
-        <h5>Get the inside scoop</h5>
+        <span class="heading-label">Get the inside scoop</span>
         <h2>Sign up for email updates &amp; nutrition tips</h2>
         <form>
           <input type="text" placeholder="Email" />
@@ -572,22 +515,26 @@
 
     <footer>
       <div class="content-wrapper display-flex">
+        <img class="logo" src="../images/logo.svg"/>
+
         <div class="left-content">
-          <img class="logo" src="../images/logo.svg"/>
           <p>Fuel is modern calorie tracking. Made for everyone. With insights and a 100% verified food library.</p>
           <p class="small">&copy; 2021 Ciarlo Software, LLC</p>
         </div>
 
         <ul>
-          <li><a href="/tips">Tracking tips</a></li>
+          <li><a href="/features">Features</a></li>
           <li><a href="/about">About</a></li>
-          <li><a href="/contact">Contact</a></li>
         </ul>
 
         <ul>
-          <li><a href="#">Blog</a></li>
+          <li><a href="/tips">Tracking tips</a></li>
           <li><a href="#">Changelog</a></li>
+        </ul>
+
+        <ul>
           <li><a href="/privacy">Privacy Policy</a></li>
+          <li><a href="/contact">Contact</a></li>
         </ul>
       </div>
     </footer>

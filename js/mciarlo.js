@@ -1,11 +1,11 @@
 $(function () {
 	var $window = $(window),
-		SCROLL_DEBOUNCE_MS = 50,
+		SCROLL_DEBOUNCE_MS = 10,
 		SCROLL_ANIMATION_DURATION = 1200,
 		$body = $("body"),
 		$burgerIcon = $("#hamburger-icon"),
-		$heroLeft = $(".hero-left"),
-		$heroRight = $(".hero-right"),
+		$howItWorks = $(".scroll-container:first"),
+		$storyContainer = $("#story-container"),
 		HERO_LEFT_DISTANCE = 80,
 		HERO_RIGHT_DISTANCE = 160,
 		downloadButtons = $(".app-store-badge"),
@@ -88,27 +88,31 @@ $(function () {
 	    },
 	    delay: SCROLL_DEBOUNCE_MS
 	},
-	updateHeros = function () {
-		if ($heroLeft.length == 0) {
+	updateIntro = function () {
+		if ($howItWorks.length == 0) {
 			return;
 		}
 
-		var heroBottom = $heroLeft.offset().top + $heroLeft.outerHeight();
-		if (heroBottom < $window.scrollTop()) {
-			return;
-		}
+		$("#loading-bar")[$window.scrollTop() > 30 ? "addClass" : "removeClass"]("hidden");
 
-		var percentOfViewportHeight = Math.min(1, $window.scrollTop() / $window.outerHeight(), 1);
-		var translateLeft = -HERO_LEFT_DISTANCE * percentOfViewportHeight;
-		var translateRight = -HERO_RIGHT_DISTANCE * percentOfViewportHeight;
-		$heroLeft.css("transform", "translate3d(0px, " + translateLeft + "px, 0)");
-		$heroRight.css("transform", "translate3d(0px, " + translateRight + "px, 0)");
-	}
+		var windowBottomY = $window.scrollTop() + $window.outerHeight();
+		var windowCenter = $window.scrollTop() + ($window.outerHeight() / 2);
+		var centerPoint = ($window.outerHeight() - $storyContainer.outerHeight()) / 2
+		var howItWorksShouldStick = $howItWorks.position().top - centerPoint <= $window.scrollTop();
+
+		$storyContainer[howItWorksShouldStick ? "addClass" : "removeClass"]("sticky");
+		console.log($(".guided-setup:first").position().top);
+		console.log(windowCenter);
+
+		if ($(".guided-setup:first").position().top <= windowCenter) {
+				$(".user-stats li").removeClass("will-animate");
+		}
+	},
   onScroll = function () {
-		updateHeros();
+		updateIntro();
 	},
 	onResize = function () {
-		updateHeros();
+		updateIntro();
 	};
 
 	$window.resize(function () {
@@ -122,6 +126,8 @@ $(function () {
 			setTimeout(scrollHandling.reallow, scrollHandling.delay);
 		}
 	});
+
+	$(".user-stats li").addClass("will-animate");
 
 	$(".jump-link").click(function (ev) {
 		ev.preventDefault();

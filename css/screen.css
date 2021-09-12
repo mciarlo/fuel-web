@@ -1202,6 +1202,12 @@ textarea {
       margin-left: auto;
       margin-right: auto; }
 
+  .long-term-habits {
+    text-align: left; }
+    .long-term-habits li {
+      max-width: none;
+      margin: 0; }
+
   .user-stats {
     padding-top: 6em; }
     .user-stats .value {
@@ -1406,6 +1412,9 @@ textarea {
       vertical-align: middle; }
     .free-trial .right-content {
       width: 37.2%; }
+
+  .newsletter form {
+    max-width: 400px; }
 
   footer {
     position: relative;

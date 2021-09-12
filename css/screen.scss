@@ -984,6 +984,15 @@ textarea {
     }
   }
 
+  .long-term-habits {
+    text-align: left;
+
+    li {
+      max-width: none;
+      margin: 0;
+    }
+  }
+
   .user-stats {
     padding-top: 6em;
 
@@ -1311,6 +1320,12 @@ textarea {
 
     .right-content {
       width: $col-5-content;
+    }
+  }
+
+  .newsletter {
+    form {
+      max-width: 400px;
     }
   }
 

@@ -194,17 +194,167 @@ section {
   width: 100%;
 }
 
-hr.light {
-  border: 0;
-  border-top: 1px solid #454545;
+.content-wrapper {
+  @include overflowfix;
+  width: 91%;
+  max-width: 1440px;
+  margin: 0 auto;
+  position: relative;
+  @include box-sizing;
+
+  &.border-top {
+    padding-top: 4em;
+    border-top: 1px solid $borderColor;
+  }
 }
 
-hr {
-  border: 0;
-  border-top: 1px solid $borderColor;
+.left-content,
+.right-content {
+  > img {
+    width: 100%;
+  }
+}
+
+h1 + h2 {
+  margin-top: 1em;
+}
+
+h1 + p {
+  margin-top: 1em;
+}
+
+h2 + p {
+  margin-top: 1em;
+}
+
+p + h2 {
+  margin-top: 1em;
+}
+
+.heading-label + h1,
+.heading-label + h2 {
+  margin-top: 0.3em;
+}
+
+p {
+  color: $textColorSecondary;
+}
+
+p + .large-link {
+  margin-top: 1em;
+}
+
+.large-link {
+  display: inline-block;
+  border-bottom: 2px solid $textColorPrimary;
+  padding-bottom: 0.2em;
+
+  &:hover {
+    color: $textColorSecondary;
+    text-decoration: none;
+    border-bottom-color: $textColorTertiary;
+  }
+}
+
+.heading-label {
+  text-transform: uppercase;
+  font-size: 0.8em;
+  letter-spacing: 4%;
+}
+
+.mobile {
+  display: block;
+}
+
+.desktop {
+  display: none;
+}
+
+.paragraphs {
+  padding-top: 6em;
+
+  h1 {
+    margin-bottom: 2em;
+  }
+
+  h1, h2, h3, h4, h5, p {
+    width: 100%;
+  }
+
+  p {
+    line-height: 1.7;
+  }
+}
+
+blockquote {
+  border-left: 4px solid #cdcdcd;
+  padding-left: 1em;
+  color: $textColorSecondary;
+  line-height: 1.4;
+  font-size: 1.2em;
+  margin-bottom: 1em;
+}
+
+.display-block {
+  display: block;
+}
+
+.purple {
+  color: #8F00FF;
+}
+
+.blue {
+  color: #0047FF;
+}
+
+#loading-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  z-index: 1;
+  @include transition(transform, 100ms, ease-in-out);
+
+  &.hidden {
+    transform: translate3d(0, 10px, 0);
+  }
+
+  span {
+    flex: 1;
+    height: 10px;
+
+    &:first-child {
+      background: #0041EA;
+    }
+
+    &:nth-child(2) {
+      background: #7100C9;
+    }
+
+    &:last-child {
+      background: #B81DB1;
+    }
+  }
 }
 
 @media screen and (min-width:768px) {
+  h2 + p {
+    margin-top: 1em;
+  }
+
+  .paragraphs {
+    padding-top: 8em;
+
+    h1 {
+      margin-bottom: 2.5em;
+    }
+
+    h1, h2, h3, h4, h5, p {
+      max-width: 620px;
+    }
+  }
+
   .display-flex {
     display: flex;
     flex-direction: row;

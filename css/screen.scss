@@ -911,8 +911,8 @@ textarea {
 
   .feature-name {
     display: block;
-    font-weight: 600;
-    margin-top: 1em;
+    font-weight: 500;
+    margin: 1em 0 0.4em;
   }
 
   span {
@@ -929,6 +929,8 @@ textarea {
     .feature-text {
       position: absolute;
       top: 100%;
+      width: 70%;
+      max-width: 300px;
       margin-top: -9.5em;
     }
 
@@ -1067,6 +1069,7 @@ textarea {
 
   .guided-setup {
     text-align: center;
+    margin-top: -50vh;
 
     h2, p {
       max-width: 400px;
@@ -1124,7 +1127,7 @@ textarea {
     padding-top: 4em;
 
     li {
-      width: 25%;
+      width: 28%;
       padding-right: 5%;
       @include box-sizing;
     }
@@ -1196,12 +1199,38 @@ textarea {
     a {
       color: #656565;
       letter-spacing: -0.05em;
+      padding-left: 0;
+      transition: all 300ms ease-in-out;
+      background-position: 0px 7px;
+      background-repeat: no-repeat;
+      background-size: 50px auto;
+      position: relative;
+
+      &:before {
+        opacity: 0;
+        content: ' ';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 50px;
+        height: 50px;
+        transition: all 300ms ease-in-out;
+        background-image: url("../images/arrow_forward.svg");
+        background-repeat: no-repeat;
+        background-position: 0px 7px;
+        background-size: 50px auto;
+        transform: translate3d(-10px, 0, 0);
+      }
 
       &.active {
         color: #fff;
-        background: transparent url("../images/arrow_forward.svg") 0px 7px no-repeat;
-        background-size: 50px auto;
         padding-left: 66px;
+
+        &:before {
+          opacity: 1;
+          transform: translate3d(0, 0, 0);
+        }
       }
     }
   }

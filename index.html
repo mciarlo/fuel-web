@@ -131,7 +131,7 @@
       </div>
     </section>
 
-    <section class="dashboard has-background">
+    <section id="make-it-yours" class="dashboard has-background">
       <div class="content-wrapper display-flex">
         <div class="left-content">
           <h2 class="large">Your dashboard.<br/>Your way.</h2>
@@ -139,13 +139,13 @@
 
           <ul class="dashboard-presets">
             <li>
-              <a href="#" class="active">Athletic training</a>
+              <a href="#" data-attr-class="preset-01" class="active">Athletic training</a>
             </li><li>
-              <a href="#">Blood sugar</a>
+              <a href="#" data-attr-class="preset-02">Blood sugar</a>
             </li><li>
-              <a href="#">Weight loss</a>
+              <a href="#" data-attr-class="preset-03">Weight loss</a>
             </li><li>
-              <a href="#">Habit building</a>
+              <a href="#" data-attr-class="preset-04">Habit building</a>
             </li>
           </ul>
         </div>
@@ -154,11 +154,14 @@
           <div class="iphone-container">
             <div class="iphone">
               <img class="lazy-load device-bezel" src="images/placeholder.png" data-src="images/iphone_frame.png" data-src-retina="../images/iphone_frame@2x.png">
-              <img class="lazy-load device-media theme_01 theme_preview active" src="images/placeholder.png" data-src="images/calorie_tracking_theme_01.jpg" data-src-retina="../images/calorie_tracking_theme_01@2x.jpg">
+              <img class="lazy-load device-media preset-01 dashboard-preset active" src="images/placeholder.png" data-src="images/dashboard_weights.jpg" data-src-retina="../images/dashboard_weights@2x.jpg">
+              <img class="lazy-load device-media preset-02 dashboard-preset" src="images/placeholder.png" data-src="images/dashboard_weights.jpg" data-src-retina="../images/dashboard_weights@2x.jpg">
+              <img class="lazy-load device-media preset-03 dashboard-preset" src="images/placeholder.png" data-src="images/dashboard_weights.jpg" data-src-retina="../images/dashboard_weights@2x.jpg">
+              <img class="lazy-load device-media preset-04 dashboard-preset" src="images/placeholder.png" data-src="images/dashboard_weights.jpg" data-src-retina="../images/dashboard_weights@2x.jpg">
 
               <noscript>
                 <img class="device-bezel" src="images/iphone_frame@2x.png">
-                <img class="device-media theme_01 theme_preview" src="../images/calorie_tracking_theme_01@2x.jpg">
+                <img class="device-media preset-01 dashboard-preset" src="../images/dashboard_weights@2x.jpg">
               </noscript>
             </div>
           </div>
@@ -286,7 +289,7 @@
       </div>
     </section>
 
-    <section class="food-library">
+    <section id="backstory" class="food-library">
       <div class="content-wrapper">
         <h2>I got tired of calorie tracking apps with incomplete data. <span class="display-block purple">So I made my own.</span></h2>
       </div>

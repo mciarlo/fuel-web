@@ -1052,8 +1052,8 @@ textarea {
   font-size: 0.9em; }
   .feature-row .feature-name {
     display: block;
-    font-weight: 600;
-    margin-top: 1em; }
+    font-weight: 500;
+    margin: 1em 0 0.4em; }
   .feature-row span {
     max-width: 200px; }
   .feature-row li {
@@ -1068,6 +1068,8 @@ textarea {
     .feature-row li .feature-text {
       position: absolute;
       top: 100%;
+      width: 70%;
+      max-width: 300px;
       margin-top: -9.5em; }
     .feature-row li.col-2 {
       width: 50%; }
@@ -1164,7 +1166,8 @@ textarea {
     width: 30%; }
 
   .guided-setup {
-    text-align: center; }
+    text-align: center;
+    margin-top: -50vh; }
     .guided-setup h2, .guided-setup p {
       max-width: 400px;
       margin-left: auto;
@@ -1201,7 +1204,7 @@ textarea {
     display: flex;
     padding-top: 4em; }
     .lifestyle li {
-      width: 25%;
+      width: 28%;
       padding-right: 5%;
       box-sizing: border-box;
       -webkit-box-sizing: border-box;
@@ -1246,12 +1249,34 @@ textarea {
       line-height: 1; }
     .dashboard-presets a {
       color: #656565;
-      letter-spacing: -0.05em; }
+      letter-spacing: -0.05em;
+      padding-left: 0;
+      transition: all 300ms ease-in-out;
+      background-position: 0px 7px;
+      background-repeat: no-repeat;
+      background-size: 50px auto;
+      position: relative; }
+      .dashboard-presets a:before {
+        opacity: 0;
+        content: ' ';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 50px;
+        height: 50px;
+        transition: all 300ms ease-in-out;
+        background-image: url("../images/arrow_forward.svg");
+        background-repeat: no-repeat;
+        background-position: 0px 7px;
+        background-size: 50px auto;
+        transform: translate3d(-10px, 0, 0); }
       .dashboard-presets a.active {
         color: #fff;
-        background: transparent url("../images/arrow_forward.svg") 0px 7px no-repeat;
-        background-size: 50px auto;
         padding-left: 66px; }
+        .dashboard-presets a.active:before {
+          opacity: 1;
+          transform: translate3d(0, 0, 0); }
 
   .dashboard-options {
     display: flex;

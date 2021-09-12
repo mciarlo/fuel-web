@@ -68,16 +68,16 @@ $(function () {
 		$(ev.target).parent().toggleClass("active");
 	});
 
-	$(".theme-selector a").click(function (ev) {
+	$(".dashboard-presets a").click(function (ev) {
 		ev.preventDefault();
 		ev.stopPropagation();
 
 		var $target = $(ev.target);
-		$(".theme-selector a").removeClass("selected");
-		$target.addClass("selected");
+		$(".dashboard-presets a").removeClass("active");
+		$target.addClass("active");
 
 		var targetClass = $target.attr("data-attr-class");
-		$("img.theme_preview").removeClass("active");
+		$("img.dashboard-preset").removeClass("active");
 		$("img." + targetClass).addClass("active");
 	});
 
@@ -101,10 +101,8 @@ $(function () {
 		var howItWorksShouldStick = $howItWorks.position().top - centerPoint <= $window.scrollTop();
 
 		$storyContainer[howItWorksShouldStick ? "addClass" : "removeClass"]("sticky");
-		console.log($(".guided-setup:first").position().top);
-		console.log(windowCenter);
 
-		if ($(".guided-setup:first").position().top <= windowCenter) {
+		if ($(".guided-setup:first").position().top <= windowBottomY) {
 				$(".user-stats li").removeClass("will-animate");
 		}
 	},

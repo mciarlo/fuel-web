@@ -167,10 +167,12 @@ img {
 
 .device-media {
   position: absolute;
-  width: 76.8%;
-  left: 11.55%;
+  top: 0;
+  left: 0;
   z-index: 1;
-  top: 6.15%;
+  padding: 11% 11.6% 5%;
+  width: 100%;
+  @include box-sizing;
 }
 
 /** Global Elements **/

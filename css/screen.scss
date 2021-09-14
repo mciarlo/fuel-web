@@ -38,12 +38,19 @@ p {
 }
 
 h1, h2, h3, h4 {
-  line-height: 1.1em;
+  line-height: 1.3em;
   font-weight: 500;
 }
 
-h1 {
+h1,
+h2.large {
+  line-height: 1.1em;
   font-size: 2em;
+  letter-spacing: -0.05em;
+}
+
+h2.xlarge {
+  font-size: 2.4em;
   letter-spacing: -0.05em;
 }
 
@@ -67,8 +74,14 @@ p.small {
 }
 
 @media screen and (min-width:768px) {
-  h1 {
+  h1,
+  h2.large {
     font-size: 2.8em;
+    letter-spacing: -0.05em;
+  }
+
+  h2.xlarge {
+    font-size: 3.6em;
     letter-spacing: -0.05em;
   }
 
@@ -79,18 +92,24 @@ p.small {
 }
 
 @media screen and (min-width:1200px) {
-  h1 {
-    font-size: 3.7em;
+  h1,
+  h2.large {
+    font-size: 3.8em;
+    letter-spacing: -0.05em;
+  }
+
+  h2.xlarge {
+    font-size: 5em;
     letter-spacing: -0.05em;
   }
 
   h2, h3  {
-    font-size: 2.25em;
+    font-size: 2.1em;
     letter-spacing: -.04em;
   }
 
   p {
-    font-size: 1.1em;
+    font-size: 1.13em;
   }
 }
 
@@ -119,19 +138,36 @@ p.small {
 .scroll-container {
   padding-top: 4em;
 
-  .off-day-text {
+  .off-day-text,
+  .callouts {
     padding-top: 2em;
     max-width: 300px;
+    text-align: center;
+    margin: 0 auto;
   }
 
   .iphone {
     max-width: 40%;
     margin: 0 auto;
+
+    &.mobile {
+      margin-top: 4em;
+    }
+  }
+}
+
+.guided-setup {
+  text-align: center;
+
+  h2 {
+    max-width: 340px;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
 .user-stats {
-  padding-top: 2em;
+  padding-top: 4em;
 
   .value {
     font-size: 2em;
@@ -325,19 +361,17 @@ p.small {
   }
 }
 
-.food-library {
+.backstory {
   h2 {
     padding-bottom: 2em;
   }
 
-  .right-content {
-    > img {
-      padding-bottom: 1em;
-    }
+  .border-top {
+    border: 0;
+  }
 
-    h2 {
-      padding-top: 2em;
-    }
+  .icon-list {
+    padding-top: 4em;
   }
 }
 
@@ -402,28 +436,100 @@ p.small {
 
 .awards {
   padding: 0;
-  background: white url("../images/awards_bg.jpg") center center no-repeat;
-  background-size: auto 60%;
 
   .content-wrapper {
-    padding: 18em 0;
+    padding: 6em 0;
   }
 
   .text-content {
     position: absolute;
     top: 50%;
+    left: 30%;
+    width: 40%;
+    padding: 12em 0;
     transform: translate(0, -50%);
-    left: 25%;
-    width: 50%;
   }
 
   p {
     display: inline-block;
     width: 100%;
   }
+
+  .awards-container {
+    margin: 0 auto;
+    width: 100%;
+    position: relative;
+    -webkit-animation: rotating $awardsRotation linear infinite;
+    -moz-animation: rotating $awardsRotation linear infinite;
+    -ms-animation: rotating $awardsRotation linear infinite;
+    -o-animation: rotating $awardsRotation linear infinite;
+    animation: rotating $awardsRotation linear infinite;
+
+    &:after {
+      content: "";
+      display: block;
+      padding-bottom: 100%;
+    }
+  }
+
+  .awards-icons {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    li {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin: -27px 0 0 -27px;
+      -webkit-animation: rotatingCounter $awardsRotation linear infinite;
+      -moz-animation: rotatingCounter $awardsRotation linear infinite;
+      -ms-animation: rotatingCounter $awardsRotation linear infinite;
+      -o-animation: rotatingCounter $awardsRotation linear infinite;
+      animation: rotatingCounter $awardsRotation linear infinite;
+
+      &:nth-child(1) {
+        left: 5%;
+      }
+
+      &:nth-child(2) {
+        top: 20%;
+        left: 20%;
+      }
+
+      &:nth-child(3) {
+        top: 5%;
+      }
+
+      &:nth-child(4) {
+        top: 20%;
+        left: 80%;
+      }
+
+      &:nth-child(5) {
+        left: 95%;
+      }
+
+      &:nth-child(6) {
+        top: 80%;
+        left: 80%;
+      }
+
+      &:nth-child(7) {
+        top: 95%;
+      }
+
+      &:nth-child(8) {
+        left: 20%;
+        top: 80%;
+      }
+    }
+  }
 }
 
 .more-features {
+  padding-top: 0;
+
   .right-content {
     padding-top: 4em;
   }
@@ -448,10 +554,10 @@ p.small {
 
     img {
       position: absolute;
-      top: 0;
+      top: 5px;
       left: 0;
-      width: 34px;
-      height: 34px;
+      width: 20px;
+      height: 20px;
     }
   }
 }
@@ -536,7 +642,7 @@ p.small {
   }
 
   a {
-    max-width: 200px;
+    max-width: 300px;
     line-height: 1.3;
   }
 
@@ -559,6 +665,10 @@ p.small {
 }
 
 .newsletter {
+  .border-top {
+    padding-top: 4em;
+  }
+
   h5 {
     font-size: 0.8em;
     text-transform: uppercase;
@@ -572,6 +682,13 @@ p.small {
     max-width: 240px;
     margin-left: auto;
     margin-right: auto;
+  }
+
+  img {
+    width: 60%;
+    max-width: 200px;
+    margin: 0 auto 2em;
+    display: block;
   }
 
   form {
@@ -673,12 +790,31 @@ textarea {
   }
 
   li {
-    background: transparent url("../images/faq_icon_collapsed.png") right 2.75em no-repeat;
+    position: relative;
+
+    &:first-child {
+      &:after {
+        top: 30%;
+      }
+    }
+  }
+
+  li:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 0;
+    width: 20px;
+    height: 20px;
+    transform: translate3d(0, -50%, 0);
+    background: transparent url("../images/faq_icon_collapsed.png") 0 0 no-repeat;
     background-size: 20px 20px;
   }
 
   li.active {
-    background-image: url("../images/faq_icon_expanded.png");
+    &:after {
+      background-image: url("../images/faq_icon_expanded.png");
+    }
 
     .answer {
       display: block;
@@ -758,83 +894,6 @@ textarea {
   }
 }
 
-/*********************************************
- *********************************************
- *********************************************
- *********************************************
- * About
- *********************************************
- *********************************************
- *********************************************
- *********************************************
- */
-
- .about-intro {
-   h1 {
-     margin-bottom: 2em;
-   }
- }
-
- .about-devices {
-   padding: 0;
-}
-
-.about-history {
-  padding-top: 5em;
-
-  .left-content {
-    img {
-      margin-bottom: 2em;
-    }
-  }
-
-  h2 {
-    margin: 4em 0 2em;
-  }
-}
-
- .setup-item {
-   width: 86%;
-   margin: 0 auto;
-   position: relative;
-   margin-bottom: 6em;
-
-   &:last-child {
-     margin-bottom: 0;
-   }
-
-   .image-container {
-     width: 100%;
-     background: #E7EAEF;
-     height: 350px;
-     overflow: hidden;
-     position: relative;
-
-     img {
-       width: 80%;
-       position: absolute;
-       top: 40px;
-       left: 10%;
-       display: block;
-     }
-   }
-
-   .content-container {
-     padding-top: 1em;
-   }
-
-   .label {
-     display: block;
-     font-weight: 500;
-   }
-
-   .description {
-     display: block;
-     margin-top: .5em;
-     line-height: 1.4;
-   }
- }
-
  /*********************************************
   *********************************************
   *********************************************
@@ -892,35 +951,34 @@ textarea {
   *********************************************
   *********************************************
   */
-.tips-header {
-  padding: 10em 0 30em;
-  background: #EAEBE5 url("../images/tips_header.jpg") center center no-repeat;
-  background-size: auto 100%;
 
-  p {
-    margin-top: 1em;
-  }
-}
-
-.tip {
-  img {
-    width: 90%;
-    max-width: 320px;
-    margin: 0 auto 2em auto;
-    display: block;
-  }
-
-  h2 {
-    margin-bottom: 2em;
-  }
-}
 
 @media screen and (min-width:500px) {
-  .awards {
-    background-size: auto 70%;
+  .dashboard {
+    .content-wrapper.padding-top h2 {
+      text-align: left;
+      margin: 0;
+    }
+  }
 
-    .content-wrapper {
-      padding: 24em 0;
+  .dashboard-options {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    ul {
+      padding-bottom: 0;
+      width: 50%;
+
+      &:nth-child(1),
+      &:nth-child(2),
+      &:nth-child(3),
+      &:nth-child(4),
+      &:nth-child(6),
+      &:nth-child(7),
+      &:nth-child(8) {
+        margin-bottom: 4em;
+      }
     }
   }
 }
@@ -944,9 +1002,31 @@ textarea {
     overflow: visible;
   }
 
+  .hero-a {
+    z-index: 2;
+  }
+
+  .hero-b {
+    z-index: 1;
+  }
+
+  .device-bezel {
+    z-index: 3;
+  }
+
+  .mask-container {
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+
   .how-it-works {
     .scroll-container {
-      height: 400vh;
+      height: 350vh;
 
       .content-wrapper {
         margin-top: 4em;
@@ -955,12 +1035,81 @@ textarea {
       }
     }
 
-    .off-day-text {
+    .button {
+      display: none;
+    }
+
+    .off-day-text,
+    .callouts {
+      text-align: left;
       width: 28%;
       position: absolute;
       left: 0;
       top: 50%;
-      transform: translate(0, -50%)
+      transform: translate(0, -50%);
+      opacity: 0;
+      transition: opacity 400ms ease-in-out;
+
+      &.active {
+        opacity :1;
+      }
+    }
+
+    .callouts {
+      text-align: left;
+      width: 28%;
+      position: absolute;
+      right: 0;
+      top: 50%;
+      left: 60%;
+      transform: translate(0, -50%);
+
+      .callout {
+        padding-left: 60px;
+        position: relative;
+
+        span {
+          display: inline-block;
+          opacity: 0;
+          transform: translate3d(-10px, 0, 0);
+          transition: opacity 600ms ease-in-out, transform 600ms ease-in-out;
+          transition-delay: 300ms;
+        }
+
+        &.b {
+          margin-top: 10em;
+
+          span {
+            transition-delay: 1200ms;
+          }
+
+          &:before {
+            transition-delay: 900ms;
+          }
+        }
+
+        &:before {
+          content: "";
+          position: absolute;
+          top: 12px;
+          left: 0;
+          width: 0;
+          height: 1px;
+          transition: width 300ms ease-in-out;
+          background: $borderColor;
+        }
+      }
+
+      &.active .callout {
+        span {
+          transform: translate3d(0, 0, 0);
+          opacity: 1;
+        }
+
+        &:before {
+          width: 40px;
+        }
+      }
     }
 
     .iphone {
@@ -985,11 +1134,27 @@ textarea {
   }
 
   .long-term-habits {
-    text-align: left;
+    padding-top: 0;
 
-    li {
-      max-width: none;
-      margin: 0;
+    .icon-list {
+      text-align: center;
+      margin: 0 auto;
+      width: 100%;
+      display: block;
+      padding-top: 6em;
+
+      li {
+        text-align: center;
+        display: inline-block;
+        width: 20%;
+        margin: 0 2%;
+        padding: 0;
+
+        img {
+          width: 40px;
+          height: 40px;
+        }
+      }
     }
   }
 
@@ -1023,12 +1188,12 @@ textarea {
     }
 
     img {
-      width: 56px;
-      height: 56px;
+      width: 40px;
+      height: 40px;
     }
 
     strong {
-      margin-top: 1em;
+      margin-top: 0.25em;
     }
   }
 
@@ -1041,36 +1206,37 @@ textarea {
 
     .left-content {
       flex: none;
+
+      p {
+        max-width: 250px;
+      }
     }
 
     .content-wrapper:first-child {
       border-bottom: 1px solid #222;
+      padding-bottom: 0;
     }
 
     .content-wrapper.padding-top {
       padding-top: 6em;
-
-      h2 {
-        margin: 0;
-        text-align: left;
-      }
     }
 
     .content-wrapper {
       .left-content {
         width: 50%;
-        margin-right: $col-2;
+        margin-right: 0;
       }
 
       .iphone {
-        width: 100%;
-        margin-left: 0%;
+        width: 360px;
+        left: 100%;
+        transform: translate3d(-100%, 0, 0);
+        max-width: none;
       }
 
       .iphone-container {
         overflow: hidden;
-        height: 500px;
-        position: absolute;
+        height: 570px;
         right: 0;
         bottom: 0;
       }
@@ -1080,6 +1246,7 @@ textarea {
   .dashboard-presets {
     font-size: 2em;
     padding-bottom: 0;
+    padding-top: 2em;
 
     li {
       text-align: left;
@@ -1103,14 +1270,7 @@ textarea {
   }
 
   .dashboard-options {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    padding: 8em 0 6em;
-
-    .content-wrapper.padding-top h2 {
-      text-align: left;
-    }
+    padding: 8em 0 0;
 
     ul {
       padding-bottom: 0;
@@ -1118,45 +1278,82 @@ textarea {
 
       &:nth-child(1),
       &:nth-child(2),
-      &:nth-child(2),
+      &:nth-child(3),
       &:nth-child(4),
-      &:nth-child(6) {
+      &:nth-child(5) {
         margin-bottom: 4em;
+      }
+
+      &:nth-child(6),
+      &:nth-child(7),
+      &:nth-child(8),
+      &:nth-child(9),
+      &:nth-child(10) {
+        margin-bottom: 0;
       }
     }
   }
 
-  .food-library {
-    .content-wrapper:first-child {
-      h2 {
-        width: $col-5;
-        padding-bottom: 3em;
-      }
+  .backstory {
+    padding-bottom: 0;
+
+    .border-top {
+      border-top: 1px solid $borderColor;
     }
 
     .left-content {
-      margin-right: $col-2;
+      width: $col-6-content;
+      margin-right: $col-1;
+      flex: none;
+      padding-bottom: 4em;
     }
 
     .right-content {
-      padding-top: 6em;
-      width: $col-4-content;
-      margin: 0;
+      flex: 1;
 
       img {
         margin-bottom: 3em;
       }
     }
+
+    .content-wrapper.border-top {
+      h2 {
+        max-width: 380px;
+      }
+    }
+
+    .icon-list {
+      padding-top: 8em;
+    }
+  }
+
+  .awards {
+    .awards-container {
+      width: 80%;
+      max-width: 800px;
+    }
+
+    .text-content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 300px;
+      padding: 12em 0;
+      transform: translate(-50%, -50%);
+    }
   }
 
   .apple-health {
     .content-wrapper:first-child {
-      h2,
+      h2 {
+        max-width: 500px;
+      }
+
       p {
         max-width: 400px;
       }
 
-      padding-bottom: 6em;
+      padding-bottom: 4em;
     }
   }
 
@@ -1176,39 +1373,27 @@ textarea {
     }
   }
 
-  .awards {
-    background-size: auto 60%;
-
-    .content-wrapper {
-      padding: 34em 0;
-    }
-
-    .text-content {
-      left: 35%;
-      width: 30%;
-    }
-  }
-
   .more-features {
+    padding-bottom: 0;
+
     .left-content {
       flex:none;
-      width: $col-4-content;
-      margin-right: $col-4;
+      width: $col-5-content;
+      margin-right: $col-3;
+
+      p {
+        max-width: 340px;
+      }
     }
 
     .right-content {
       padding-top: 0;
     }
-
-    li {
-      img {
-        width: 34px;
-        height: 34px;
-      }
-    }
   }
 
   .pricing {
+    padding-bottom: 0;
+
     h2 {
       text-align: left;
     }
@@ -1273,6 +1458,10 @@ textarea {
     }
   }
 
+  .support {
+    padding-bottom: 0;
+  }
+
   .frequently-asked-questions {
     padding-bottom: 0;
 
@@ -1293,11 +1482,6 @@ textarea {
         border: 0;
       }
     }
-  }
-
-  .support .support-items {
-    padding-bottom: 0;
-    margin-bottom: 0;
   }
 
   .free-trial {
@@ -1326,6 +1510,16 @@ textarea {
   .newsletter {
     form {
       max-width: 400px;
+    }
+
+    .border-top {
+      padding-top: 6em;
+    }
+
+    img {
+      max-width: 300px;
+      margin: 0 auto 4em;
+      display: block;
     }
   }
 
@@ -1406,136 +1600,6 @@ textarea {
     }
   }
 
-  .about-intro,
-  .tip {
-    .left-content {
-      flex: none;
-      width: 50% - $col-1 * 2;
-      margin-left: $col-1;
-      margin-right: $col-1;
-    }
-
-    .right-content {
-      width: 50% - $col-1 * 2;
-      margin-left: $col-1;
-    }
-  }
-
-  .tip .right-content {
-    margin-left: 0;
-  }
-
-  .about-devices {
-    .left-content {
-      flex: none;
-      width: 45% - $col-2;
-      margin-left: $col-2;
-      margin-right: 5%;
-
-      .iphone {
-        margin-top: -6em;
-      }
-    }
-
-    .right-content {
-      width: 45% - $col-2;
-      margin-left: 5%;
-      margin-right: $col-2;
-
-      .iphone {
-        margin-top: 3em;
-      }
-    }
- }
-
- .about-history {
-   padding-top: 5em;
-
-   h2 {
-     width: 65%;
-     margin: 0;
-   }
-
-   .left-content {
-     flex: none;
-     width: $col-3-content;
-     margin-left: $col-1;
-     margin-right: $col-3;
-
-     img {
-       margin-bottom: 6em;
-     }
-   }
-
-   .right-content {
-     width: $col-6-content;
-
-     img {
-       margin-top: 8em;
-     }
-   }
- }
-
- .about-intro {
-   padding-bottom: 0;
- }
-
- .about-setup {
-   padding-bottom: 15em;
-   padding-top: 5em;
- }
-
- .setup-item {
-   width: 20%;
-   position: relative;
-
-   .image-container {
-     height: calc(100vw * 0.2);
-     max-height: 350px;
-
-     img {
-       width: 80%;
-       position: absolute;
-       top: 40px;
-       left: 10%;
-       display: block;
-     }
-   }
-
-   .content-container {
-     position: absolute;
-     top: 100%;
-     left: 0;
-     width: 100%;
-     padding-top: 1em;
-   }
-
-   h2 {
-     position: absolute;
-     bottom: 0;
-     left: 0;
-     width: 100%;
-   }
-
-   p {
-     position: absolute;
-     top: calc(100% + .2em);
-     left: 0;
-     width: 100%;
-   }
-
-   &:nth-child(1),
-   &:nth-child(2),
-   &:nth-child(3) {
-     margin-right: 5%;
-   }
- }
-
-  .tip img {
-    width: 400px;
-    max-width: none;
-  }
-
   /************
   **************
   ****** FEATURES **********
@@ -1610,26 +1674,45 @@ textarea {
 
 @media screen and (min-width:1024px) {
   .dashboard {
+    .left-content {
+      p {
+        max-width: 350px;
+      }
+    }
+
     .content-wrapper {
       .iphone {
-        width: 90%;
-        margin-left: 10%;
-        max-width: 400px;
+        width: 440px;
       }
 
       .iphone-container {
-        height: 600px;
+        height: 700px;
       }
     }
   }
 
   .dashboard-presets {
+    padding-top: 4em;
     font-size: 2.5em;
   }
 
   .dashboard-options {
     ul {
       width: 20%;
+    }
+  }
+
+  .apple-health {
+    .content-wrapper:first-child {
+      h2 {
+        max-width: 600px;
+      }
+    }
+  }
+
+  .awards {
+    .text-content {
+      width: 280px;
     }
   }
 
@@ -1650,11 +1733,11 @@ textarea {
   .dashboard {
     .content-wrapper {
       .iphone {
-        max-width: 500px;
+        width: 503px;
       }
 
       .iphone-container {
-        height: 700px;
+        height: 800px;
       }
     }
   }

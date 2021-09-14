@@ -181,10 +181,6 @@ section {
   z-index: 1;
   @include overflowfix;
 
-  &.has-background {
-    padding: 3em 0;
-  }
-
   &.no-padding {
     padding: 0;
   }
@@ -196,16 +192,19 @@ section {
 
 .content-wrapper {
   @include overflowfix;
-  width: 91%;
   max-width: 1440px;
-  margin: 0 auto;
+  margin: 0 25px;
   position: relative;
   @include box-sizing;
 
   &.border-top {
-    padding-top: 4em;
+    padding-top: 2em;
     border-top: 1px solid $borderColor;
   }
+}
+
+nav .content-wrapper {
+  max-width: none;
 }
 
 .left-content,
@@ -244,10 +243,15 @@ p + .large-link {
   margin-top: 1em;
 }
 
+p + .button {
+  margin-top: 1em;
+}
+
 .large-link {
   display: inline-block;
   border-bottom: 2px solid $textColorPrimary;
   padding-bottom: 0.2em;
+  font-weight: 500;
 
   &:hover {
     color: $textColorSecondary;
@@ -338,7 +342,22 @@ blockquote {
   }
 }
 
+@media screen and (min-width:414px) {
+  .content-wrapper {
+    margin: 0 30px;
+  }
+}
+
 @media screen and (min-width:768px) {
+  .content-wrapper {
+    margin: 0 auto;
+    width: 88%;
+
+    &.border-top {
+      padding-top: 3em;
+    }
+  }
+
   h2 + p {
     margin-top: 1em;
   }
@@ -371,27 +390,65 @@ blockquote {
 
   section {
     padding: 6em 0;
-
-    &.has-background {
-      padding: 4em 0;
-    }
   }
 
   .content-wrapper.padding-top {
     padding-top: 4em;
+  }
+
+  .desktop {
+    display: block;
+  }
+
+  .mobile {
+    display: none;
   }
 }
 
 @media screen and (min-width:1200px) {
   section {
     padding: 8em 0;
-
-    &.has-background {
-      padding: 5em 0;
-    }
   }
 
   .content-wrapper.padding-top {
     padding-top: 6em;
+  }
+}
+
+/* Animation */
+
+$awardsRotation: 25s;
+
+@keyframes rotating {
+  from {
+    -ms-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -ms-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotatingCounter {
+  from {
+    -ms-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -ms-transform: rotate(-360deg);
+    -moz-transform: rotate(-360deg);
+    -webkit-transform: rotate(-360deg);
+    -o-transform: rotate(-360deg);
+    transform: rotate(-360deg);
   }
 }

@@ -68,7 +68,7 @@ $(function () {
 		$(ev.target).parent().toggleClass("active");
 	});
 
-	$(".dashboard-presets a").click(function (ev) {
+	var handleDashboardPreset = function (ev) {
 		ev.preventDefault();
 		ev.stopPropagation();
 
@@ -79,6 +79,14 @@ $(function () {
 		var targetClass = $target.attr("data-attr-class");
 		$("img.dashboard-preset").removeClass("active");
 		$("img." + targetClass).addClass("active");
+	};
+
+	$(".dashboard-presets a").click(function (ev) {
+		handleDashboardPreset(ev);
+	});
+
+	$(".dashboard-presets a").hover(function (ev) {
+		handleDashboardPreset(ev);
 	});
 
 	var scrollHandling = {
@@ -99,12 +107,31 @@ $(function () {
 		var windowCenter = $window.scrollTop() + ($window.outerHeight() / 2);
 		var centerPoint = ($window.outerHeight() - $storyContainer.outerHeight()) / 2
 		var howItWorksShouldStick = $howItWorks.position().top - centerPoint <= $window.scrollTop();
+		var scrollContainerHeight = $howItWorks.outerHeight();
+		var scrollContainerThreshold0 = $howItWorks.position().top;
+		var scrollContainerThreshold1 = $howItWorks.position().top + (scrollContainerHeight * .4);
+		var scrollContainerThreshold2 = $howItWorks.position().top + (scrollContainerHeight * .6);
 
 		$storyContainer[howItWorksShouldStick ? "addClass" : "removeClass"]("sticky");
 
 		if ($(".guided-setup:first").position().top <= windowBottomY) {
 				$(".user-stats li").removeClass("will-animate");
 		}
+
+		var scrollDistanceFromTop = $window.scrollTop() - $howItWorks.position().top;
+		var percent = (scrollDistanceFromTop / scrollContainerThreshold0 * 100);
+		percent = Math.min(percent, 100);
+		percent = Math.max(percent, 0);
+
+		if (scrollDistanceFromTop > 0) {
+			$(".mask-container").css("height", 100 - percent + "%");
+
+		} else {
+			$(".mask-container").css("height", "100%");
+		}
+
+		$(".off-day-text")[windowBottomY >= scrollContainerThreshold1 ? "addClass" : "removeClass"]("active");
+		$(".callouts")[windowBottomY >= scrollContainerThreshold2 ? "addClass" : "removeClass"]("active");
 	},
   onScroll = function () {
 		updateIntro();

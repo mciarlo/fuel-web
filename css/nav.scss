@@ -34,6 +34,10 @@ nav {
   background: $lightBackground;
   @include transition(height, .25s, ease-in-out);
 
+  a.button {
+    display: none;
+  }
+
   .content-wrapper {
     padding: 1em 0;
   }
@@ -57,14 +61,15 @@ nav {
   }
 
   .logo {
-    width: 30px;
-    height: 30px;
+    width: 20px;
+    height: 20px;
     position: absolute;
-    top: 1em;
+    top: 1.2em;
     left: 0;
   }
 
   ul {
+    padding-top: 4em;
     opacity: 0;
     pointer-events: none;
     flex: 1;
@@ -81,7 +86,7 @@ nav {
 
     a:link, a:visited {
       font-weight: 500;
-      font-size: 0.85em;
+      font-size: 1em;
       color: $textColorSecondary;
       display: inline-block;
       padding: .6em 0;
@@ -114,7 +119,7 @@ nav.active {
 #hamburger-icon {
   position: absolute;
   top: 1.2em;
-  right: 4.5%;
+  right: 25px;
   width: 20px;
   height: 20px;
   z-index: 9999;
@@ -155,11 +160,13 @@ nav.active {
   }
 }
 
-@media screen and (min-width: 675px) {
-
+@media screen and (min-width: 414px) {
+  #hamburger-icon {
+    right: 30px;
+  }
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1024px) {
   .no-js  {
     nav {
       height: auto;
@@ -186,10 +193,11 @@ nav.active {
       }
     }
 
-    .button {
+    a.button {
       position: absolute;
       top: 2em;
       right: 0;
+      display: inline-block;
     }
 
     &.slim {
@@ -207,6 +215,10 @@ nav.active {
       ul:first-child {
         margin: 0;
 
+        li {
+          margin: 0;
+        }
+
         li:first-child a {
           background: transparent url("../images/back_arrow.svg") 0 .5em no-repeat;
           padding-left: 18px;
@@ -221,6 +233,7 @@ nav.active {
     ul {
       opacity: 1;
       pointer-events: all;
+      padding-top: 0;
 
       li {
         display: inline-block;
@@ -230,6 +243,7 @@ nav.active {
 
       a:link, a:visited {
         padding: .6em 0;
+        font-size: 0.85em;
       }
     }
   }
@@ -237,8 +251,4 @@ nav.active {
   #hamburger-icon {
     display: none;
   }
-}
-
-@media screen and (min-width: 1024px) {
-
 }

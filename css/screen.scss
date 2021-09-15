@@ -698,6 +698,12 @@ p {
     padding-top: 4em;
   }
 
+  .response {
+    margin: 2em auto 2em;
+    line-height: 1.4;
+    max-width: 400px;
+  }
+
   h5 {
     font-size: 0.8em;
     text-transform: uppercase;
@@ -726,23 +732,12 @@ p {
   }
 
   input,
-  button {
+  button,
+  input[type="submit"] {
     display: block;
     width: 100%;
-    margin: 0 auto;
-  }
-
-  button {
-    background: $textColorPrimary;
-    border: 0;
-    color: white;
-    margin-top: 1em;
-    font-size: 1.1em;
-    @include fontFamily;
-
-    &:hover {
-      background: $textColorSecondary;
-    }
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
@@ -802,6 +797,7 @@ footer {
 }
 
 input[type="text"],
+input[type="email"],
 #support-input,
 select,
 textarea {
@@ -811,6 +807,24 @@ textarea {
   background: #fff;
   @include fontFamily;
   @include box-sizing;
+}
+
+
+button,
+input[type="submit"] {
+  padding: 20px;
+  background: $textColorPrimary;
+  border: 0;
+  color: white;
+  margin-top: 1em;
+  font-size: 1.1em;
+  @include fontFamily;
+  cursor: pointer;
+  transition: background-color 100ms ease-in-out;
+
+  &:hover {
+    background: $textColorSecondary;
+  }
 }
 
 .faq {

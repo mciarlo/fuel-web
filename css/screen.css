@@ -1079,6 +1079,10 @@ p {
 
 .newsletter .border-top {
   padding-top: 4em; }
+.newsletter .response {
+  margin: 2em auto 2em;
+  line-height: 1.4;
+  max-width: 400px; }
 .newsletter h5 {
   font-size: 0.8em;
   text-transform: uppercase;
@@ -1099,19 +1103,12 @@ p {
   max-width: 300px;
   margin: 4em auto 0; }
 .newsletter input,
-.newsletter button {
+.newsletter button,
+.newsletter input[type="submit"] {
   display: block;
   width: 100%;
-  margin: 0 auto; }
-.newsletter button {
-  background: #050505;
-  border: 0;
-  color: white;
-  margin-top: 1em;
-  font-size: 1.1em;
-  font-family: "Avenir Next", "Poppins", -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Helvetica", "Helvetica", "Gill Sans", sans-serif; }
-  .newsletter button:hover {
-    background: #737373; }
+  margin-left: auto;
+  margin-right: auto; }
 
 footer {
   position: relative;
@@ -1146,6 +1143,7 @@ footer {
     margin-bottom: 0; }
 
 input[type="text"],
+input[type="email"],
 #support-input,
 select,
 textarea {
@@ -1158,6 +1156,21 @@ textarea {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   -ms-box-sizing: border-box; }
+
+button,
+input[type="submit"] {
+  padding: 20px;
+  background: #050505;
+  border: 0;
+  color: white;
+  margin-top: 1em;
+  font-size: 1.1em;
+  font-family: "Avenir Next", "Poppins", -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Helvetica", "Helvetica", "Gill Sans", sans-serif;
+  cursor: pointer;
+  transition: background-color 100ms ease-in-out; }
+  button:hover,
+  input[type="submit"]:hover {
+    background: #737373; }
 
 .faq a {
   display: inline-block; }

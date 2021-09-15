@@ -1408,7 +1408,8 @@ textarea {
       height: 300vh; }
       .how-it-works .scroll-container .content-wrapper {
         margin-top: 4em;
-        height: 100vh; }
+        height: 100vh;
+        min-height: 900px; }
     .how-it-works .button {
       display: none; }
     .how-it-works .off-day-text,
@@ -1445,7 +1446,7 @@ textarea {
           transition: opacity 600ms ease-in-out;
           transition-delay: 200ms; }
         .how-it-works .callouts .callout.b {
-          margin-top: 5em; }
+          margin-top: 10em; }
           .how-it-works .callouts .callout.b span {
             transition-delay: 800ms; }
           .how-it-works .callouts .callout.b:before {
@@ -1878,13 +1879,15 @@ textarea {
           flex: 1 1 auto;
           vertical-align: middle; }
 
-  .features-continued ul li {
-    width: 25%;
-    padding-bottom: 0;
-    padding-right: 40px; }
-    .features-continued ul li:nth-child(1), .features-continued ul li:nth-child(2), .features-continued ul li:nth-child(3), .features-continued ul li:nth-child(4)
-    .features-continued ul li:nth-child(5), .features-continued ul li:nth-child(6), .features-continued ul li:nth-child(7), .features-continued ul li:nth-child(8) {
-      padding-bottom: 4em; }
+  .features-continued ul {
+    padding-top: 8em; }
+    .features-continued ul li {
+      width: 25%;
+      padding-bottom: 0;
+      padding-right: 40px; }
+      .features-continued ul li:nth-child(1), .features-continued ul li:nth-child(2), .features-continued ul li:nth-child(3), .features-continued ul li:nth-child(4)
+      .features-continued ul li:nth-child(5), .features-continued ul li:nth-child(6), .features-continued ul li:nth-child(7), .features-continued ul li:nth-child(8) {
+        padding-bottom: 4em; }
 
   .pricing-trial.display-flex {
     padding: 0 20px; }
@@ -1913,10 +1916,9 @@ textarea {
         .pricing-trial.display-flex .right-content img.desktop {
           display: inline-block; } }
 @media screen and (min-width: 830px) {
-  .how-it-works .iphone {
-    width: 45%; }
+  .how-it-works .iphone,
   .how-it-works .phone-gap {
-    width: 45%; }
+    width: 350px; }
   .how-it-works .text-left {
     margin-right: 5%; }
   .how-it-works .text-right {
@@ -1924,13 +1926,14 @@ textarea {
 @media screen and (min-width: 1024px) {
   .how-it-works {
     padding-top: 6em; }
-    .how-it-works .iphone {
-      width: 400px; }
+    .how-it-works .iphone,
     .how-it-works .phone-gap {
-      width: 400px; }
+      width: 380px; }
     .how-it-works .text-left,
     .how-it-works .text-right {
       margin: 0; }
+    .how-it-works .scroll-container .content-wrapper {
+      min-height: 1000px; }
 
   .dashboard .left-content p {
     max-width: 350px; }
@@ -1961,6 +1964,11 @@ textarea {
 
   .awards .text-content {
     width: 280px; }
+  .awards .awards-icons li {
+    margin: -35px 0 0 -35px; }
+    .awards .awards-icons li img {
+      width: 70px;
+      height: 70px; }
 
   footer {
     padding-bottom: 8em; }
@@ -2015,7 +2023,7 @@ textarea {
     width: 60px; }
   .how-it-works .iphone,
   .how-it-works .phone-gap {
-    width: 500px; }
+    width: 420px; }
 
   .dashboard .content-wrapper .iphone {
     width: 503px; }
@@ -2047,7 +2055,7 @@ textarea {
 @media screen and (min-width: 1440px) {
   .how-it-works .iphone,
   .how-it-works .phone-gap {
-    width: 500px; }
+    width: 450px; }
   .how-it-works .scroll-container .content-wrapper {
     min-height: 1000px; } }
 @media screen and (min-width: 1600px) {
@@ -2055,4 +2063,4 @@ textarea {
     padding-top: 15vh; }
     .how-it-works .iphone,
     .how-it-works .phone-gap {
-      width: 580px; } }
+      width: 500px; } }

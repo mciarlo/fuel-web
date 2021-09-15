@@ -1122,10 +1122,6 @@ textarea {
 
   .scroll-container {
     padding: 0;
-
-    // .content-wrapper {
-    //   height: 100vh;
-    // }
   }
 
   .sticky {
@@ -1177,7 +1173,7 @@ textarea {
       .content-wrapper {
         margin-top: 4em;
         height: 100vh;
-        // min-height: 800px;
+        min-height: 900px;
       }
     }
 
@@ -1230,7 +1226,7 @@ textarea {
         }
 
         &.b {
-          margin-top: 5em;
+          margin-top: 10em;
 
           span {
             transition-delay: 800ms;
@@ -1267,7 +1263,6 @@ textarea {
     .iphone {
       margin: 0 auto;
       width: 50%;
-      //transform: translate3d(0,50%, 0);
     }
   }
 
@@ -1917,6 +1912,7 @@ textarea {
 
   .features-continued {
     ul {
+      padding-top: 8em;
       li {
         width: 25%;
         padding-bottom: 0;
@@ -1981,12 +1977,9 @@ textarea {
 
 @media screen and (min-width:830px) {
   .how-it-works {
-    .iphone {
-      width: 45%;
-    }
-
+    .iphone,
     .phone-gap {
-      width: 45%;
+      width: 350px;
     }
 
     .text-left {
@@ -2003,17 +1996,20 @@ textarea {
   .how-it-works {
     padding-top: 6em;
 
-    .iphone {
-      width: 400px;
-    }
-
+    .iphone,
     .phone-gap {
-      width: 400px;
+      width: 380px;
     }
 
     .text-left,
     .text-right {
       margin: 0;
+    }
+
+    .scroll-container {
+      .content-wrapper {
+        min-height: 1000px;
+      }
     }
   }
 
@@ -2073,6 +2069,15 @@ textarea {
   .awards {
     .text-content {
       width: 280px;
+    }
+
+    .awards-icons li {
+      margin: -35px 0 0 -35px;
+
+      img {
+        width: 70px;
+        height: 70px;
+      }
     }
   }
 
@@ -2183,7 +2188,7 @@ textarea {
 
     .iphone,
     .phone-gap {
-      width: 500px;
+      width: 420px;
     }
   }
 
@@ -2247,7 +2252,7 @@ textarea {
   .how-it-works {
     .iphone,
     .phone-gap {
-      width: 500px;
+      width: 450px;
     }
 
     .scroll-container .content-wrapper {
@@ -2262,7 +2267,7 @@ textarea {
 
     .iphone,
     .phone-gap {
-      width: 580px;
+      width: 500px;
     }
   }
 }

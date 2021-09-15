@@ -106,22 +106,14 @@ $(function () {
 
 		var windowBottomY = $window.scrollTop() + $window.outerHeight();
 		var viewportHeight = $window.outerHeight();
-		var windowCenter = $window.scrollTop() + ($window.outerHeight() / 2);
-		var centerPoint = ($window.outerHeight() - $storyContainer.outerHeight()) / 2
-		var howItWorksShouldStick = $howItWorks.position().top - centerPoint <= $window.scrollTop();
 		var scrollContainerHeight = $howItWorks.outerHeight();
-		var scrollContainerThreshold0 = $howItWorks.position().top;
-		var scrollContainerThreshold1 = $textContent.position().top - windowBottomY;
-		var scrollContainerThreshold2 = $howItWorks.position().top + (scrollContainerHeight * .7);
-
-		$storyContainer[howItWorksShouldStick ? "addClass" : "removeClass"]("sticky");
+		var scrollContainerThreshold = $howItWorks.position().top + (scrollContainerHeight * .7);
 
 		if ($(".guided-setup:first").position().top + (viewportHeight / 4) <= windowBottomY) {
 				$(".user-stats li").removeClass("will-animate");
 		}
 
 		var iPhoneHeight = $(".sticky-container .iphone").outerHeight();
-		var topPadding = 0;//(($window.outerHeight() - iPhoneHeight) / 2);
 		var scrollDistanceFromLockingStoryText = $window.scrollTop() - $textContent.position().top;
 
 		if (scrollDistanceFromLockingStoryText > - viewportHeight) {
@@ -133,7 +125,7 @@ $(function () {
 			$(".mask-container").css("height", "100%");
 		}
 
-		$(".callouts")[windowBottomY >= scrollContainerThreshold2 ? "addClass" : "removeClass"]("active");
+		$(".callouts")[windowBottomY >= scrollContainerThreshold ? "addClass" : "removeClass"]("active");
 	},
   onScroll = function () {
 		updateIntro();

@@ -78,8 +78,58 @@ button {
  * No Script States
  */
 .no-js  {
-  .answer {
+  .lazy-load {
+    display: none;
+
+    &.desktop,
+    &.mobile {
+      display: none;
+    }
+  }
+
+  .faq {
+    li:after {
+      background-image: none;
+    }
+
+    a {
+      pointer-events: none;
+    }
+  }
+
+  .faq .answer {
     display: block;
+  }
+
+  .how-it-works .callouts {
+    opacity: 1;
+
+    .callout {
+
+      &:before {
+        width: 60px;
+      }
+
+      span {
+        opacity: 1;
+      }
+    }
+  }
+
+  .dashboard-presets a {
+    background: none;
+    padding-left: 0;
+    color: white;
+
+    &:before {
+      background: none;
+      padding-left: 0;
+    }
+
+    &.active {
+      background: none;
+      padding-left: 0;
+    }
   }
 
   .question .arrow,
@@ -211,7 +261,8 @@ nav .content-wrapper {
 
 .left-content,
 .right-content {
-  > img {
+  > img,
+  noscript > img {
     width: 100%;
   }
 }

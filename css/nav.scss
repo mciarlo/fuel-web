@@ -9,13 +9,8 @@ $menuDuration: 1200ms;
  * Navigation
  */
 .no-js  {
-  #nav-links {
-    opacity: 1;
-    pointer-events: all;
-  }
-
-  nav {
-    height: 200px;
+  ul {
+    dispaly: none;
   }
 
   #hamburger-icon {

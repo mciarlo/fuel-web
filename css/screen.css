@@ -44,11 +44,8 @@ table {
 /**
  * Navigation
  */
-.no-js #nav-links {
-  opacity: 1;
-  pointer-events: all; }
-.no-js nav {
-  height: 200px; }
+.no-js ul {
+  dispaly: none; }
 .no-js #hamburger-icon {
   display: none; }
 
@@ -281,8 +278,32 @@ button {
 /**
  * No Script States
  */
-.no-js .answer {
+.no-js .lazy-load {
+  display: none; }
+  .no-js .lazy-load.desktop, .no-js .lazy-load.mobile {
+    display: none; }
+.no-js .faq li:after {
+  background-image: none; }
+.no-js .faq a {
+  pointer-events: none; }
+.no-js .faq .answer {
   display: block; }
+.no-js .how-it-works .callouts {
+  opacity: 1; }
+  .no-js .how-it-works .callouts .callout:before {
+    width: 60px; }
+  .no-js .how-it-works .callouts .callout span {
+    opacity: 1; }
+.no-js .dashboard-presets a {
+  background: none;
+  padding-left: 0;
+  color: white; }
+  .no-js .dashboard-presets a:before {
+    background: none;
+    padding-left: 0; }
+  .no-js .dashboard-presets a.active {
+    background: none;
+    padding-left: 0; }
 .no-js .question .arrow,
 .no-js .invisible {
   display: none; }
@@ -406,7 +427,9 @@ nav .content-wrapper {
   max-width: none; }
 
 .left-content > img,
-.right-content > img {
+.left-content noscript > img,
+.right-content > img,
+.right-content noscript > img {
   width: 100%; }
 
 h1 + h2 {

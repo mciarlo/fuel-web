@@ -319,7 +319,7 @@ blockquote {
   left: 0;
   width: 100%;
   display: flex;
-  z-index: 1;
+  z-index: 2;
   @include transition(transform, 100ms, ease-in-out);
 
   &.hidden {

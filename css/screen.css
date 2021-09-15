@@ -487,7 +487,7 @@ blockquote {
   left: 0;
   width: 100%;
   display: flex;
-  z-index: 1;
+  z-index: 2;
   transition: transform 100ms ease-in-out;
   -webkit-transition: transform 100ms ease-in-out;
   -moz-transition: transform 100ms ease-in-out;
@@ -620,7 +620,11 @@ h2.xlarge {
   font-size: 2.4em;
   letter-spacing: -0.05em; }
 
-h2, h3 {
+h2 {
+  font-size: 1.7em;
+  letter-spacing: -.04em; }
+
+h3 {
   font-size: 1.35em;
   letter-spacing: -.04em; }
 
@@ -631,9 +635,6 @@ h4 {
 p {
   font-size: 1em;
   line-height: 1.4; }
-
-p.small {
-  font-size: 0.8em; }
 
 @media screen and (min-width: 768px) {
   h1,
@@ -680,19 +681,23 @@ p.small {
  *********************************************
  *********************************************
  */
+.how-it-works {
+  padding-top: 10vh; }
+
 .scroll-container {
   padding-top: 4em; }
   .scroll-container .off-day-text,
   .scroll-container .callouts {
     padding-top: 2em;
-    max-width: 300px;
-    text-align: center;
-    margin: 0 auto; }
+    margin: 0 auto;
+    text-align: center; }
+  .scroll-container .off-day-text {
+    max-width: 300px; }
   .scroll-container .iphone {
-    max-width: 40%;
+    max-width: 80%;
     margin: 0 auto; }
     .scroll-container .iphone.mobile {
-      margin-top: 4em; }
+      margin-top: 8em; }
 
 .guided-setup {
   text-align: center; }
@@ -775,6 +780,11 @@ p.small {
       max-width: 300px;
       margin: 0 auto;
       text-align: center; }
+  .dashboard .dashboard-preset {
+    opacity: 0;
+    transition: opacity 250ms ease-out; }
+    .dashboard .dashboard-preset.active {
+      opacity: 1; }
   .dashboard .content-wrapper .iphone {
     width: 88%;
     max-width: 300px;
@@ -893,16 +903,16 @@ p.small {
   .awards .text-content {
     position: absolute;
     top: 50%;
-    left: 30%;
-    width: 40%;
+    left: 25%;
+    width: 50%;
     padding: 12em 0;
     transform: translate(0, -50%); }
   .awards p {
     display: inline-block;
     width: 100%; }
   .awards .awards-container {
-    margin: 0 auto;
-    width: 100%;
+    margin-left: -15%;
+    width: 130%;
     position: relative;
     -webkit-animation: rotating 25s linear infinite;
     -moz-animation: rotating 25s linear infinite;
@@ -1009,16 +1019,23 @@ p.small {
   background: #0047FF;
   color: white; }
 .pricing .pricing-trial {
-  background: #DAE5FF;
   flex: 1;
   vertical-align: top; }
-  .pricing .pricing-trial .button {
-    margin-top: 4em;
-    display: block;
-    text-align: center; }
 .pricing p.small {
   width: 60%;
   margin: 4em auto 0; }
+
+.pricing-trial {
+  background: #DAE5FF; }
+  .pricing-trial .button {
+    margin-top: 4em;
+    display: block;
+    text-align: center; }
+  .pricing-trial.display-flex {
+    padding: 40px;
+    padding-bottom: 0; }
+    .pricing-trial.display-flex .right-content {
+      margin-top: 2em; }
 
 .frequently-asked-questions .left-content {
   flex: none; }
@@ -1047,7 +1064,6 @@ p.small {
   color: #737373;
   padding-bottom: 1em; }
 .newsletter h2, .newsletter p {
-  max-width: 240px;
   margin-left: auto;
   margin-right: auto; }
 .newsletter img {
@@ -1087,7 +1103,8 @@ footer {
     border-top: 1px solid #ECECEC; }
   footer .content-wrapper.display-flex .left-content {
     flex: none;
-    padding-top: 2em; }
+    padding-top: 2em;
+    max-width: 375px; }
   footer .right-content {
     padding-top: 2em; }
   footer ul:nth-child(3) {
@@ -1098,9 +1115,9 @@ footer {
     display: block;
     border-bottom: 1px solid #ECECEC;
     padding: 0.5em 0; }
-  footer ul:nth-child(5) {
+  footer ul:nth-child(4) {
     padding-bottom: 2em; }
-    footer ul:nth-child(5) li:last-child a {
+    footer ul:nth-child(4) li:last-child a {
       border: 0; }
   footer p.small {
     margin-bottom: 0; }
@@ -1124,19 +1141,19 @@ textarea {
 .faq li {
   position: relative; }
   .faq li:first-child:after {
-    top: 30%; }
+    top: 1em; }
 .faq li:after {
   content: "";
   position: absolute;
-  top: 50%;
+  top: 3em;
   right: 0;
-  width: 20px;
-  height: 20px;
-  transform: translate3d(0, -50%, 0);
+  width: 24px;
+  height: 24px;
+  transform: translate(0, -50%) rotate(0);
   background: transparent url("../images/faq_icon_collapsed.png") 0 0 no-repeat;
-  background-size: 20px 20px; }
+  background-size: 100% auto; }
 .faq li.active:after {
-  background-image: url("../images/faq_icon_expanded.png"); }
+  transform: translate(0, -50%) rotate(45deg); }
 .faq li.active .answer {
   display: block; }
 .faq li.active > a {
@@ -1169,8 +1186,9 @@ textarea {
 .contact .select-container {
   width: 100%;
   border-radius: 3px;
+  border: 1px solid #ECECEC;
   overflow: hidden;
-  background: #f1f1f1 url("../images/arrow_down.svg") 96% 49% no-repeat;
+  background: #ffffff url("../images/arrow_down.svg") 96% 49% no-repeat;
   position: relative; }
 .contact select {
   width: 100%;
@@ -1248,7 +1266,7 @@ textarea {
       padding-top: 0; }
   .feature-row .image-container {
     position: relative;
-    background: #F4F4F4;
+    background: #F8F8F8;
     border-radius: 24px;
     -moz-border-radius: 24px;
     -webkit-border-radius: 24px;
@@ -1288,6 +1306,18 @@ textarea {
  *********************************************
  *********************************************
  */
+.tips-header .left-content {
+  width: 37.2%;
+  margin-right: 25.5%; }
+.tips-header .right-content {
+  flex: 1; }
+.tips-header .border-top {
+  padding-bottom: 6em; }
+  .tips-header .border-top:nth-child(2) {
+    margin-top: 12em; }
+.tips-header h2 + img {
+  padding-top: 3em; }
+
 @media screen and (min-width: 500px) {
   .dashboard .content-wrapper.padding-top h2 {
     text-align: left;
@@ -1301,22 +1331,35 @@ textarea {
       padding-bottom: 0;
       width: 50%; }
       .dashboard-options ul:nth-child(1), .dashboard-options ul:nth-child(2), .dashboard-options ul:nth-child(3), .dashboard-options ul:nth-child(4), .dashboard-options ul:nth-child(6), .dashboard-options ul:nth-child(7), .dashboard-options ul:nth-child(8) {
-        margin-bottom: 4em; } }
+        margin-bottom: 4em; }
+
+  .awards .awards-container {
+    margin: 0 auto;
+    width: 100%; } }
 @media screen and (min-width: 768px) {
   .scroll-container,
   #how-it-works {
     position: unset;
-    overflow: visible; }
+    overflow: visible;
+    padding-bottom: 0; }
 
   .scroll-container {
     padding: 0; }
 
-  #story-container.sticky {
+  .sticky {
     position: -webkit-sticky;
     position: sticky;
+    overflow: visible;
+    top: 0; }
+
+  .sticky-container {
+    position: relative;
     top: 50%;
-    transform: translate(0, -50%);
-    overflow: visible; }
+    transform: translate(0, -50%); }
+
+  #story-container {
+    padding-top: 0;
+    margin-top: 0; }
 
   .hero-a {
     z-index: 2; }
@@ -1336,75 +1379,74 @@ textarea {
     width: 100%;
     height: 100%; }
 
-  .how-it-works .scroll-container {
-    height: 350vh; }
-    .how-it-works .scroll-container .content-wrapper {
-      margin-top: 4em;
-      height: 1vh;
-      min-height: 800px; }
-  .how-it-works .button {
-    display: none; }
-  .how-it-works .off-day-text,
-  .how-it-works .callouts {
-    text-align: left;
-    width: 28%;
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translate(0, -50%);
-    opacity: 0;
-    transition: opacity 400ms ease-in-out; }
-    .how-it-works .off-day-text.active,
-    .how-it-works .callouts.active {
-      opacity: 1; }
-  .how-it-works .callouts {
-    text-align: left;
-    width: 28%;
-    position: absolute;
-    right: 0;
-    top: 50%;
-    left: 60%;
-    transform: translate(0, -50%); }
-    .how-it-works .callouts .callout {
-      padding-left: 60px;
+  .how-it-works {
+    padding-top: 10em; }
+    .how-it-works .scroll-container {
+      height: 300vh; }
+      .how-it-works .scroll-container .content-wrapper {
+        margin-top: 4em;
+        height: 100vh; }
+    .how-it-works .button {
+      display: none; }
+    .how-it-works .off-day-text,
+    .how-it-works .callouts {
+      padding-top: 0;
+      text-align: left;
+      position: absolute;
+      left: 0;
+      top: 50%;
+      width: 100%;
+      transform: translate(0, -50%); }
+      .how-it-works .off-day-text.active,
+      .how-it-works .callouts.active {
+        opacity: 1; }
+    .how-it-works .text-left,
+    .how-it-works .text-right {
+      flex: 1;
       position: relative; }
-      .how-it-works .callouts .callout span {
-        display: inline-block;
-        opacity: 0;
-        transform: translate3d(-10px, 0, 0);
-        transition: opacity 600ms ease-in-out, transform 600ms ease-in-out;
-        transition-delay: 300ms; }
-      .how-it-works .callouts .callout.b {
-        margin-top: 10em; }
-        .how-it-works .callouts .callout.b span {
-          transition-delay: 1200ms; }
-        .how-it-works .callouts .callout.b:before {
-          transition-delay: 900ms; }
-      .how-it-works .callouts .callout:before {
-        content: "";
-        position: absolute;
-        top: 12px;
-        left: 0;
-        width: 0;
-        height: 1px;
-        transition: width 300ms ease-in-out;
-        background: #ECECEC; }
-    .how-it-works .callouts.active .callout span {
-      transform: translate3d(0, 0, 0);
-      opacity: 1; }
-    .how-it-works .callouts.active .callout:before {
-      width: 40px; }
-  .how-it-works .iphone {
-    position: absolute;
-    top: 50%;
-    transform: translate(0, -50%);
-    left: 50%;
-    margin-left: -15%;
-    width: 30%; }
+    .how-it-works .phone-gap {
+      width: 50%; }
+    .how-it-works .callouts {
+      text-align: left;
+      top: 50%;
+      position: relative;
+      transform: translate(0, -50%);
+      opacity: 0;
+      transition: opacity 400ms ease-in-out; }
+      .how-it-works .callouts .callout {
+        padding-left: 40px;
+        position: relative; }
+        .how-it-works .callouts .callout span {
+          display: inline-block;
+          opacity: 0;
+          transition: opacity 600ms ease-in-out;
+          transition-delay: 200ms; }
+        .how-it-works .callouts .callout.b {
+          margin-top: 5em; }
+          .how-it-works .callouts .callout.b span {
+            transition-delay: 800ms; }
+          .how-it-works .callouts .callout.b:before {
+            transition-delay: 600ms; }
+        .how-it-works .callouts .callout:before {
+          content: "";
+          position: absolute;
+          top: 12px;
+          left: 0;
+          width: 0;
+          height: 1px;
+          transition: width 300ms ease-in-out;
+          background: #ababab; }
+      .how-it-works .callouts.active .callout span {
+        opacity: 1; }
+      .how-it-works .callouts.active .callout:before {
+        width: 20px; }
+    .how-it-works .iphone {
+      margin: 0 auto;
+      width: 50%; }
 
   .guided-setup {
-    text-align: center;
-    margin-top: -50vh; }
+    padding-top: 0;
+    text-align: center; }
     .guided-setup h2, .guided-setup p {
       max-width: 400px;
       margin-left: auto;
@@ -1470,12 +1512,10 @@ textarea {
   .dashboard .content-wrapper.padding-top {
     padding-top: 6em; }
   .dashboard .content-wrapper .left-content {
-    width: 50%;
-    margin-right: 0; }
+    flex: 1; }
   .dashboard .content-wrapper .iphone {
     width: 360px;
-    left: 100%;
-    transform: translate3d(-100%, 0, 0);
+    right: 0;
     max-width: none; }
   .dashboard .content-wrapper .iphone-container {
     overflow: hidden;
@@ -1616,6 +1656,8 @@ textarea {
 
   .support {
     padding-bottom: 0; }
+    .support .icon-list {
+      text-align: center; }
 
   .frequently-asked-questions {
     padding-bottom: 0; }
@@ -1655,7 +1697,7 @@ textarea {
 
   footer {
     position: relative;
-    padding: 0 0 5em;
+    padding: 0 0 8em;
     font-size: 0.8em; }
     footer .logo {
       position: absolute;
@@ -1686,22 +1728,16 @@ textarea {
       footer ul:last-child {
         margin-right: 9%; }
     footer p.small {
-      margin-top: 5em;
-      margin-bottom: 0;
-      position: absolute;
-      left: 9%;
-      top: 100%;
-      transform: translate(0, -400%); }
+      padding-top: 1.5em; }
 
   .contact form {
     margin-top: 0; }
   .contact .left-content {
-    width: 20%;
-    margin-left: 17%;
-    margin-right: 13%; }
+    width: 30%;
+    margin-right: 30%;
+    flex: none; }
   .contact .right-content {
-    width: 33%;
-    margin-right: 17%; }
+    width: 40%; }
 
   /************
   **************
@@ -1743,6 +1779,7 @@ textarea {
         bottom: 20px;
         width: 80%;
         left: 50%;
+        max-width: none;
         transform: translate3d(-50%, 0, 0);
         font-size: 0.8em;
         font-weight: 500;
@@ -1824,8 +1861,54 @@ textarea {
     padding-right: 40px; }
     .features-continued ul li:nth-child(1), .features-continued ul li:nth-child(2), .features-continued ul li:nth-child(3), .features-continued ul li:nth-child(4)
     .features-continued ul li:nth-child(5), .features-continued ul li:nth-child(6), .features-continued ul li:nth-child(7), .features-continued ul li:nth-child(8) {
-      padding-bottom: 4em; } }
+      padding-bottom: 4em; }
+
+  .pricing-trial.display-flex {
+    padding: 0 20px; }
+    .pricing-trial.display-flex .left-content {
+      padding: 20px 0;
+      width: 40%;
+      flex: none; }
+      .pricing-trial.display-flex .left-content h3 {
+        max-width: 180px;
+        font-size: 1.3em;
+        display: inline-block;
+        line-height: 1.2; }
+      .pricing-trial.display-flex .left-content .button {
+        position: absolute;
+        bottom: 20px;
+        left: 20px;
+        display: inline-block; }
+    .pricing-trial.display-flex .right-content {
+      flex: 1;
+      margin-top: 0;
+      text-align: right; }
+      .pricing-trial.display-flex .right-content img {
+        width: 70%;
+        float: right;
+        margin-right: 40px; }
+        .pricing-trial.display-flex .right-content img.desktop {
+          display: inline-block; } }
+@media screen and (min-width: 830px) {
+  .how-it-works .iphone {
+    width: 45%; }
+  .how-it-works .phone-gap {
+    width: 45%; }
+  .how-it-works .text-left {
+    margin-right: 5%; }
+  .how-it-works .text-right {
+    margin-left: 5%; } }
 @media screen and (min-width: 1024px) {
+  .how-it-works {
+    padding-top: 6em; }
+    .how-it-works .iphone {
+      width: 400px; }
+    .how-it-works .phone-gap {
+      width: 400px; }
+    .how-it-works .text-left,
+    .how-it-works .text-right {
+      margin: 0; }
+
   .dashboard .left-content p {
     max-width: 350px; }
   .dashboard .content-wrapper .iphone {
@@ -1836,6 +1919,16 @@ textarea {
   .dashboard-presets {
     padding-top: 4em;
     font-size: 2.5em; }
+    .dashboard-presets a {
+      background-position: 0px 7px;
+      background-size: 50px auto; }
+      .dashboard-presets a:before {
+        width: 50px;
+        height: 50px;
+        background-position: 0px 0;
+        background-size: 50px auto; }
+      .dashboard-presets a.active {
+        padding-left: 70px; }
 
   .dashboard-options ul {
     width: 20%; }
@@ -1867,7 +1960,8 @@ textarea {
     .feature-row .feature strong {
       bottom: 20px;
       width: 80%;
-      font-size: 1.2em; }
+      font-size: 1.2em;
+      letter-spacing: -0.04em; }
   .feature-row.half-width .feature.full-width strong {
     width: 40%;
     max-width: 240px; }
@@ -1876,8 +1970,30 @@ textarea {
   .feature-row.half-width .hero strong {
     font-size: 2em;
     width: 60%;
-    bottom: 40px; } }
+    bottom: 40px; }
+
+  .pricing-trial.display-flex {
+    padding: 0 30px; }
+    .pricing-trial.display-flex .left-content {
+      padding: 30px 0; }
+      .pricing-trial.display-flex .left-content h3 {
+        max-width: 240px;
+        font-size: 1.8em; }
+      .pricing-trial.display-flex .left-content .button {
+        bottom: 30px;
+        left: 30px; }
+    .pricing-trial.display-flex .right-content img {
+      width: 60%;
+      margin-right: 40px; } }
 @media screen and (min-width: 1200px) {
+  .how-it-works .callouts .callout {
+    padding-left: 70px; }
+  .how-it-works .callouts.active .callout:before {
+    width: 60px; }
+  .how-it-works .iphone,
+  .how-it-works .phone-gap {
+    width: 500px; }
+
   .dashboard .content-wrapper .iphone {
     width: 503px; }
   .dashboard .content-wrapper .iphone-container {
@@ -1885,6 +2001,16 @@ textarea {
 
   .dashboard-presets {
     font-size: 3em; }
+    .dashboard-presets a {
+      background-position: 0px 7px;
+      background-size: 60px auto; }
+      .dashboard-presets a:before {
+        width: 60px;
+        height: 60px;
+        background-position: 0px 2px;
+        background-size: 60px auto; }
+      .dashboard-presets a.active {
+        padding-left: 80px; }
 
   .feature-row .feature strong {
     bottom: 30px;
@@ -1895,3 +2021,15 @@ textarea {
   .feature-row.half-width .hero strong {
     font-size: 2.6em;
     bottom: 60px; } }
+@media screen and (min-width: 1440px) {
+  .how-it-works .iphone,
+  .how-it-works .phone-gap {
+    width: 500px; }
+  .how-it-works .scroll-container .content-wrapper {
+    min-height: 1000px; } }
+@media screen and (min-width: 1600px) {
+  .how-it-works {
+    padding-top: 15vh; }
+    .how-it-works .iphone,
+    .how-it-works .phone-gap {
+      width: 580px; } }

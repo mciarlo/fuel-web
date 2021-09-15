@@ -5,6 +5,7 @@ $(function () {
 		$body = $("body"),
 		$burgerIcon = $("#hamburger-icon"),
 		$howItWorks = $(".scroll-container:first"),
+		$textContent = $(".text-content:first"),
 		$storyContainer = $("#story-container"),
 		HERO_LEFT_DISTANCE = 80,
 		HERO_RIGHT_DISTANCE = 160,
@@ -104,33 +105,34 @@ $(function () {
 		$("#loading-bar")[$window.scrollTop() > 30 ? "addClass" : "removeClass"]("hidden");
 
 		var windowBottomY = $window.scrollTop() + $window.outerHeight();
+		var viewportHeight = $window.outerHeight();
 		var windowCenter = $window.scrollTop() + ($window.outerHeight() / 2);
 		var centerPoint = ($window.outerHeight() - $storyContainer.outerHeight()) / 2
 		var howItWorksShouldStick = $howItWorks.position().top - centerPoint <= $window.scrollTop();
 		var scrollContainerHeight = $howItWorks.outerHeight();
 		var scrollContainerThreshold0 = $howItWorks.position().top;
-		var scrollContainerThreshold1 = $howItWorks.position().top + (scrollContainerHeight * .4);
-		var scrollContainerThreshold2 = $howItWorks.position().top + (scrollContainerHeight * .6);
+		var scrollContainerThreshold1 = $textContent.position().top - windowBottomY;
+		var scrollContainerThreshold2 = $howItWorks.position().top + (scrollContainerHeight * .7);
 
 		$storyContainer[howItWorksShouldStick ? "addClass" : "removeClass"]("sticky");
 
-		if ($(".guided-setup:first").position().top <= windowBottomY) {
+		if ($(".guided-setup:first").position().top + (viewportHeight / 4) <= windowBottomY) {
 				$(".user-stats li").removeClass("will-animate");
 		}
 
-		var scrollDistanceFromTop = $window.scrollTop() - $howItWorks.position().top;
-		var percent = (scrollDistanceFromTop / scrollContainerThreshold0 * 100);
-		percent = Math.min(percent, 100);
-		percent = Math.max(percent, 0);
+		var iPhoneHeight = $(".sticky-container .iphone").outerHeight();
+		var topPadding = 0;//(($window.outerHeight() - iPhoneHeight) / 2);
+		var scrollDistanceFromLockingStoryText = $window.scrollTop() - $textContent.position().top;
 
-		if (scrollDistanceFromTop > 0) {
-			$(".mask-container").css("height", 100 - percent + "%");
+		if (scrollDistanceFromLockingStoryText > - viewportHeight) {
+			var percent = -1 * ((scrollDistanceFromLockingStoryText / iPhoneHeight) * 100);
+
+			$(".mask-container").css("height", percent + "%");
 
 		} else {
 			$(".mask-container").css("height", "100%");
 		}
 
-		$(".off-day-text")[windowBottomY >= scrollContainerThreshold1 ? "addClass" : "removeClass"]("active");
 		$(".callouts")[windowBottomY >= scrollContainerThreshold2 ? "addClass" : "removeClass"]("active");
 	},
   onScroll = function () {

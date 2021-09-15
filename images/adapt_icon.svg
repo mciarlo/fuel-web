@@ -1,8 +1,8 @@
-<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M0 4L40 4" stroke="#8F00FF" stroke-width="1.5"/>
-<path d="M0 20L40 20" stroke="#8F00FF" stroke-width="1.5"/>
-<path d="M0 36L40 36" stroke="#8F00FF" stroke-width="1.5"/>
-<circle cx="31.4297" cy="4" r="3.25" fill="white" stroke="#8F00FF" stroke-width="1.5"/>
-<circle cx="20" cy="20" r="3.25" fill="white" stroke="#8F00FF" stroke-width="1.5"/>
-<circle cx="8.57031" cy="36" r="3.25" fill="white" stroke="#8F00FF" stroke-width="1.5"/>
+<svg width="40" height="41" viewBox="0 0 40 41" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 4.23438L40 4.23437" stroke="#8F00FF" stroke-width="1.5"/>
+<path d="M0 20.2344L40 20.2344" stroke="#8F00FF" stroke-width="1.5"/>
+<path d="M0 36.2344L40 36.2344" stroke="#8F00FF" stroke-width="1.5"/>
+<circle cx="31.4297" cy="4.23438" r="3.25" fill="white" stroke="#8F00FF" stroke-width="1.5"/>
+<circle cx="20" cy="20.2344" r="3.25" fill="white" stroke="#8F00FF" stroke-width="1.5"/>
+<circle cx="8.57031" cy="36.2344" r="3.25" fill="white" stroke="#8F00FF" stroke-width="1.5"/>
 </svg>

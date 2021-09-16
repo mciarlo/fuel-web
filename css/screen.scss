@@ -51,6 +51,7 @@ h2.large {
 
 h2.xlarge {
   font-size: 2.4em;
+  line-height: 1;
   letter-spacing: -0.05em;
 }
 
@@ -900,14 +901,17 @@ input[type="submit"] {
     margin-bottom: 2em;
   }
 
-  input {
+  input,
+  select-container,
+  textarea {
     width: 100%;
+    border-color: #cbcbcb;
   }
 
   .select-container {
     width: 100%;
     border-radius: 3px;
-    border: 1px solid $borderColor;
+    border: 1px solid #cbcbcb;
     overflow: hidden;
     background: #ffffff url("../images/arrow_down.svg") 96% 49% no-repeat;
     position: relative;
@@ -1740,7 +1744,7 @@ input[type="submit"] {
 
   .contact {
     form {
-      margin-top: 0;
+      margin-top: 1em;
     }
 
     .left-content {
@@ -2187,6 +2191,10 @@ input[type="submit"] {
 @media screen and (min-width:1200px) {
   .how-it-works {
     .callouts {
+      span {
+        max-width: 200px;
+      }
+      
       .callout {
         padding-left: 70px;
       }
@@ -2208,6 +2216,11 @@ input[type="submit"] {
 
   .dashboard {
     .content-wrapper {
+
+      &.padding-top h2 {
+          max-width: 340px;
+      }
+
       .iphone {
         width: 503px;
       }
@@ -2256,6 +2269,21 @@ input[type="submit"] {
         strong {
           font-size: 2.6em;
           bottom: 60px;
+        }
+      }
+    }
+  }
+
+  .pricing-trial {
+    &.display-flex {
+      padding: 0 60px;
+
+      .left-content {
+        padding: 60px 0;
+
+        .button {
+          bottom: 60px;
+          left: 60px;
         }
       }
     }

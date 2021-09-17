@@ -808,6 +808,11 @@ textarea {
   background: #fff;
   @include fontFamily;
   @include box-sizing;
+
+  &:focus {
+    -webkit-outline: none;
+    outline: none;
+  }
 }
 
 
@@ -2194,7 +2199,7 @@ input[type="submit"] {
       span {
         max-width: 200px;
       }
-      
+
       .callout {
         padding-left: 70px;
       }

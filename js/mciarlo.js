@@ -3,44 +3,16 @@ $(function () {
 		SCROLL_DEBOUNCE_MS = 10,
 		SCROLL_ANIMATION_DURATION = 1200,
 		$body = $("body"),
-		$burgerIcon = $("#hamburger-icon"),
-		$howItWorks = $(".scroll-container:first"),
-		$textContent = $(".text-content:first"),
 		$storyContainer = $("#story-container"),
-		HERO_LEFT_DISTANCE = 80,
-		HERO_RIGHT_DISTANCE = 160,
-		downloadButtons = $(".app-store-badge"),
 		preventDefaultFormAction = function (ev) {
 			ev.preventDefault();
 			ev.stopPropagation();
 		};
 
 	var timeout;
-
 	function sendURL(anchor) {
 		clearTimeout(timeout)
 		window.location = $(anchor).attr("href")
-	}
-
-	if (downloadButtons.length > 0) {
-		downloadButtons.each(function (idx, el) {
-			el.addEventListener("click", function(e){
-			e.preventDefault();
-			var anchor = e.currentTarget;
-
-			// Creates a timeout to call `submitForm` after one second.
-			timeout = setTimeout(function () {
-				sendURL(anchor)
-			}, 2000);
-
-			var downloadType =
-			gtag('event', 'download', {
-			  'event_category' : 'download',
-			  'event_label' : $(anchor).attr("data-attr-type"),
-			  'hitCallback' : sendURL(anchor)
-			});
-		});
-		});
 	}
 
 	var isElementInViewport = function (el) {
@@ -53,43 +25,6 @@ $(function () {
 		$body.removeClass("no-js");
 	};
 
-	$burgerIcon.click(function (ev) {
-		ev.preventDefault();
-		ev.stopPropagation();
-
-		$burgerIcon.toggleClass("active");
-		$("nav").toggleClass("active");
-	});
-
-	$(".faq li > a").click(function (ev) {
-		ev.preventDefault();
-		ev.stopPropagation();
-
-		$(ev.target).toggleClass("active");
-		$(ev.target).parent().toggleClass("active");
-	});
-
-	var handleDashboardPreset = function (ev) {
-		ev.preventDefault();
-		ev.stopPropagation();
-
-		var $target = $(ev.target);
-		$(".dashboard-presets a").removeClass("active");
-		$target.addClass("active");
-
-		var targetClass = $target.attr("data-attr-class");
-		$("img.dashboard-preset").removeClass("active");
-		$("img." + targetClass).addClass("active");
-	};
-
-	$(".dashboard-presets a").click(function (ev) {
-		handleDashboardPreset(ev);
-	});
-
-	$(".dashboard-presets a").hover(function (ev) {
-		handleDashboardPreset(ev);
-	});
-
 	var scrollHandling = {
 	    allow: true,
 	    reallow: function() {
@@ -97,41 +32,9 @@ $(function () {
 	    },
 	    delay: SCROLL_DEBOUNCE_MS
 	},
-	updateIntro = function () {
-		if ($howItWorks.length == 0) {
-			return;
-		}
-
-		$("#loading-bar")[$window.scrollTop() > 30 ? "addClass" : "removeClass"]("hidden");
-
-		var windowBottomY = $window.scrollTop() + $window.outerHeight();
-		var viewportHeight = $window.outerHeight();
-		var scrollContainerHeight = $howItWorks.outerHeight();
-		var scrollContainerThreshold = $howItWorks.position().top + (scrollContainerHeight * .7);
-
-		if ($(".guided-setup:first").position().top + (viewportHeight / 4) <= windowBottomY) {
-				$(".user-stats li").removeClass("will-animate");
-		}
-
-		var iPhoneHeight = $(".sticky-container .iphone").outerHeight();
-		var scrollDistanceFromLockingStoryText = $window.scrollTop() - $textContent.position().top;
-
-		if (scrollDistanceFromLockingStoryText > - viewportHeight) {
-			var percent = -1 * ((scrollDistanceFromLockingStoryText / iPhoneHeight) * 100);
-
-			$(".mask-container").css("height", percent + "%");
-
-		} else {
-			$(".mask-container").css("height", "100%");
-		}
-
-		$(".callouts")[windowBottomY >= scrollContainerThreshold ? "addClass" : "removeClass"]("active");
-	},
   onScroll = function () {
-		updateIntro();
 	},
 	onResize = function () {
-		updateIntro();
 	};
 
 	$window.resize(function () {
@@ -146,20 +49,36 @@ $(function () {
 		}
 	});
 
-	$(".user-stats li").addClass("will-animate");
-
-	$(".jump-link").click(function (ev) {
-		ev.preventDefault();
-		ev.stopPropagation();
-
-		var $target = $(ev.target);
-		var targetID = $target.attr("data-attr-id");
-		var scrollTop = $("#" + targetID).offset().top;
-		$("html, body").animate({scrollTop: scrollTop}, SCROLL_ANIMATION_DURATION);
-	});
-
 	onResize();
 	handleJSAbilities();
+
+	var countDownDate = new Date("Sep 28, 2021 12:00:00").getTime();
+	var updateCountDown = function () {
+		var now = new Date().getTime();
+		var distance = countDownDate - now;
+
+		var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+		var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+		var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+		var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+		document.getElementById("countdown-days").innerHTML = days;
+		document.getElementById("countdown-hours").innerHTML = hours;
+		document.getElementById("countdown-minutes").innerHTML = minutes;
+		document.getElementById("countdown-seconds").innerHTML = seconds;
+
+		return distance;
+	};
+
+	updateCountDown();
+
+	var timer = setInterval(function() {
+		var distance = updateCountDown();
+
+	  if (distance < 0) {
+	    clearInterval(timer);
+	  }
+	}, 1000);
 
 	if ($('img.lazy-load').length > 0) {
 		// Lazy load major image assets

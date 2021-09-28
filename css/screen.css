@@ -1047,7 +1047,8 @@ p {
   vertical-align: top; }
 .pricing p.small {
   width: 60%;
-  margin: 4em auto 0; }
+  margin: 4em auto 0;
+  font-size: 0.85rem; }
 
 .pricing-trial {
   background: #DAE5FF; }
@@ -1558,8 +1559,7 @@ input[type="submit"] {
     width: 100%;
     margin: 0 auto;
     display: block;
-    padding-top: 2em;
-    max-width: 1280px; }
+    padding-top: 2em; }
   .dashboard .left-content {
     flex: none; }
     .dashboard .left-content p {

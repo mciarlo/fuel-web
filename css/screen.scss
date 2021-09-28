@@ -640,6 +640,7 @@ p {
   p.small {
     width: 60%;
     margin: 4em auto 0;
+    font-size: 0.85rem;
   }
 }
 
@@ -1378,7 +1379,6 @@ input[type="submit"] {
       margin: 0 auto;
       display: block;
       padding-top: 2em;
-      max-width: 1280px;
     }
 
     .left-content {

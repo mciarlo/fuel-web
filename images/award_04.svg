@@ -1,13 +1,6 @@
-<svg width="54" height="54" viewBox="0 0 54 54" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M0.0546875 0.207031H53.0817V26.7205C53.0817 41.3635 41.2112 53.2341 26.5682 53.2341V53.2341C11.9252 53.2341 0.0546875 41.3636 0.0546875 26.7206V0.207031Z" fill="#1DABFB"/>
-<mask id="mask0" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="54" height="54">
-<path d="M0.0546875 0.207031H53.0817V26.7205C53.0817 41.3635 41.2112 53.2341 26.5682 53.2341V53.2341C11.9252 53.2341 0.0546875 41.3636 0.0546875 26.7206V0.207031Z" fill="#C4C4C4"/>
-</mask>
-<g mask="url(#mask0)">
-<path d="M-3.48047 61.8912L52.6295 5.78125H-3.48047" stroke="white" stroke-width="0.883784"/>
-<path d="M1.01562 61.8916L52.9893 9.91797" stroke="white" stroke-width="0.883784"/>
-<path d="M5.51172 61.8918L52.9894 14.4141" stroke="white" stroke-width="0.883784"/>
-<path d="M10.0078 61.8918L52.9895 18.9102" stroke="white" stroke-width="0.883784"/>
-<path d="M14.5039 61.892L52.9896 23.4062" stroke="white" stroke-width="0.883784"/>
-</g>
+<svg width="62" height="62" viewBox="0 0 62 62" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M1 0.999997L1 61L61 61L61 31L61 1L31 0.999999L1 0.999997Z" fill="#EA3D3D" stroke="#D9A76D" stroke-width="1.5" stroke-linejoin="round"/>
+<path d="M1 61L60.5 1.5" stroke="#D9A76D" stroke-width="1.5" stroke-linejoin="round"/>
+<path d="M23 61V1L40.5 21V1" stroke="#D9A76D" stroke-width="1.5" stroke-linejoin="round"/>
+<circle cx="47" cy="40" r="5.25" stroke="#D9A76D" stroke-width="1.5" stroke-linejoin="round"/>
 </svg>

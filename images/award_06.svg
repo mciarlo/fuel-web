@@ -1,11 +1,15 @@
-<svg width="54" height="54" viewBox="0 0 54 54" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M0.0273438 0.0273438H26.5409H53.0544V53.0544H0.0273438V0.0273438Z" fill="#E53434"/>
-<path d="M52.6125 24.3325V52.6136H0.469236V24.3325H26.5409H52.6125Z" fill="white" stroke="#EAEAEA" stroke-width="0.883784"/>
-<rect x="19.4395" y="46.0156" width="10.1316" height="10.1316" transform="rotate(-45 19.4395 46.0156)" fill="#FF5C00"/>
-<path d="M19.6713 17.019C16.9102 14.2579 16.9102 9.78121 19.6713 7.0201L26.6032 0.0882344L33.535 7.0201C36.2961 9.78121 36.2961 14.2579 33.535 17.019L26.6032 23.9508L19.6713 17.019Z" fill="#FF5C00"/>
-<rect x="0.0273438" y="6.27734" width="8.83784" height="8.83784" transform="rotate(-45 0.0273438 6.27734)" fill="#FF5C00"/>
-<rect x="40.6816" y="6.27734" width="8.83784" height="8.83784" transform="rotate(-45 40.6816 6.27734)" fill="#FF5C00"/>
-<circle cx="15.9365" cy="38.915" r="4.41892" fill="black"/>
-<circle cx="37.1455" cy="38.915" r="4.41892" fill="black"/>
-<path d="M0.0273438 23.891V6.21531L6.21383 12.4018L16.3773 2.23828L26.5409 12.4018L36.7044 2.23828L46.8679 12.4018L53.0544 6.21531V23.891H0.0273438Z" fill="#FFB800"/>
+<svg width="62" height="62" viewBox="0 0 62 62" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M1 1L61 1.00001L61 31L31 61L0.999995 31L1 1Z" fill="#E88B00"/>
+<mask id="mask0" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="1" y="1" width="60" height="60">
+<path d="M1 1L61 1.00001L61 31L31 61L0.999995 31L1 1Z" fill="#7B00DB"/>
+</mask>
+<g mask="url(#mask0)">
+<path d="M-1 20L31 52L62.5 20.5" stroke="#DEBA00" stroke-width="1.5"/>
+<path d="M-1 11L31 43L62.5 11.5" stroke="#DEBA00" stroke-width="1.5"/>
+<path d="M-1 2L31 34L62.5 2.5" stroke="#DEBA00" stroke-width="1.5"/>
+<path d="M-1 -7L31 25L62.5 -6.5" stroke="#DEBA00" stroke-width="1.5"/>
+<path d="M-1 -16L31 16L62.5 -15.5" stroke="#DEBA00" stroke-width="1.5"/>
+<path d="M-1 -25L31 7L62.5 -24.5" stroke="#ED9612" stroke-width="1.5"/>
+</g>
+<path d="M1 1L61 1.00001L61 31L31 61L0.999995 31L1 1Z" stroke="#DEBA00" stroke-width="1.5" stroke-linejoin="round"/>
 </svg>

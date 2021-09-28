@@ -56,10 +56,10 @@ nav {
   }
 
   .logo {
-    width: 20px;
-    height: 20px;
+    width: 30px;
+    height: 28px;
     position: absolute;
-    top: 1.2em;
+    top: 1em;
     left: 0;
   }
 
@@ -198,7 +198,7 @@ nav.active {
     &.slim {
       text-align: left;
 
-      .content-wrapper {
+      &.bordered .content-wrapper {
         border-bottom: 1px solid $borderColor;
       }
 

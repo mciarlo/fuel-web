@@ -81,10 +81,10 @@ nav {
       nav.dark ul a:link:hover, nav.dark ul a:link.active, nav.dark a:visited:hover, nav.dark a:visited.active {
         color: white; }
   nav .logo {
-    width: 20px;
-    height: 20px;
+    width: 30px;
+    height: 28px;
     position: absolute;
-    top: 1.2em;
+    top: 1em;
     left: 0; }
   nav ul {
     padding-top: 4em;
@@ -193,7 +193,7 @@ nav.active {
       display: inline-block; }
     nav.slim {
       text-align: left; }
-      nav.slim .content-wrapper {
+      nav.slim.bordered .content-wrapper {
         border-bottom: 1px solid #ECECEC; }
       nav.slim .logo-link {
         left: 50%;
@@ -522,11 +522,11 @@ blockquote {
     flex: 1;
     height: 10px; }
     #loading-bar span:first-child {
-      background: #0041EA; }
+      background: #2282F4; }
     #loading-bar span:nth-child(2) {
-      background: #7100C9; }
+      background: #8F00FF; }
     #loading-bar span:last-child {
-      background: #B81DB1; }
+      background: #CE1DC7; }
 
 @media screen and (min-width: 414px) {
   .content-wrapper {
@@ -1152,6 +1152,8 @@ textarea {
   font-size: 1.1em;
   border: 1px solid #ECECEC;
   background: #fff;
+  -webkit-appearance: none;
+  -webkit-border-radius: 0;
   font-family: "Avenir Next", "Poppins", -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Helvetica", "Helvetica", "Gill Sans", sans-serif;
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -1173,6 +1175,8 @@ input[type="submit"] {
   color: white;
   margin-top: 1em;
   font-size: 1.1em;
+  -webkit-appearance: none;
+  -webkit-border-radius: 0;
   font-family: "Avenir Next", "Poppins", -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Helvetica", "Helvetica", "Gill Sans", sans-serif;
   cursor: pointer;
   transition: background-color 100ms ease-in-out; }
@@ -1353,17 +1357,21 @@ input[type="submit"] {
  *********************************************
  *********************************************
  */
-.tips-header .left-content {
-  width: 37.2%;
-  margin-right: 25.5%; }
 .tips-header .right-content {
   flex: 1; }
 .tips-header .border-top {
   padding-bottom: 6em; }
   .tips-header .border-top:nth-child(2) {
     margin-top: 12em; }
-.tips-header h2 + img {
-  padding-top: 3em; }
+.tips-header h2 {
+  position: relative;
+  padding-left: 2.2em;
+  padding-bottom: 4em; }
+  .tips-header h2 img {
+    position: absolute;
+    top: -0.4em;
+    left: -.2em;
+    transform: scale3d(0.8, 0.8, 1); }
 
 @media screen and (min-width: 500px) {
   .dashboard .content-wrapper.padding-top h2 {
@@ -1938,7 +1946,18 @@ input[type="submit"] {
         float: right;
         margin-right: 40px; }
         .pricing-trial.display-flex .right-content img.desktop {
-          display: inline-block; } }
+          display: inline-block; }
+
+  .tips-header .left-content {
+    width: 37.2%;
+    margin-right: 25.5%; }
+  .tips-header h2 {
+    padding-left: 3em;
+    padding-bottom: 0; }
+    .tips-header h2 img {
+      top: -0.35em;
+      left: 0;
+      transform: scale3d(1, 1, 1); } }
 @media screen and (min-width: 830px) {
   .how-it-works .iphone,
   .how-it-works .phone-gap {
@@ -2039,7 +2058,12 @@ input[type="submit"] {
         left: 30px; }
     .pricing-trial.display-flex .right-content img {
       width: 60%;
-      margin-right: 40px; } }
+      margin-right: 40px; }
+
+  .tips-header h2 {
+    max-width: 400px; }
+    .tips-header h2 img {
+      top: -0.2em; } }
 @media screen and (min-width: 1200px) {
   .how-it-works .callouts span {
     max-width: 200px; }

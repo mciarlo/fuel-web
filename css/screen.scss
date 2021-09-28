@@ -806,6 +806,8 @@ textarea {
   font-size: 1.1em;
   border: 1px solid $borderColor;
   background: #fff;
+  -webkit-appearance: none;
+  -webkit-border-radius: 0;
   @include fontFamily;
   @include box-sizing;
 
@@ -824,6 +826,8 @@ input[type="submit"] {
   color: white;
   margin-top: 1em;
   font-size: 1.1em;
+  -webkit-appearance: none;
+  -webkit-border-radius: 0;
   @include fontFamily;
   cursor: pointer;
   transition: background-color 100ms ease-in-out;
@@ -1075,11 +1079,6 @@ input[type="submit"] {
   *********************************************
   */
 .tips-header {
-  .left-content {
-    width: $col-5-content;
-    margin-right: $col-3;
-  }
-
   .right-content {
     flex: 1;
   }
@@ -1092,8 +1091,17 @@ input[type="submit"] {
     }
   }
 
-  h2 + img {
-    padding-top: 3em;
+  h2 {
+    position: relative;
+    padding-left: 2.2em;
+    padding-bottom: 4em;
+
+    img {
+      position: absolute;
+      top: -0.4em;
+      left: -.2em;
+      transform: scale3d(0.8,0.8,1);
+    }
   }
 }
 
@@ -1996,6 +2004,24 @@ input[type="submit"] {
       }
     }
   }
+
+  .tips-header {
+    .left-content {
+      width: $col-5-content;
+      margin-right: $col-3;
+    }
+
+    h2 {
+      padding-left: 3em;
+      padding-bottom: 0;
+
+      img {
+        top: -0.35em;
+        left: 0;
+        transform: scale3d(1,1,1);
+      }
+    }
+  }
 }
 
 @media screen and (min-width:830px) {
@@ -2188,6 +2214,16 @@ input[type="submit"] {
           width: 60%;
           margin-right: 40px;
         }
+      }
+    }
+  }
+
+  .tips-header {
+    h2 {
+      max-width: 400px;
+
+      img {
+        top: -0.2em;
       }
     }
   }

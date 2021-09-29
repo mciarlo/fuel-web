@@ -400,8 +400,12 @@ blockquote {
   z-index: 2;
   @include transition(transform, 100ms, ease-in-out);
 
-  &.hidden {
+  &.animate-out {
     transform: translate3d(0, 10px, 0);
+  }
+
+  &.hidden {
+    display: none;
   }
 
   span {

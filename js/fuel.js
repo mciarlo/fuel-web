@@ -78,7 +78,10 @@ $(function () {
 			return;
 		}
 
-		$("#loading-bar")[$window.scrollTop() > 30 ? "addClass" : "removeClass"]("hidden");
+		$("#loading-bar")[$window.scrollTop() > 30 ? "addClass" : "removeClass"]("animate-out");
+
+		$("#loading-bar")[$window.scrollTop() > 500 ? "addClass" : "removeClass"]("hidden");
+
 
 		var windowBottomY = $window.scrollTop() + $window.outerHeight();
 		var viewportHeight = $window.outerHeight();

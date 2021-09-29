@@ -275,11 +275,20 @@ h1 + p {
   margin-top: 1em;
 }
 
-h2 + p {
+h2 + p,
+h2 + ul,
+h4 + p {
   margin-top: 1em;
 }
 
-p + h2 {
+h2 + h4,
+p + h4,
+ul + h4 {
+  margin-top: 2em;
+}
+
+p + h2,
+ul + h2 {
   margin-top: 1em;
 }
 
@@ -288,7 +297,7 @@ p + h2 {
   margin-top: 0.3em;
 }
 
-p {
+p, li {
   color: $textColorSecondary;
 }
 
@@ -311,6 +320,14 @@ p + .button {
     text-decoration: none;
     border-bottom-color: $textColorTertiary;
   }
+}
+
+code {
+  font-family: monospace;
+  background: #f7f7f7;
+  @include borderRadius(4px);
+  font-size: 0.8rem;
+  padding: 4px 6px;
 }
 
 .heading-label {
@@ -338,8 +355,12 @@ p + .button {
     width: 100%;
   }
 
-  p {
+  p, li {
     line-height: 1.7;
+  }
+
+  li {
+    margin-bottom: 0.5em;
   }
 }
 
@@ -422,8 +443,21 @@ blockquote {
       margin-bottom: 2.5em;
     }
 
-    h1, h2, h3, h4, h5, p {
+    h1, h2, h3, h4, h5, p, li {
       max-width: 620px;
+    }
+
+    li {
+      position: relative;
+      padding-left: 20px;
+
+      &:before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: block;
+        content: "•";
+      }
     }
   }
 

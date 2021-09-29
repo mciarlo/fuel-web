@@ -29,7 +29,7 @@ a:hover {
   color: $textColorPrimary;
 }
 
-p {
+p, ul {
   padding-bottom: 1em;
 
   &:last-child {
@@ -70,9 +70,13 @@ h4 {
   font-weight: 600;
 }
 
-p {
+p, li {
   font-size: 1em;
   line-height: 1.4;
+}
+
+li {
+  line-height: 1;
 }
 
 
@@ -111,7 +115,7 @@ p {
     letter-spacing: -.04em;
   }
 
-  p {
+  p, li {
     font-size: 1.13em;
   }
 }

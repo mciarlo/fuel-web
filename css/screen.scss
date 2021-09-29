@@ -486,6 +486,7 @@ li {
     -ms-animation: rotating $awardsRotation linear infinite;
     -o-animation: rotating $awardsRotation linear infinite;
     animation: rotating $awardsRotation linear infinite;
+    pointer-events: none;
 
     &:after {
       content: "";

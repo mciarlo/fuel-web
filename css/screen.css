@@ -981,7 +981,8 @@ li {
     -moz-animation: rotating 25s linear infinite;
     -ms-animation: rotating 25s linear infinite;
     -o-animation: rotating 25s linear infinite;
-    animation: rotating 25s linear infinite; }
+    animation: rotating 25s linear infinite;
+    pointer-events: none; }
     .awards .awards-container:after {
       content: "";
       display: block;

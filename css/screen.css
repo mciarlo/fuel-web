@@ -440,14 +440,18 @@ h1 + p {
   margin-top: 1em; }
 
 h2 + p,
-h2 + ul,
-h4 + p {
+h2 + ul {
   margin-top: 1em; }
 
-h2 + h4,
+h4 + p {
+  margin-top: 0.5em; }
+
+h2 + h4 {
+  margin-top: 2em; }
+
 p + h4,
 ul + h4 {
-  margin-top: 2em; }
+  margin-top: 1em; }
 
 p + h2,
 ul + h2 {

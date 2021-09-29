@@ -1186,7 +1186,7 @@ input[type="email"],
 #support-input,
 select,
 textarea {
-  padding: 20px;
+  padding: 15px;
   font-size: 1.1em;
   border: 1px solid #ECECEC;
   background: #fff;
@@ -1203,15 +1203,26 @@ textarea {
   select:focus,
   textarea:focus {
     -webkit-outline: none;
-    outline: none; }
+    outline: none;
+    border-color: #050505; }
+
+input[type=file] {
+  font-size: 1rem;
+  border: 1px solid #e5e5e5;
+  padding: 15px;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  color: #737373; }
 
 button,
 input[type="submit"] {
-  padding: 20px;
+  padding: 15px;
   background: #050505;
   border: 0;
   color: white;
-  margin-top: 1em;
+  margin-top: 2em;
   font-size: 1.1em;
   -webkit-appearance: none;
   -webkit-border-radius: 0;
@@ -1293,6 +1304,8 @@ input[type="submit"] {
 .contact textarea {
   width: 100%;
   height: 200px; }
+  .contact textarea:focus {
+    border-color: #050505; }
 .contact form {
   margin-top: 4em; }
 
@@ -1742,10 +1755,14 @@ input[type="submit"] {
       background: #EDEDED;
       flex: 1;
       vertical-align: bottom; }
+      .pricing .pricing-basic li {
+        color: #050505; }
     .pricing .pricing-pro {
       width: 40%;
       background: #0047FF;
       color: white; }
+      .pricing .pricing-pro li {
+        color: white; }
     .pricing .pricing-trial {
       background: #DAE5FF;
       flex: 1;

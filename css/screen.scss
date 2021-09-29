@@ -807,7 +807,7 @@ input[type="email"],
 #support-input,
 select,
 textarea {
-  padding: 20px;
+  padding: 15px;
   font-size: 1.1em;
   border: 1px solid $borderColor;
   background: #fff;
@@ -819,17 +819,25 @@ textarea {
   &:focus {
     -webkit-outline: none;
     outline: none;
+    border-color: $textColorPrimary;
   }
 }
 
+input[type=file] {
+  font-size: 1rem;
+  border: 1px solid #e5e5e5;
+  padding: 15px;
+  @include box-sizing;
+  color: $textColorSecondary;
+}
 
 button,
 input[type="submit"] {
-  padding: 20px;
+  padding: 15px;
   background: $textColorPrimary;
   border: 0;
   color: white;
-  margin-top: 1em;
+  margin-top: 2em;
   font-size: 1.1em;
   -webkit-appearance: none;
   -webkit-border-radius: 0;
@@ -949,6 +957,10 @@ input[type="submit"] {
   textarea {
     width: 100%;
     height: 200px;
+
+    &:focus {
+      border-color: $textColorPrimary;
+    }
   }
 
   form {
@@ -1623,12 +1635,20 @@ input[type="submit"] {
       background: #EDEDED;
       flex: 1;
       vertical-align: bottom;
+
+      li {
+        color: $textColorPrimary;
+      }
     }
 
     .pricing-pro {
       width: 40%;
       background: #0047FF;
       color: white;
+
+      li {
+        color: white;
+      }
     }
 
     .pricing-trial {

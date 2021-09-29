@@ -59,22 +59,13 @@
           <label for="name">Name</label>
           <input type="text" name="name" placeholder="Name"></input>
 
-          <label for="subject">Subject</label>
-          <div class="select-container">
-            <select type="select" name="thread_id" placeholder="Select..." required="true">
-              <option value="Bug Report">Bug report</option>
-              <option value="Feature Request">Feature Request</option>
-              <option value="Food Request">Food Request</option>
-              <option value="Press Inquiry">Press Inquiry</option>
-              <option value="Other">Other</option>
-            </select>
-          </div>
-
           <label for="email">Email</label>
           <input type="email" placeholder="your@email.com" name="email" required="true">
 
           <label for="body">Message</label>
           <textarea name="body" rows="5" required="true" placeholder="How can we help?"></textarea>
+
+          <input type="file" name="attachments" multiple="true" />
 
 				  <input class="button bluebtn" type="submit" value="Send" onclick="this.form.action = RepliesContactForm.endpoint">
 
@@ -91,7 +82,7 @@
         <img class="logo" src="../images/logo.svg"/>
 
         <div class="left-content">
-          <p>Fuel is modern calorie tracking. Made for everyone. With insights and a 100% verified food library.</p>
+          <p>Modern calorie tracking made for everyone. With personalized insights and a verified food library.</p>
           <p class="small desktop">&copy; 2021 Ciarlo Software, LLC</p>
         </div>
 

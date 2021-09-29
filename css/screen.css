@@ -81,13 +81,16 @@ nav {
       -o-transition: all 0.15s ease-in-out; }
       nav.dark ul a:link:hover, nav.dark ul a:link.active, nav.dark a:visited:hover, nav.dark a:visited.active {
         color: white; }
-  nav .logo {
-    width: 30px;
-    height: 28px;
+  nav .logo-link {
+    width: 22px;
+    height: 20px;
     position: absolute;
-    top: 1em;
+    top: 1.3em;
     left: 0; }
+    nav .logo-link img {
+      width: 100%; }
   nav ul {
+    padding-bottom: 0;
     padding-top: 4em;
     opacity: 0;
     pointer-events: none;
@@ -101,7 +104,8 @@ nav {
       margin-top: 60px; }
     nav ul li {
       display: block;
-      text-align: center; }
+      text-align: center;
+      font-size: 1em; }
     nav ul a:link, nav ul a:visited {
       font-weight: 500;
       font-size: 1em;
@@ -180,13 +184,9 @@ nav.active {
     nav .content-wrapper {
       padding: 0; }
     nav .logo-link {
-      width: 32px;
+      width: 30px;
       height: 28px;
-      position: absolute;
-      top: 1em;
-      left: 0; }
-      nav .logo-link img {
-        width: 100%; }
+      top: 1.9em; }
     nav a.button {
       position: absolute;
       top: 2em;

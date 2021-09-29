@@ -55,15 +55,20 @@ nav {
     }
   }
 
-  .logo {
-    width: 30px;
-    height: 28px;
+  .logo-link {
+    width: 22px;
+    height: 20px;
     position: absolute;
-    top: 1em;
+    top: 1.3em;
     left: 0;
+
+    img {
+      width: 100%;
+    }
   }
 
   ul {
+    padding-bottom: 0;
     padding-top: 4em;
     opacity: 0;
     pointer-events: none;
@@ -77,6 +82,7 @@ nav {
     li {
       display: block;
       text-align: center;
+      font-size: 1em;
     }
 
     a:link, a:visited {
@@ -177,15 +183,9 @@ nav.active {
     }
 
     .logo-link {
-      width: 32px;
+      width: 30px;
       height: 28px;
-      position: absolute;;
-      top: 1em;
-      left: 0;
-
-      img {
-        width: 100%;
-      }
+      top: 1.9em;
     }
 
     a.button {

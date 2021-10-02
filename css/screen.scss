@@ -2259,6 +2259,12 @@ input[type="submit"] {
       }
     }
   }
+
+  .features-intro {
+    .left-content {
+      padding-top: 6em;
+    }
+  }
 }
 
 @media screen and (min-width:1440px) {

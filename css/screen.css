@@ -2106,7 +2106,10 @@ input[type="submit"] {
       padding: 60px 0; }
       .pricing-trial.display-flex .left-content .button {
         bottom: 60px;
-        left: 60px; } }
+        left: 60px; }
+
+  .features-intro .left-content {
+    padding-top: 6em; } }
 @media screen and (min-width: 1440px) {
   .how-it-works .iphone,
   .how-it-works .phone-gap {

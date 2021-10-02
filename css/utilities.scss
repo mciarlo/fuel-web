@@ -72,6 +72,17 @@ button {
     border-color: $darkBackground;
     text-decoration: none;
   }
+
+  &.mobile {
+    background: $darkBackground;
+    color: white;
+    border-color: $darkBackground;
+    text-decoration: none;
+
+    &:hover {
+      background-color: #454545;
+    }
+  }
 }
 
 /**

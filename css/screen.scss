@@ -630,11 +630,19 @@ li {
     margin: 5em 0 0;
     background: #EDEDED;
     vertical-align: bottom;
+
+    li {
+      color: $textColorPrimary;
+    }
   }
 
   .pricing-pro {
     background: #0047FF;
     color: white;
+
+    li {
+      color: white;
+    }
   }
 
   .pricing-trial {
@@ -656,6 +664,7 @@ li {
     margin-top: 4em;
     display: block;
     text-align: center;
+    max-width: 200px;
   }
 
   &.display-flex {
@@ -678,7 +687,7 @@ li {
   }
 
   a {
-    max-width: 300px;
+    max-width: 350px;
     line-height: 1.3;
   }
 
@@ -910,7 +919,7 @@ input[type="submit"] {
  */
 .contact {
   h1 {
-    margin-bottom: 1em;
+    margin-bottom: 0.5em;
   }
 
   label {
@@ -1636,20 +1645,12 @@ input[type="submit"] {
       background: #EDEDED;
       flex: 1;
       vertical-align: bottom;
-
-      li {
-        color: $textColorPrimary;
-      }
     }
 
     .pricing-pro {
       width: 40%;
       background: #0047FF;
       color: white;
-
-      li {
-        color: white;
-      }
     }
 
     .pricing-trial {

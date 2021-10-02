@@ -1062,11 +1062,16 @@ li {
   font-size: 0.75em;
   letter-spacing: 0.1em;
   font-weight: 600; }
-.pricing .price {
+.pricing .price,
+.pricing .trial-description {
   font-size: 1.8em;
   display: block;
   padding: .5em 0;
   font-weight: 500; }
+.pricing .trial-description {
+  line-height: 1.2;
+  letter-spacing: -0.04em;
+  width: 80%; }
 .pricing .price-details {
   margin-bottom: 2em; }
 .pricing ul {
@@ -1379,7 +1384,8 @@ input[type="submit"] {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     -ms-box-sizing: border-box;
-    margin-bottom: 30px; }
+    margin-bottom: 30px;
+    color: #050505; }
     .feature-row li.summary .image-container {
       padding-bottom: 0; }
     .feature-row li.summary strong {
@@ -1745,7 +1751,8 @@ input[type="submit"] {
       font-size: 0.75em;
       letter-spacing: 0.1em;
       font-weight: 600; }
-    .pricing .price {
+    .pricing .price,
+    .pricing .trial-description {
       font-size: 1.8em;
       display: block;
       padding: .5em 0;
@@ -2190,7 +2197,10 @@ input[type="submit"] {
   .how-it-works .phone-gap {
     width: 450px; }
   .how-it-works .scroll-container .content-wrapper {
-    min-height: 1000px; } }
+    min-height: 1000px; }
+
+  .pricing .trial-description {
+    width: 65%; } }
 @media screen and (min-width: 1600px) {
   .how-it-works {
     padding-top: 15vh; }

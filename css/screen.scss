@@ -597,11 +597,18 @@ li {
     font-weight: 600;
   }
 
-  .price {
+  .price,
+  .trial-description {
     font-size: 1.8em;
     display: block;
     padding: .5em 0;
     font-weight: 500;
+  }
+
+  .trial-description {
+    line-height: 1.2;
+    letter-spacing: -0.04em;
+    width: 80%;
   }
 
   .price-details {
@@ -1042,6 +1049,7 @@ input[type="submit"] {
   li {
     @include box-sizing;
     margin-bottom: 30px;
+    color: $textColorPrimary;
 
     &.summary {
       .image-container {
@@ -1611,7 +1619,8 @@ input[type="submit"] {
       font-weight: 600;
     }
 
-    .price {
+    .price,
+    .trial-description {
       font-size: 1.8em;
       display: block;
       padding: .5em 0;
@@ -2373,6 +2382,12 @@ input[type="submit"] {
 
     .scroll-container .content-wrapper {
       min-height: 1000px;
+    }
+  }
+
+  .pricing {
+    .trial-description {
+      width: 65%;
     }
   }
 }

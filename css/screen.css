@@ -527,7 +527,7 @@ blockquote {
   color: #737373;
   line-height: 1.4;
   font-size: 1.2em;
-  margin-bottom: 1em; }
+  margin-bottom: 1.5em; }
 
 .display-block {
   display: block; }
@@ -670,7 +670,7 @@ a:hover {
   color: #050505; }
 
 p, ul {
-  padding-bottom: 1em; }
+  padding-bottom: 1.5em; }
   p:last-child, ul:last-child {
     padding-bottom: 0; }
 
@@ -1752,7 +1752,8 @@ input[type="submit"] {
       padding-top: 3em; }
       .pricing ul li {
         margin: 1em 0;
-        line-height: 1.4; }
+        line-height: 1.4;
+        font-size: 1em; }
     .pricing .pricing-basic,
     .pricing .pricing-pro,
     .pricing .pricing-trial {
@@ -1872,6 +1873,8 @@ input[type="submit"] {
   .features-intro {
     text-align: left;
     padding-top: 4em; }
+    .features-intro p {
+      margin-top: 2em; }
     .features-intro img {
       width: 100%;
       margin: 0; }
@@ -1890,8 +1893,7 @@ input[type="submit"] {
     .main-features-list.one-col li {
       position: relative;
       background: #f8f8f8;
-      width: 80%;
-      margin-left: 15%; }
+      margin: 0 15%; }
     .main-features-list.two-col li {
       width: 40%;
       margin-left: 5%; }
@@ -2015,32 +2017,6 @@ input[type="submit"] {
     footer .logo {
       top: 8em; }
 
-  .feature-row .feature {
-    padding-right: 20px;
-    padding-bottom: 20px; }
-    .feature-row .feature.guided-first-steps strong {
-      font-size: 0;
-      text-indent: -9999px;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      transform: none; }
-    .feature-row .feature strong {
-      bottom: 20px;
-      width: 80%;
-      font-size: 1.2em;
-      letter-spacing: -0.04em; }
-  .feature-row.half-width .feature.full-width strong {
-    width: 40%;
-    max-width: 240px; }
-  .feature-row.half-width .hero.summary strong {
-    top: 40px; }
-  .feature-row.half-width .hero strong {
-    font-size: 2em;
-    width: 60%;
-    bottom: 40px; }
-
   .pricing-trial.display-flex {
     padding: 0 30px; }
     .pricing-trial.display-flex .left-content {
@@ -2058,7 +2034,13 @@ input[type="submit"] {
   .tips-header h2 {
     max-width: 400px; }
     .tips-header h2 img {
-      top: -0.2em; } }
+      top: -0.2em; }
+
+  .main-features-list {
+    padding-bottom: 10em; }
+
+  .features-intro .left-content {
+    padding-top: 6em; } }
 @media screen and (min-width: 1200px) {
   .how-it-works .callouts span {
     max-width: 200px; }
@@ -2124,4 +2106,8 @@ input[type="submit"] {
     padding-top: 15vh; }
     .how-it-works .iphone,
     .how-it-works .phone-gap {
-      width: 500px; } }
+      width: 500px; }
+
+  .backstory .left-content.large {
+    width: 40%;
+    margin-right: 14%; } }

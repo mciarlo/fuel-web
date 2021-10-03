@@ -30,7 +30,7 @@ a:hover {
 }
 
 p, ul {
-  padding-bottom: 1em;
+  padding-bottom: 1.5em;
 
   &:last-child {
     padding-bottom: 0;
@@ -1625,6 +1625,7 @@ input[type="submit"] {
       li {
         margin: 1em 0;
         line-height: 1.4;
+        font-size: 1em;
       }
     }
 
@@ -1810,6 +1811,10 @@ input[type="submit"] {
     text-align: left;
     padding-top: 4em;
 
+    p {
+      margin-top: 2em;
+    }
+
     img {
       width: 100%;
       margin: 0;
@@ -1840,8 +1845,7 @@ input[type="submit"] {
       li {
         position: relative;
         background: #f8f8f8;
-        width: 80%;
-        margin-left: 15%;
+        margin: 0 15%;
       }
     }
 
@@ -2072,55 +2076,6 @@ input[type="submit"] {
     padding-bottom: 8em;
   }
 
-  .feature-row {
-    .feature {
-      padding-right: 20px;
-      padding-bottom: 20px;
-
-      &.guided-first-steps {
-        strong {
-          font-size: 0;
-          text-indent: -9999px;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          transform: none;
-        }
-      }
-
-      strong {
-        bottom: 20px;
-        width: 80%;
-        font-size: 1.2em;
-        letter-spacing: -0.04em;
-      }
-    }
-
-    &.half-width {
-      .feature {
-        &.full-width {
-          strong {
-            width: 40%;
-            max-width: 240px;
-          }
-        }
-      }
-
-      .hero {
-        &.summary strong {
-          top: 40px;
-        }
-
-        strong {
-          font-size: 2em;
-          width: 60%;
-          bottom: 40px;
-        }
-      }
-    }
-  }
-
   .pricing-trial {
     &.display-flex {
       padding: 0 30px;
@@ -2155,6 +2110,16 @@ input[type="submit"] {
       img {
         top: -0.2em;
       }
+    }
+  }
+
+  .main-features-list {
+    padding-bottom: 10em;
+  }
+
+  .features-intro {
+    .left-content {
+      padding-top: 6em;
     }
   }
 }
@@ -2293,6 +2258,13 @@ input[type="submit"] {
     .iphone,
     .phone-gap {
       width: 500px;
+    }
+  }
+
+  .backstory {
+    .left-content.large {
+      width: 40%;
+      margin-right: 14%;
     }
   }
 }

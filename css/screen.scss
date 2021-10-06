@@ -101,7 +101,7 @@ li {
 @media screen and (min-width:1200px) {
   h1,
   h2.large {
-    font-size: 3.8em;
+    font-size: 3.5em;
     letter-spacing: -0.05em;
   }
 
@@ -1209,6 +1209,8 @@ input[type="submit"] {
   .how-it-works {
     p {
       max-width: none;
+      margin-left: 0;
+      margin-right: 0;
     }
   }
 
@@ -1546,6 +1548,10 @@ input[type="submit"] {
       margin-right: $col-1;
       flex: none;
       padding-bottom: 4em;
+
+      h2.large {
+        max-width: 390px;
+      }
     }
 
     .right-content {
@@ -1558,7 +1564,7 @@ input[type="submit"] {
 
     .content-wrapper.border-top {
       h2 {
-        max-width: 320px;
+        max-width: 300px;
       }
     }
 
@@ -2133,6 +2139,10 @@ input[type="submit"] {
   }
 
   .backstory {
+    .left-content h2.large {
+      max-width: 390px;
+    }
+
     .icon-list {
       li:nth-child(1) {
         padding: 0 4% 0 0;
@@ -2319,14 +2329,6 @@ input[type="submit"] {
     }
   }
 
-  .backstory {
-    .content-wrapper.border-top {
-      h2 {
-        max-width: 380px;
-      }
-    }
-  }
-
   .pricing-trial {
     &.display-flex {
       padding: 0 60px;
@@ -2349,6 +2351,18 @@ input[type="submit"] {
 
     .right-content {
       width: 80%;
+    }
+  }
+
+  .backstory {
+    .left-content h2.large {
+      max-width: 480px;
+    }
+
+    .content-wrapper.border-top {
+      h2 {
+        max-width: 350px;
+      }
     }
   }
 }

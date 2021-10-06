@@ -131,49 +131,6 @@ nav.active {
     opacity: 1;
     pointer-events: all; }
 
-#hamburger-icon {
-  position: absolute;
-  top: 1.2em;
-  right: 25px;
-  width: 20px;
-  height: 20px;
-  z-index: 9999; }
-  #hamburger-icon span {
-    display: block;
-    position: absolute;
-    height: 1px;
-    width: 100%;
-    background: #737373;
-    opacity: 1;
-    transition: all 0.25s ease-in-out;
-    -webkit-transition: all 0.25s ease-in-out;
-    -moz-transition: all 0.25s ease-in-out;
-    -ms-transition: all 0.25s ease-in-out;
-    -o-transition: all 0.25s ease-in-out; }
-    #hamburger-icon span.top {
-      top: 20%; }
-    #hamburger-icon span.middle {
-      top: 50%; }
-    #hamburger-icon span.bottom {
-      top: 80%; }
-  #hamburger-icon.active span {
-    top: 50%; }
-  #hamburger-icon.active .top {
-    transform: rotate3d(0, 0, 1, 45deg);
-    -webkit-transform: rotate3d(0, 0, 1, 45deg);
-    -moz-transform: rotate3d(0, 0, 1, 45deg);
-    -ms-transform: rotate3d(0, 0, 1, 45deg); }
-  #hamburger-icon.active .bottom {
-    transform: rotate3d(0, 0, 1, -45deg);
-    -webkit-transform: rotate3d(0, 0, 1, -45deg);
-    -moz-transform: rotate3d(0, 0, 1, -45deg);
-    -ms-transform: rotate3d(0, 0, 1, -45deg); }
-  #hamburger-icon.active .middle {
-    opacity: 0; }
-
-@media screen and (min-width: 414px) {
-  #hamburger-icon {
-    right: 30px; } }
 @media screen and (min-width: 1024px) {
   .no-js nav {
     height: auto; }
@@ -218,10 +175,7 @@ nav.active {
         margin: 0 1em; }
       nav ul a:link, nav ul a:visited {
         padding: .6em 0;
-        font-size: 0.85em; }
-
-  #hamburger-icon {
-    display: none; } }
+        font-size: 0.85em; } }
 li {
   list-style: none; }
 
@@ -432,9 +386,6 @@ section {
   .content-wrapper.border-top {
     padding-top: 2em;
     border-top: 1px solid #ECECEC; }
-
-nav .content-wrapper {
-  max-width: none; }
 
 .left-content > img,
 .left-content noscript > img,

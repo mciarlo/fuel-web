@@ -83,7 +83,7 @@ li {
 @media screen and (min-width:768px) {
   h1,
   h2.large {
-    font-size: 2.8em;
+    font-size: 2.4em;
     letter-spacing: -0.05em;
   }
 
@@ -424,6 +424,7 @@ li {
   display: inline-block;
   position: relative;
   @include overflowfix;
+  float:left;
 
   img {
     float: right;
@@ -618,6 +619,7 @@ li {
     line-height: 1.2;
     letter-spacing: -0.04em;
     width: 80%;
+    max-width: 360px;
   }
 
   .price-detail {
@@ -1382,7 +1384,7 @@ input[type="submit"] {
 
     li {
       width: auto;
-      padding: 0;
+      padding: 0 0 2em 0;
       margin: 0 1em;
 
       &:last-child {
@@ -1538,6 +1540,22 @@ input[type="submit"] {
 
     .icon-list {
       padding-top: 10em;
+
+      li:nth-child(1) {
+        padding: 0 2% 0 0;
+      }
+
+      li:nth-child(2) {
+        padding: 0 1.5% 0 1%;
+      }
+
+      li:nth-child(3) {
+        padding: 0 1% 0 1.5%;
+      }
+
+      li:nth-child(4) {
+        padding: 0 0 0 2%;
+      }
     }
   }
 
@@ -1560,7 +1578,7 @@ input[type="submit"] {
   .apple-health {
     .content-wrapper:first-child {
       h2 {
-        max-width: 500px;
+        max-width: 430px;
       }
 
       p {
@@ -1571,16 +1589,22 @@ input[type="submit"] {
     }
   }
 
+  .apple-watch-screen-1,
+  .apple-watch-screen-2 {
+    float:none;
+  }
+
   .apple-watch-screen-1 {
-    width: 25%;
+    width: 30%;
 
     img {
-      width: 100%;
+      width: 90%;
+      padding-top: 50px;
     }
   }
 
   .apple-watch-screen-2 {
-    width: 55%;
+    width: 65%;
 
     img {
       width: 60%;
@@ -1650,16 +1674,19 @@ input[type="submit"] {
     .pricing-basic {
       background: #EDEDED;
       flex: 1;
+      width: 40%;
       vertical-align: bottom;
     }
 
     .pricing-pro {
-      width: 40%;
+      width: 60%;
       background: #0047FF;
       color: white;
     }
 
     .pricing-trial {
+      width: 100%;
+      margin-top: 1em;
       background: #DAE5FF;
       flex: 1;
       vertical-align: top;
@@ -2003,6 +2030,10 @@ input[type="submit"] {
     }
   }
 
+  .user-stats li {
+    padding: 0;
+  }
+
   .dashboard {
     .left-content {
       p {
@@ -2060,6 +2091,52 @@ input[type="submit"] {
         width: 70px;
         height: 70px;
       }
+    }
+  }
+
+  .apple-watch-screen-1 {
+    width: 25%;
+
+    img {
+      width: 100%;
+      padding-top: 20px;
+    }
+  }
+
+  .apple-watch-screen-2 {
+    width: 60%;
+  }
+
+  .backstory {
+    .icon-list {
+      li:nth-child(1) {
+        padding: 0 4% 0 0;
+      }
+
+      li:nth-child(2) {
+        padding: 0 3% 0 2%;
+      }
+
+      li:nth-child(3) {
+        padding: 0 2% 0 3%;
+      }
+
+      li:nth-child(4) {
+        padding: 0 0 0 4%;
+      }
+    }
+  }
+
+  .pricing {
+    .pricing-basic,
+    .pricing-pro,
+    .pricing-trial {
+      width: 28%;
+      margin: 5em 0 0;
+    }
+
+    .pricing-pro {
+      width: 44%;
     }
   }
 

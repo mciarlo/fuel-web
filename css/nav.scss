@@ -117,7 +117,7 @@ nav.active {
   }
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 768px) {
   .no-js  {
     nav {
       height: auto;
@@ -125,11 +125,14 @@ nav.active {
   }
 
   nav {
-    height: auto;
+    height: 95px;
     text-align: center;
 
-    .content-wrapper {
-      padding: 0;
+    a.button {
+      position: absolute;
+      top: 2em;
+      right: 0;
+      display: inline-block;
     }
 
     .logo-link {
@@ -138,11 +141,16 @@ nav.active {
       top: 1.9em;
     }
 
-    a.button {
-      position: absolute;
-      top: 2em;
-      right: 0;
-      display: inline-block;
+    ul {
+      display: none;
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  nav {
+    .content-wrapper {
+      padding: 0;
     }
 
     &.slim {

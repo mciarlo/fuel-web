@@ -523,10 +523,9 @@ code {
 
 blockquote {
   border-left: 4px solid #cdcdcd;
-  padding-left: 1em;
+  padding-left: 1.5em;
   color: #737373;
-  line-height: 1.4;
-  font-size: 1.2em;
+  line-height: 1.5;
   margin-bottom: 1.5em; }
 
 .display-block {
@@ -701,9 +700,9 @@ h4 {
   font-size: 1.1em;
   font-weight: 600; }
 
-p, li {
+p, li, blockquote {
   font-size: 1em;
-  line-height: 1.4; }
+  line-height: 1.5; }
 
 li {
   line-height: 1; }
@@ -735,7 +734,7 @@ li {
     font-size: 2.1em;
     letter-spacing: -.04em; }
 
-  p, li {
+  p, li, blockquote {
     font-size: 1.13em; } }
 @media screen and (min-width: 768px) {
   img.mobile {
@@ -908,7 +907,8 @@ li {
     padding-bottom: 2em; }
     .dashboard-options ul li {
       color: #909090;
-      line-height: 2; }
+      line-height: 2;
+      font-size: 1rem; }
       .dashboard-options ul li strong {
         display: block;
         color: white;
@@ -1055,6 +1055,8 @@ li {
       width: 30px;
       height: 30px; }
 
+.pricing .small {
+  font-size: 1rem; }
 .pricing h2 {
   text-align: center; }
 .pricing h3 {
@@ -1072,8 +1074,9 @@ li {
   line-height: 1.2;
   letter-spacing: -0.04em;
   width: 80%; }
-.pricing .price-details {
-  margin-bottom: 2em; }
+.pricing .price-detail {
+  line-height: 1.5;
+  display: inline-block; }
 .pricing ul {
   padding-top: 3em; }
   .pricing ul li {
@@ -1279,7 +1282,9 @@ input[type="submit"] {
   padding-bottom: 2em; }
 .faq .answer {
   padding-top: 1em;
-  display: none; }
+  display: none;
+  font-size: 1rem;
+  line-height: 1.7; }
 
 /*********************************************
  *********************************************
@@ -1746,8 +1751,6 @@ input[type="submit"] {
       display: block;
       padding: .5em 0;
       font-weight: 500; }
-    .pricing .price-details {
-      margin-bottom: 2em; }
     .pricing ul {
       padding-top: 3em; }
       .pricing ul li {
@@ -1872,12 +1875,17 @@ input[type="submit"] {
   ***************/
   .features-intro {
     text-align: left;
-    padding-top: 4em; }
+    padding-top: 0em; }
+    .features-intro .right-content {
+      margin-left: 5%;
+      width: 70%; }
     .features-intro p {
-      margin-top: 2em; }
+      margin-top: 2em;
+      font-size: 0.9rem; }
     .features-intro img {
       width: 100%;
-      margin: 0; }
+      margin: 0;
+      padding-top: 2em; }
 
   .main-features-list {
     padding-bottom: 6em; }
@@ -1896,11 +1904,11 @@ input[type="submit"] {
       margin: 0 15%; }
     .main-features-list.two-col li {
       width: 40%;
-      margin-left: 5%; }
+      margin: 0 5%; }
     .main-features-list.three-col li {
       width: 30%; }
       .main-features-list.three-col li:nth-child(2) {
-        margin: 0 4%; }
+        margin: 0 5%; }
     .main-features-list .feature-content {
       position: absolute;
       top: 50%;
@@ -1913,7 +1921,7 @@ input[type="submit"] {
     .features-continued ul li {
       width: 25%;
       padding-bottom: 0;
-      padding-right: 40px; }
+      padding-right: 60px; }
       .features-continued ul li:nth-child(1), .features-continued ul li:nth-child(2), .features-continued ul li:nth-child(3), .features-continued ul li:nth-child(4)
       .features-continued ul li:nth-child(5), .features-continued ul li:nth-child(6), .features-continued ul li:nth-child(7), .features-continued ul li:nth-child(8) {
         padding-bottom: 4em; }
@@ -1973,7 +1981,7 @@ input[type="submit"] {
     .how-it-works .text-right {
       margin: 0; }
     .how-it-works .scroll-container .content-wrapper {
-      min-height: 1000px; }
+      min-height: 800px; }
 
   .dashboard .left-content p {
     max-width: 350px; }
@@ -2039,8 +2047,13 @@ input[type="submit"] {
   .main-features-list {
     padding-bottom: 10em; }
 
-  .features-intro .left-content {
-    padding-top: 6em; } }
+  .features-intro {
+    padding-top: 2em; }
+    .features-intro .left-content {
+      padding-top: 6em; }
+    .features-intro .right-content {
+      margin-left: 0%;
+      width: 100%; } }
 @media screen and (min-width: 1200px) {
   .how-it-works .callouts span {
     max-width: 200px; }
@@ -2100,7 +2113,10 @@ input[type="submit"] {
     min-height: 1000px; }
 
   .pricing .trial-description {
-    width: 65%; } }
+    width: 65%; }
+
+  .features-intro .left-content {
+    padding-top: 8em; } }
 @media screen and (min-width: 1600px) {
   .how-it-works {
     padding-top: 15vh; }

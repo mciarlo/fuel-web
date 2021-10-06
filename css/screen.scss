@@ -70,9 +70,9 @@ h4 {
   font-weight: 600;
 }
 
-p, li {
+p, li, blockquote {
   font-size: 1em;
-  line-height: 1.4;
+  line-height: 1.5;
 }
 
 li {
@@ -115,7 +115,7 @@ li {
     letter-spacing: -.04em;
   }
 
-  p, li {
+  p, li, blockquote {
     font-size: 1.13em;
   }
 }
@@ -373,6 +373,7 @@ li {
     li {
       color: $textColorSecondaryOnDark;
       line-height: 2;
+      font-size: 1rem;
 
       strong {
         display: block;
@@ -586,6 +587,10 @@ li {
 }
 
 .pricing {
+  .small {
+    font-size: 1rem;
+  }
+
   h2 {
     text-align: center;
   }
@@ -611,8 +616,9 @@ li {
     width: 80%;
   }
 
-  .price-details {
-    margin-bottom: 2em;
+  .price-detail {
+    line-height: 1.5;
+    display: inline-block;
   }
 
   ul {
@@ -911,6 +917,8 @@ input[type="submit"] {
   .answer {
     padding-top: 1em;
     display: none;
+    font-size: 1rem;
+    line-height: 1.7;
   }
 }
 
@@ -1615,10 +1623,6 @@ input[type="submit"] {
       font-weight: 500;
     }
 
-    .price-details {
-      margin-bottom: 2em;
-    }
-
     ul {
       padding-top: 3em;
 
@@ -1809,15 +1813,22 @@ input[type="submit"] {
   ***************/
   .features-intro {
     text-align: left;
-    padding-top: 4em;
+    padding-top: 0em;
+
+    .right-content {
+      margin-left: 5%;
+      width: 70%;
+    }
 
     p {
       margin-top: 2em;
+      font-size: 0.9rem;
     }
 
     img {
       width: 100%;
       margin: 0;
+      padding-top: 2em;
     }
   }
 
@@ -1852,7 +1863,7 @@ input[type="submit"] {
     &.two-col {
       li {
         width: 40%;
-        margin-left: 5%;
+        margin: 0 5%;
       }
     }
 
@@ -1861,7 +1872,7 @@ input[type="submit"] {
         width: 30%;
 
         &:nth-child(2) {
-          margin: 0 4%;
+          margin: 0 5%;
         }
       }
     }
@@ -1878,10 +1889,11 @@ input[type="submit"] {
   .features-continued {
     ul {
       padding-top: 8em;
+
       li {
         width: 25%;
         padding-bottom: 0;
-        padding-right: 40px;
+        padding-right: 60px;
 
         &:nth-child(1),
         &:nth-child(2),
@@ -1991,7 +2003,7 @@ input[type="submit"] {
 
     .scroll-container {
       .content-wrapper {
-        min-height: 1000px;
+        min-height: 800px;
       }
     }
   }
@@ -2118,8 +2130,15 @@ input[type="submit"] {
   }
 
   .features-intro {
+    padding-top: 2em;
+
     .left-content {
       padding-top: 6em;
+    }
+
+    .right-content {
+      margin-left: 0%;
+      width: 100%;
     }
   }
 }
@@ -2247,6 +2266,12 @@ input[type="submit"] {
   .pricing {
     .trial-description {
       width: 65%;
+    }
+  }
+
+  .features-intro {
+    .left-content {
+      padding-top: 8em;
     }
   }
 }

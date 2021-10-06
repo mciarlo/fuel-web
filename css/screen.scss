@@ -44,7 +44,7 @@ h1, h2, h3, h4 {
 
 h1,
 h2.large {
-  line-height: 1.1em;
+  line-height: 1.2;
   font-size: 2em;
   letter-spacing: -0.05em;
 }
@@ -143,6 +143,12 @@ li {
  */
 .how-it-works {
   padding-top: 10vh;
+
+  p {
+    max-width: 330px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 .scroll-container {
@@ -706,7 +712,7 @@ li {
   }
 
   a {
-    max-width: 350px;
+    max-width: 230px;
     line-height: 1.3;
   }
 
@@ -803,6 +809,8 @@ footer {
   }
 
   ul {
+    padding-bottom: 0;
+
     &:nth-child(3) {
       padding-top: 2em;
     }
@@ -897,7 +905,7 @@ input[type="submit"] {
   li:after {
     content: "";
     position: absolute;
-    top: 3em;
+    top: 3.5em;
     right: 0;
     width: 24px;
     height: 24px;
@@ -1170,6 +1178,12 @@ input[type="submit"] {
     }
   }
 
+  .frequently-asked-questions {
+    a {
+      max-width: 350px;
+    }
+  }
+
   .features-intro {
     p {
       max-width: 300px;
@@ -1190,6 +1204,12 @@ input[type="submit"] {
     position: unset;
     overflow: visible;
     padding-bottom: 0;
+  }
+
+  .how-it-works {
+    p {
+      max-width: none;
+    }
   }
 
   .scroll-container {
@@ -1262,6 +1282,10 @@ input[type="submit"] {
       top: 50%;
       width: 100%;
       transform: translate(0, -50%);
+
+      p {
+        max-width: 280px;
+      }
 
       &.active {
         opacity :1;
@@ -1534,7 +1558,7 @@ input[type="submit"] {
 
     .content-wrapper.border-top {
       h2 {
-        max-width: 380px;
+        max-width: 320px;
       }
     }
 
@@ -1890,6 +1914,7 @@ input[type="submit"] {
         position: relative;
         background: #f8f8f8;
         margin: 0 15%;
+        padding: 40px 0;
       }
     }
 
@@ -2209,6 +2234,14 @@ input[type="submit"] {
       width: 75%;
     }
   }
+
+  .main-features-list {
+    &.one-col {
+      li {
+        padding: 0;
+      }
+    }
+  }
 }
 
 @media screen and (min-width:1200px) {
@@ -2286,25 +2319,10 @@ input[type="submit"] {
     }
   }
 
-  .feature-row {
-    .feature {
-      strong {
-        bottom: 30px;
-        width: 80%;
-        font-size: 1.4em;
-      }
-    }
-
-    &.half-width {
-      .hero {
-        &.summary strong {
-          top: 60px;
-        }
-
-        strong {
-          font-size: 2.6em;
-          bottom: 60px;
-        }
+  .backstory {
+    .content-wrapper.border-top {
+      h2 {
+        max-width: 380px;
       }
     }
   }

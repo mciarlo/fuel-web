@@ -10,11 +10,7 @@ $menuDuration: 1200ms;
  */
 .no-js  {
   ul {
-    dispaly: none;
-  }
-
-  #hamburger-icon {
-    display :none;
+    display: none;
   }
 }
 
@@ -26,40 +22,20 @@ nav {
   z-index: 9999;
   overflow: hidden;
   height: 60px;
+  text-align: right;
   background: $lightBackground;
   @include transition(height, .25s, ease-in-out);
 
-  a.button {
-    display: none;
-  }
-
   .content-wrapper {
     padding: 1em 0;
-  }
-
-  &.dark {
-    background: $darkBackground;
-
-    .content-wrapper {
-      border-bottom: 1px solid #353535;
-    }
-
-    ul a:link, a:visited {
-      color: $textColorSecondaryOnDark;
-      @include transition(all, .15s, ease-in-out);
-
-      &:hover,
-      &.active {
-        color: white;
-      }
-    }
+    width: 100%;
   }
 
   .logo-link {
-    width: 22px;
-    height: 20px;
+    width: 26px;
+    height: 24px;
     position: absolute;
-    top: 1.3em;
+    top: 1.55em;
     left: 0;
 
     img {
@@ -68,71 +44,17 @@ nav {
   }
 
   ul {
-    padding-bottom: 0;
-    padding-top: 4em;
-    opacity: 0;
-    pointer-events: none;
-    flex: 1;
-    @include transition(opacity, 0.25s, ease-in-out);
-
-    &:first-child {
-      margin-top: 60px;
-    }
-
-    li {
-      display: block;
-      text-align: center;
-      font-size: 1em;
-    }
-
-    a:link, a:visited {
-      font-weight: 500;
-      font-size: 1em;
-      color: $textColorSecondary;
-      display: inline-block;
-      padding: .6em 0;
-      vertical-align: middle;
-      @include transition(all, .15s, ease-in-out);
-
-      &:hover,
-      &.active {
-        color: $textColorPrimary;
-        text-decoration: none;
-      }
-    }
-  }
-}
-
-nav.active {
-  height: 280px;
-
-  &.slim {
-    height: 220px;
-  }
-
-  ul {
-    transition-delay: 200ms;
-    opacity: 1;
-    pointer-events: all;
+    display: none;
   }
 }
 
 @media screen and (min-width: 768px) {
-  .no-js  {
-    nav {
-      height: auto;
-    }
-  }
-
   nav {
     height: 95px;
-    text-align: center;
 
-    a.button {
-      position: absolute;
-      top: 2em;
-      right: 0;
-      display: inline-block;
+    .content-wrapper {
+      padding: 1em 0;
+      width: 88%;
     }
 
     .logo-link {
@@ -141,44 +63,55 @@ nav.active {
       top: 1.9em;
     }
 
-    ul {
-      display: none;
+    a.button {
+      position: absolute;
+      top: 1.8em;
+      right: 0;
+      display: inline-block;
     }
   }
 }
 
 @media screen and (min-width: 1024px) {
   nav {
+    text-align: center;
+
     .content-wrapper {
       padding: 0;
     }
 
-    &.slim {
-      text-align: left;
+    ul {
+      padding-bottom: 0;
+      padding-top: 4em;
+      opacity: 0;
+      pointer-events: none;
+      flex: 1;
+      display: block;
+      @include transition(opacity, 0.25s, ease-in-out);
 
-      &.bordered .content-wrapper {
-        border-bottom: 1px solid $borderColor;
+      &:first-child {
+        margin-top: 60px;
       }
 
-      .logo-link {
-        left: 50%;
-        margin-left: -16px;
+      li {
+        display: block;
+        text-align: center;
+        font-size: 1em;
       }
 
-      ul:first-child {
-        margin: 0;
+      a:link, a:visited {
+        font-weight: 500;
+        font-size: 1em;
+        color: $textColorSecondary;
+        display: inline-block;
+        padding: .6em 0;
+        vertical-align: middle;
+        @include transition(all, .15s, ease-in-out);
 
-        li {
-          margin: 0;
-        }
-
-        li:first-child a {
-          background: transparent url("../images/back_arrow.svg") 0 .5em no-repeat;
-          padding-left: 18px;
-
-          &:hover {
-            background-image:url("../images/back_arrow_hover.svg");
-          }
+        &:hover,
+        &.active {
+          color: $textColorPrimary;
+          text-decoration: none;
         }
       }
     }

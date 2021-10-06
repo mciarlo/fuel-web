@@ -1822,7 +1822,9 @@ input[type="submit"] {
 
     p {
       margin-top: 2em;
-      font-size: 0.9rem;
+      font-size: 0.9em;
+      margin-left: 0;
+      margin-right: 0;
     }
 
     img {
@@ -2132,13 +2134,17 @@ input[type="submit"] {
   .features-intro {
     padding-top: 2em;
 
+    p {
+      font-size: 1em;
+    }
+
     .left-content {
       padding-top: 6em;
     }
 
     .right-content {
       margin-left: 0%;
-      width: 100%;
+      width: 75%;
     }
   }
 }
@@ -2247,6 +2253,10 @@ input[type="submit"] {
   .features-intro {
     .left-content {
       padding-top: 6em;
+    }
+
+    .right-content {
+      width: 80%;
     }
   }
 }

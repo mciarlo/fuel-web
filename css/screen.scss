@@ -410,7 +410,7 @@ li {
   .content-wrapper:first-child {
     h2,
     p {
-      max-width: 300px;
+      max-width: 260px;
     }
 
     h2 + p {
@@ -1167,6 +1167,17 @@ input[type="submit"] {
       &:nth-child(7),
       &:nth-child(8) {
         margin-bottom: 4em;
+      }
+    }
+  }
+
+  .apple-health {
+    vertical-align: bottom;
+
+    .content-wrapper:first-child {
+      h2,
+      p {
+        max-width: 300px;
       }
     }
   }

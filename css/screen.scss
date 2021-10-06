@@ -1980,10 +1980,10 @@ input[type="submit"] {
 
   .pricing-trial {
     &.display-flex {
-      padding: 0 20px;
+      padding: 0 40px;
 
       .left-content {
-        padding: 20px 0;
+        padding: 40px 0;
         width: 40%;
         flex:none;
 
@@ -1996,8 +1996,8 @@ input[type="submit"] {
 
         .button {
           position: absolute;
-          bottom: 20px;
-          left: 20px;
+          bottom: 40px;
+          left: 40px;
           display: inline-block;
         }
       }
@@ -2210,10 +2210,10 @@ input[type="submit"] {
 
   .pricing-trial {
     &.display-flex {
-      padding: 0 30px;
+      padding: 0 60px;
 
       .left-content {
-        padding: 30px 0;
+        padding: 60px 0;
 
         h3 {
           max-width: 240px;
@@ -2221,8 +2221,8 @@ input[type="submit"] {
         }
 
         .button {
-          bottom: 30px;
-          left: 30px;
+          bottom: 60px;
+          left: 60px;
         }
       }
 

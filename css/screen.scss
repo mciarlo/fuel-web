@@ -407,6 +407,10 @@ li {
       max-width: 300px;
     }
 
+    h2 + p {
+      margin-top: 2em;
+    }
+
     padding-bottom: 3em;
   }
 
@@ -1078,7 +1082,6 @@ input[type="submit"] {
 
     li {
       line-height: 1.5;
-      padding-bottom: 2em;
       @include box-sizing;
       color: $textColorSecondary;
 
@@ -1896,17 +1899,6 @@ input[type="submit"] {
         width: 25%;
         padding-bottom: 0;
         padding-right: 60px;
-
-        &:nth-child(1),
-        &:nth-child(2),
-        &:nth-child(3),
-        &:nth-child(4)
-        &:nth-child(5),
-        &:nth-child(6),
-        &:nth-child(7),
-        &:nth-child(8) {
-          padding-bottom: 4em;
-        }
       }
     }
   }
@@ -2055,14 +2047,6 @@ input[type="submit"] {
     }
   }
 
-  .apple-health {
-    .content-wrapper:first-child {
-      h2 {
-        max-width: 600px;
-      }
-    }
-  }
-
   .awards {
     .text-content {
       width: 280px;
@@ -2208,6 +2192,18 @@ input[type="submit"] {
 
       &.active {
         padding-left: 80px;
+      }
+    }
+  }
+
+  .apple-health {
+    .content-wrapper:first-child {
+      h2 {
+        max-width: 600px;
+      }
+
+      h2 + p {
+        margin-top: 3em;
       }
     }
   }

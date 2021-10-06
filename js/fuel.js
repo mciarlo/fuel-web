@@ -86,7 +86,7 @@ $(function () {
 		var windowBottomY = $window.scrollTop() + $window.outerHeight();
 		var viewportHeight = $window.outerHeight();
 		var scrollContainerHeight = $howItWorks.outerHeight();
-		var scrollContainerThreshold = $howItWorks.position().top + (scrollContainerHeight * .7);
+		var scrollContainerThreshold = $howItWorks.position().top + (scrollContainerHeight * .80);
 
 		if ($(".guided-setup:first").position().top + (viewportHeight / 4) <= windowBottomY) {
 				$(".user-stats li").removeClass("will-animate");

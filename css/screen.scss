@@ -1974,6 +1974,10 @@ input[type="submit"] {
         width: 25%;
         padding-bottom: 0;
         padding-right: 60px;
+
+        &:first-child {
+          padding-bottom: 4em;
+        }
       }
     }
   }
@@ -2229,7 +2233,7 @@ input[type="submit"] {
       .right-content {
         img {
           width: 60%;
-          margin-right: 40px;
+          margin-right: 60px;
         }
       }
     }

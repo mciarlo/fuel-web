@@ -88,6 +88,10 @@ button {
   .lazy-load {
     display: none;
 
+    &.full-width {
+      display: none;
+    }
+
     &.desktop,
     &.mobile {
       display: none;

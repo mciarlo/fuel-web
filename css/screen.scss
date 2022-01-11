@@ -130,6 +130,42 @@ li {
   }
 }
 
+$pingAnimation: 8s;
+
+@keyframes ping {
+  0% {
+    -ms-transform: scale3d(0, 0, 1);
+    -moz-transform: scale3d(0, 0, 1);
+    -webkit-transform: scale3d(0, 0, 1);
+    -o-transform: sscale3d(0, 0, 1);
+    transform: scale3d(0, 0, 1);
+    opacity: 0;
+  }
+  15% {
+    -ms-transform: scale3d(0.3, 0.3, 1);
+    -moz-transform: scale3d(0.3, 0.3, 1);
+    -webkit-transform: scale3d(0.3, 0.3, 1);
+    -o-transform: scale3d(0.3, 0.3, 1);
+    transform: scale3d(0.3, 0.3, 1);
+    opacity: 1;
+  }
+  45% {
+    -ms-transform: scale3d(1, 1, 1);
+    -moz-transform: scale3d(1, 1, 1);
+    -webkit-transform: scale3d(1, 1, 1);
+    -o-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+    opacity: 0;
+  }
+  100% {
+    -ms-transform: scale3d(1, 1, 1);
+    -moz-transform: scale3d(1, 1, 1);
+    -webkit-transform: scale3d(1, 1, 1);
+    -o-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+    opacity: 0;
+  }
+}
 
 /*********************************************
  *********************************************
@@ -148,6 +184,31 @@ li {
     max-width: 330px;
     margin-left: auto;
     margin-right: auto;
+  }
+}
+
+.day-ping {
+  width: 1px;
+  height: 1px;
+  position: absolute;
+  top: 46.0%;
+  left: 59.08%;
+
+  &::after {
+    content: " ";
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: -18px;
+    left: -18px;
+    border: 3px solid #B42E48;
+    @include borderRadius(18px);
+    z-index: 2;
+    -webkit-animation: ping $pingAnimation linear infinite;
+    -moz-animation: ping $pingAnimation linear infinite;
+    -ms-animation: ping $pingAnimation linear infinite;
+    -o-animation: ping $pingAnimation linear infinite;
+    animation: ping $pingAnimation linear infinite;
   }
 }
 
@@ -1142,6 +1203,16 @@ input[type="submit"] {
 
 
 @media screen and (min-width:500px) {
+  .day-ping {
+    &::after {
+      width: 50px;
+      height: 50px;
+      top: -28px;
+      left: -28px;
+      @include borderRadius(28px);
+    }
+  }
+
   .dashboard {
     .content-wrapper.padding-top h2 {
       text-align: left;
@@ -1253,15 +1324,16 @@ input[type="submit"] {
   }
 
   .hero-a {
-    z-index: 2;
+    z-index: 3;
   }
 
   .hero-b {
     z-index: 1;
+    display: block;
   }
 
   .device-bezel {
-    z-index: 3;
+    z-index: 4;
   }
 
   .mask-container {

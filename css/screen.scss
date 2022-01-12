@@ -191,8 +191,8 @@ $pingAnimation: 8s;
   width: 1px;
   height: 1px;
   position: absolute;
-  top: 45.64%;
-  left: 59.08%;
+  top: 46.49%;
+  left: 59.32%;
 
   &::after {
     content: " ";
@@ -1398,6 +1398,7 @@ input[type="submit"] {
       position: relative;
       transform: translate(0, -50%);
       opacity: 0;
+      padding-top: 4em;
       transition: opacity 400ms ease-in-out;
 
       .callout {

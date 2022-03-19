@@ -254,6 +254,11 @@ $pingAnimation: 8s;
     font-size: 2em;
     padding-bottom: .2em;
     display: block;
+    color: $textColorPrimary;
+
+    &.purple {
+      color: $purple;
+    }
   }
 
   li {
@@ -530,6 +535,23 @@ $pingAnimation: 8s;
   }
 }
 
+.apple-watch {
+  padding-top: 0;
+  text-align: center;
+
+  p {
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .full-width {
+    width: 220%;
+    margin-left: -60%;
+    padding-top: 2em;
+  }
+}
+
 .awards {
   padding: 0;
 
@@ -627,12 +649,26 @@ $pingAnimation: 8s;
 .more-features {
   padding-top: 0;
 
+  .full-width {
+    width: 90%;
+    margin: 0 auto;
+    display: block;
+    padding: 2em 0;
+  }
+
   .right-content {
     padding-top: 4em;
   }
 
   .left-content {
-    margin-bottom: 4em;
+    margin-bottom: 2em;
+    text-align: center;
+
+    p {
+      max-width: 400px;
+      margin-left: auto;
+      margin-right: auto;
+    }
   }
 
   li {
@@ -1259,6 +1295,14 @@ input[type="submit"] {
     }
   }
 
+  .apple-watch {
+    .full-width {
+      width: 180%;
+      margin-left: -40%;
+      padding-top: 3em;
+    }
+  }
+
   .awards {
     .awards-container {
       margin: 0 auto;
@@ -1282,6 +1326,12 @@ input[type="submit"] {
     img {
       width: 100%;
       margin-left: -5%;
+    }
+  }
+
+  .more-features {
+    .full-width {
+      padding: 1em 0 4em;
     }
   }
 }
@@ -1734,6 +1784,30 @@ input[type="submit"] {
     }
   }
 
+  .apple-watch {
+    padding-top: 0;
+    text-align: left;
+
+    .complications-intro {
+      margin-left: 5%;
+      width: 50%;
+
+      p {
+        max-width: 400px;
+        margin-left: 0;
+        margin-right: 0;
+      }
+    }
+
+    .full-width {
+      width: 110%;
+      padding-top: 4em;
+      max-width: 1760px;
+      margin-left: -5%;
+      display: block;
+    }
+  }
+
   .more-features {
     padding-bottom: 0;
 
@@ -1741,9 +1815,12 @@ input[type="submit"] {
       flex:none;
       width: $col-5-content;
       margin-right: $col-3;
+      text-align: left;
 
       p {
         max-width: 340px;
+        margin-left: 0;
+        margin-right: 0;
       }
     }
 
@@ -2026,10 +2103,10 @@ input[type="submit"] {
 
     &.three-col {
       li {
-        width: 30%;
+        width: 33.3%;
 
         &:nth-child(2) {
-          margin: 0 5%;
+          margin: 0 1%;
         }
       }
     }
@@ -2233,6 +2310,17 @@ input[type="submit"] {
 
   .apple-watch-screen-2 {
     width: 60%;
+  }
+
+  .apple-watch {
+    .complications-intro {
+      margin-left: 15%;
+      width: 50%;
+    }
+
+    .full-width {
+      padding-top: 6em;
+    }
   }
 
   .backstory {
@@ -2508,6 +2596,13 @@ input[type="submit"] {
     .left-content.large {
       width: 40%;
       margin-right: 14%;
+    }
+  }
+
+  .apple-watch {
+    .full-width {
+      width: 100%;
+      margin: 0 auto;
     }
   }
 }

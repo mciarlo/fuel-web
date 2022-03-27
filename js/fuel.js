@@ -82,7 +82,6 @@ $(function () {
 
 		$("#loading-bar")[$window.scrollTop() > 500 ? "addClass" : "removeClass"]("hidden");
 
-
 		var windowBottomY = $window.scrollTop() + $window.outerHeight();
 		var viewportHeight = $window.outerHeight();
 		var scrollContainerHeight = $howItWorks.outerHeight();

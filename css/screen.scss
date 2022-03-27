@@ -2215,7 +2215,8 @@ input[type="submit"] {
 }
 
 @media screen and (min-width:1024px) {
-  .how-it-works {
+  .how-it-works,
+  .contact {
     padding-top: 6em;
 
     .iphone,
@@ -2583,7 +2584,8 @@ input[type="submit"] {
 }
 
 @media screen and (min-width:1600px) {
-  .how-it-works {
+  .how-it-works,
+  .contact {
     padding-top: 15vh;
 
     .iphone,

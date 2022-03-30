@@ -14,7 +14,7 @@
 }
 
 @mixin fontFamily {
-  font-family: "Avenir Next", "Poppins", -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Helvetica", "Helvetica", "Gill Sans", sans-serif;
+  font-family: "Avenir Next", "Lato", -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Helvetica", sans-serif;
 }
 
 @mixin transition($property, $duration, $easing) {

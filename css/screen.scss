@@ -30,10 +30,10 @@ a:hover {
 }
 
 p, ul {
-  padding-bottom: 1.5em;
+  margin-bottom: 1.5em;
 
   &:last-child {
-    padding-bottom: 0;
+    margin-bottom: 0;
   }
 }
 

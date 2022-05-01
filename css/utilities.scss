@@ -26,6 +26,22 @@ em {
   font-weight: 600;
 }
 
+.diff {
+  padding: 0 6px;
+  @include borderRadius(6px);
+
+  &.removed {
+    background: #FEE5E5;
+    color: #6F0000;
+    margin-bottom: 2px;
+  }
+
+  &.added {
+    background: #D1F6D5;
+    color: #002F0D;
+  }
+}
+
 .optional-new-line {
   display: inline;
 }

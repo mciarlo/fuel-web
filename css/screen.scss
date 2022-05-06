@@ -80,6 +80,39 @@ li {
 }
 
 
+.references {
+  li {
+    margin-bottom: 1.5em;
+    padding-left: 24px;
+    font-size: 0.8rem;
+    position: relative;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &::before {
+      position: absolute;
+      top: 50%;
+      transform: translate3d(0, -50%, 0);
+      left: 0;
+      content: url("../images/link_icon.svg");
+      width: 16px;
+      height: 16px;
+    }
+  }
+
+  a {
+    color: $textColorSecondary;
+    line-height: 1.5;
+
+    &:hover {
+      color: $textColorPrimary;
+      text-decoration: none;
+    }
+  }
+}
+
 @media screen and (min-width:768px) {
   h1,
   h2.large {
@@ -191,7 +224,7 @@ $pingAnimation: 8s;
   width: 1px;
   height: 1px;
   position: absolute;
-  top: 48.05%;
+  top: 46.44%;
   left: 59.32%;
   display: none;
 

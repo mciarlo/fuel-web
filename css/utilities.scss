@@ -318,7 +318,7 @@ ul + h4 {
 
 p + h2,
 ul + h2 {
-  margin-top: 1em;
+  margin-top: 2em;
 }
 
 .heading-label + h1,
@@ -390,6 +390,16 @@ code {
 
   li {
     margin-bottom: 0.5em;
+    position: relative;
+    padding-left: 20px;
+
+    &:before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: block;
+      content: "•";
+    }
   }
 }
 
@@ -481,19 +491,6 @@ blockquote {
 
     h1, h2, h3, h4, h5, p, li {
       max-width: 620px;
-    }
-
-    li {
-      position: relative;
-      padding-left: 20px;
-
-      &:before {
-        position: absolute;
-        top: 0;
-        left: 0;
-        display: block;
-        content: "•";
-      }
     }
   }
 

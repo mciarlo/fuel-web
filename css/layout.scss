@@ -1,8 +1,11 @@
 $col-1: 9%;
 $col-2: 17%;
 $col-3: 25.5%;
-$col-4: 33.88%;
+$col-4: 28.6%;
 $col-5: 40.45%;
+$col-6: 40.45%;
+$col-7: 40.45%;
+$col-8: 65.6%;
 
 $col-2-content: 12.5%;
 $col-3-content: 21.5%;
@@ -10,11 +13,17 @@ $col-4-content: 29.4%;
 $col-5-content: 37.2%;
 $col-6-content: 45%;
 
-section {
+$sectionPadding375: 4rem;
+$sectionPadding768: 6rem;
+$sectionPadding1200: 8rem;
+
+section,
+footer {
   overflow: hidden;
-  padding: 4em 0;
+  padding: $sectionPadding375 0;
   position: relative;
   z-index: 1;
+  text-align: center;
   @include overflowfix;
 }
 
@@ -26,19 +35,54 @@ section {
   @include box-sizing;
 }
 
+.container {
+  @include borderRadius(20px);
+  overflow: hidden;
+  padding: 40px;
+  box-sizing: border-box;
+
+  img {
+    width: 100%;
+    margin: 0;
+    border: 0;
+  }
+}
+
 @media screen and (min-width:768px) {
   .content-wrapper {
     margin: 0 auto;
     width: 88%;
   }
 
-  section {
-    padding: 6em 0;
+  section,
+  footer {
+    padding: $sectionPadding768 0;
+
+    &.introduction {
+      padding-top:  $sectionPadding768 / 2;
+    }
+  }
+}
+
+@media screen and (min-width: 1023px) {
+  .display-flex {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+  }
+
+  section, footer {
+    text-align: left;
   }
 }
 
 @media screen and (min-width:1200px) {
-  section {
-    padding: 8em 0;
+  section,
+  footer {
+    padding: $sectionPadding1200 0;
+
+    &.introduction {
+      padding-top:  $sectionPadding1200 / 2;
+    }
   }
 }

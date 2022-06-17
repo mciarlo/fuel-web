@@ -3,7 +3,7 @@ html, body {
 }
 
 h1 {
-  font-size: 3rem;
+  font-size: 3.63rem;
   line-height: 1.2;
   letter-spacing: -0.05em;
 }
@@ -35,21 +35,22 @@ p, li, a, blockquote {
   font-size: 1rem;
 }
 
-p, blockquote {
+p, blockquote, li {
   line-height: 1.5;
 }
 
 a {
   text-decoration: none;
   color: $textColorPrimary;
+  transition: color 100ms ease-in-out;
 
   &:hover {
-    text-decoration: underline;
-    color: $textColorPrimary;
+    text-decoration: none;
+    color: $textColorSecondary;
   }
 }
 
-p, ul {
+p {
   margin-bottom: 1.5em;
 
   &:last-child {
@@ -71,6 +72,11 @@ code {
   @include borderRadius(4px);
   font-size: 0.8rem;
   padding: 4px 6px;
+}
+
+h1 + p,
+h2 + p {
+  margin-top: 2rem;
 }
 
 // h1 + h2 {
@@ -143,5 +149,31 @@ code {
       display: block;
       content: "•";
     }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  h2 {
+    font-size: 2.8rem;
+    line-height: 1.2;
+    letter-spacing: -0.05em;
+  }
+}
+
+@media screen and (min-width:1200px) {
+  html, body {
+    font-size: 18px;
+  }
+}
+
+@media screen and (min-width:1400) {
+  html, body {
+    font-size: 20px;
+  }
+
+  h2 {
+    font-size: 3.63rem;
+    line-height: 1.2;
+    letter-spacing: -0.05em;
   }
 }

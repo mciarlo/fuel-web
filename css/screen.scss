@@ -8,7 +8,7 @@
 html,
 body {
   color: $textColorPrimary;
-  background-color: $lightBackground;
+  background-color: #E4E9F5;
   @include fontFamily;
   /* Fix for bolder font rendering on Firefox */
   -moz-osx-font-smoothing: grayscale;
@@ -19,18 +19,6 @@ body {
 body {
   counter-reset: item;
   @include aliasing;
-}
-
-@media screen and (min-width:768px) {
-
-}
-
-@media screen and (min-width:1200px) {
-
-}
-
-@media screen and (min-width:768px) {
-
 }
 
 /*********************************************
@@ -44,8 +32,253 @@ body {
  *********************************************
  */
 
+.introduction {
+  text-align: left;
 
+  p + .button {
+    margin-top: 2rem;
+  }
 
+  .right-content {
+    padding-top: $sectionPadding375;
+  }
+
+  .container {
+    padding-bottom: 0;
+    font-size: 0;
+  }
+}
+
+.why-fuel {
+  li {
+    position: relative;
+    margin-bottom: $sectionPadding375;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    img {
+      width: 40px;
+      height: 40px;
+      display: inline-block;
+    }
+  }
+}
+
+.dashboard {
+  background: $blackBackground;
+
+  h2 {
+    color: white;
+  }
+
+  .container {
+    margin-bottom: 2rem;
+    color: white;
+
+    h3 {
+      padding-bottom: 1rem;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.dashboard-icons {
+  padding: $sectionPadding375 0;
+}
+
+.dashboard-overview {
+  background: $blackBackground;
+  margin-top: -5px;
+
+  h2 ,
+  .large-number,
+  .number-label {
+    color: white;
+  }
+}
+
+.dashboard-stats {
+  text-align: left;
+
+  li {
+    padding-bottom: 2rem;
+    display: inline-block;
+    width: 50%;
+
+    &:last-child {
+      padding-bottom: 0;
+    }
+  }
+
+  .large-number {
+    font-size: 4rem;
+    display: block;
+    letter-spacing: -0.06em;
+  }
+}
+
+.dashboard-cards {
+  margin-top: 4rem;
+  color: $textColorSecondaryOnDark;
+
+  ul {
+    text-align: left;
+    padding-bottom: 2rem;
+
+    &:last-child {
+      padding-bottom: 0;
+    }
+
+    strong {
+      color: white;
+      display: block;
+      font-size: 1.75rem;
+      padding-bottom: 1rem;
+    }
+  }
+}
+
+.weekly-review {
+  background: #E9E7F0;
+
+  .left-content {
+    img {
+      width: 100%;
+      margin: $sectionPadding375 0;
+    }
+  }
+}
+
+.food-library {
+  background: #036BE5;
+  color: white;
+
+  h2 {
+    font-size: 3rem;
+    text-align: left;
+  }
+
+  ul {
+    text-align: left;
+    margin-top: 10rem;
+
+    li {
+      padding-bottom: 3rem;
+
+      &:last-child {
+        padding-bottom: 0;
+      }
+    }
+  }
+}
+
+.repeat-use {
+  background: white;
+
+  .container {
+    font-size: 0;
+    padding-bottom: 0;
+  }
+
+  .left-content img {
+    width: 100%;
+  }
+
+  .right-content img {
+    width: 70%;
+    @include borderRadius(20px);
+  }
+
+  h2 {
+    padding-top: $sectionPadding375;
+  }
+
+  p {
+    padding-bottom: $sectionPadding375;
+  }
+}
+
+.integrations {
+  background: #8F00FF;
+  color: white;
+
+  h2 {
+    padding-top: $sectionPadding375;
+  }
+}
+
+.phone-watch {
+  position: relative;
+
+  .iphone {
+    z-index: 1;
+  }
+}
+
+.watch-faces {
+  padding: $sectionPadding375 * 2 0;
+
+  img {
+    width: 180%;
+    margin-left: -40%;
+    padding-top: $sectionPadding375;
+  }
+}
+
+.watch-lay-flat {
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  width: 110%;
+  z-index: 2;
+  transform: translate3d(-50%, 0, 0);
+}
+
+.dark-purple {
+  padding: 40px;
+
+  h3 {
+    padding: 2rem 0 1rem;
+  }
+
+  .apple-health-app-icon {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+.sharing {
+  background: white;
+  position: relative;
+  padding-bottom: 0;
+  text-align: center;
+
+  img {
+    position: relative;
+    width: 80%;
+    max-width: 505px;
+    z-index: 2;
+    padding-top: $sectionPadding375;
+  }
+
+  svg {
+    width: 140%;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate3d(-50%, 30%, 0);
+    z-index: 1;
+  }
+
+  .image-container {
+    font-size: 0;
+  }
+}
 
 .awards {
   padding: 0;
@@ -139,6 +372,509 @@ body {
       }
     }
   }
+}
+
+.private-by-design {
+  text-align: center;
+
+  img {
+    width: 40%;
+  }
+
+  h2 {
+    margin-top: 2rem;
+  }
+}
+
+.pricing {
+  .button {
+    margin-top: $sectionPadding375 / 2;
+  }
+
+  .footnote {
+    padding-top: 2rem;
+    display: block;
+  }
+}
+
+.membership-table {
+  li {
+    color: white;
+    text-align: left;
+    margin-bottom: 1rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    span {
+      display: block;
+    }
+
+    &.white {
+      color: $textColorPrimary;
+    }
+
+    .membership-price,
+    .membership-type {
+      font-size: 1.2rem;
+    }
+
+    .membership-type {
+      padding-bottom: 4rem;
+      font-weight: 500;
+    }
+
+    .membership-details {
+      position: relative;
+    }
+
+    .membership-badge {
+      position: absolute;
+      top: -0.5rem;
+      transform: translate3d(0, -100%, 0);
+      left: 0;
+      background: #FFBC6C;
+      color: #000;
+      font-weight: 500;
+      padding: 0.2rem 0.5rem;
+      @include borderRadius(4px);
+    }
+
+    .membership-price {
+      font-weight: 500;
+    }
+
+    .membership-description {
+      opacity: 0.7;
+    }
+  }
+}
+
+.recirculation {
+  text-align: center;
+
+  img {
+    padding-top: $sectionPadding375 / 2;
+    width: 40px;
+    height: 40px;
+  }
+
+  h3 {
+    padding: $sectionPadding375 / 2 0 $sectionPadding375;
+  }
+}
+
+.frequently-asked-questions {
+  h2 {
+    margin-bottom: $sectionPadding375;
+  }
+}
+
+.faq {
+  text-align: left;
+
+  li {
+    padding: 2rem 0;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    > a {
+      display: block;
+      background: transparent url("/images/faq_icon_collapsed.png") top right no-repeat;
+      background-size: 24px auto;
+    }
+
+    &.active {
+      > a {
+        background: transparent url("/images/faq_icon_expanded.png") top right no-repeat;
+        background-size: 24px auto;
+      }
+
+      .answer {
+        padding-top: 2rem;
+        display: block;
+      }
+    }
+  }
+
+  .answer {
+    display: none;
+  }
+}
+
+footer {
+  background: $blueAccessible;
+  color: white;
+
+  .logo {
+    width: 30px;
+    height: auto;
+  }
+
+  p {
+    margin-top: $sectionPadding375;
+    display: block;
+  }
+
+  ul {
+    margin-top: 3rem;
+  }
+
+  li {
+    margin-bottom: 1rem;
+
+    &:first-child {
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    a {
+      color: white;
+
+      &:hover {
+        color: white;
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+@media screen and (min-width:1023px) {
+  /*********************************************
+   *********************************************
+   *********************************************
+   *********************************************
+   * Homepage
+   *********************************************
+   *********************************************
+   *********************************************
+   *********************************************
+   */
+
+   .introduction {
+     .left-content {
+       width: 50%;
+       box-sizing: border-box;
+       padding-right: $col-1;
+       margin-top: auto;
+     }
+
+     .right-content {
+       flex: 1;
+     }
+   }
+
+  .why-fuel {
+    li {
+      vertical-align: top;
+      display: inline-block;
+      width: 25%;
+      box-sizing: border-box;
+      padding: 0 1rem;
+      border-right: 1px solid #C8CBE6;
+
+      &:first-child {
+        padding-left: 0;
+      }
+
+      &:last-child {
+        border-right: 0;
+      }
+    }
+  }
+
+  .dashboard {
+    h2 {
+      text-align: center;
+    }
+
+    .container {
+      padding: 40px 80px;
+      margin-bottom: 80px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    .left-content {
+      margin: auto 0;
+      padding-right: $col-1;
+      box-sizing: border-box;
+    }
+
+    .right-content {
+      margin-bottom: -40%;
+    }
+  }
+
+  .dashboard-stats {
+    width: $col-4;
+
+    li {
+      width: 100%;
+    }
+  }
+
+  .dashboard-cards {
+    margin-top: 0.5rem;
+    vertical-align: top;
+    margin-left: 40px;
+    width: $col-8;
+
+    ul {
+      vertical-align: top;
+      width: 33%;
+      padding-right: $col-1;
+      box-sizing: border-box;
+      display: inline-block;
+      padding-bottom: 4rem;
+
+      &:nth-child(3),
+      &:nth-child(6),
+      &:nth-child(9) {
+        padding-right: 0;
+      }
+
+      li {
+        margin-bottom: 1rem;
+      }
+    }
+  }
+
+  .weekly-review {
+    margin: 0 $col-1;
+
+    .left-content {
+      margin-top: 10%;
+      width: $col-4;
+    }
+
+    .right-content {
+      margin-left: $col-3;
+      flex: 1;
+    }
+  }
+
+  .food-library {
+    h2 {
+      width: 40%;
+      max-width: 400px;
+    }
+
+    li {
+      display: inline-block;
+      width: 50%;
+      padding-right: 80px;
+      box-sizing: border-box;
+      vertical-align: top;
+
+      &:nth-child(1),
+      &:nth-child(2) {
+        padding-bottom: 80px;
+      }
+
+    }
+  }
+
+  .repeat-use {
+    .left-content {
+      flex: 1;
+    }
+
+    .right-content {
+      margin-top: 10%;
+      margin-left: $col-2;
+      margin-right: $col-1;
+      width: $col-4;
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  .integrations {
+    .integrations-intro {
+      .left-content {
+        margin-left: $col-2;
+        width: $col-4;
+      }
+
+      .right-content {
+        margin-top: 5%;
+        flex: 1;
+        margin-left: $col-1;
+        margin-right: $col-2;
+      }
+    }
+
+    .watch-faces {
+      text-align: center;
+
+      img {
+        width: 120%;
+        margin-left: -10%;
+      }
+
+      h3 {
+        width: $col-8;
+        margin: 0 auto;
+      }
+    }
+
+    .container {
+      padding: 80px;
+
+      .left-content {
+        width: $col-4;
+      }
+
+      .right-content {
+        margin-bottom: -100%;
+        flex: 1;
+
+        .iphone {
+          width: 120%;
+          transform: translate3d(25%, -5%, 0);
+        }
+      }
+    }
+  }
+
+  .watch-lay-flat {
+    left: 80%;
+  }
+
+  .sharing {
+    h2, p {
+      margin-left: auto;
+      margin-right: auto;
+      width: $col-6;
+    }
+
+    svg {
+      width: 110%;
+    }
+  }
+
+  .private-by-design {
+    padding-top: 0;
+
+    .container {
+      padding: 80px 140px;
+      margin: 0 $col-1;
+
+      p {
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+
+    img {
+      width: 240px;
+    }
+  }
+
+  .pricing {
+    text-align: center;
+  }
+
+  .membership-table {
+    margin-top: $sectionPadding768;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: stretch;
+
+    li {
+      padding: 30px;
+      display: inline-block;
+      flex: 1;
+      margin-right: 10px;
+      margin-bottom: 0;
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      .membership-type {
+        margin-bottom: 2rem;
+      }
+    }
+  }
+
+  .recirculation .container {
+    padding: 80px;
+    box-sizing: border-box;
+    margin: 0 $col-1;
+  }
+
+  .frequently-asked-questions {
+    h2 {
+      text-align: center;
+    }
+
+    .faq {
+      margin: 0 $col-1;
+    }
+  }
+
+  footer {
+    position: relative;
+    vertical-align: top;
+
+    .logo {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    .left-content {
+      width: 35%;
+      margin-right:15%;
+
+      p {
+        margin-top: 0;
+      }
+    }
+
+    ul {
+      flex: 1;
+      margin-top: 0;
+      margin-right: $col-1;
+    }
+
+    .left-content,
+    ul {
+      padding-top: 4rem;
+    }
+  }
+}
+
+@media screen and (min-width:1200px) {
+  .why-fuel {
+    li {
+      padding: 0 2rem;
+
+      &:first-child {
+        padding-left: 0;
+      }
+
+      &:last-child {
+        border-right: 0;
+      }
+    }
+  }
+}
+
+@media screen and (min-width:1400px) {
+
 }
 
 /*********************************************
@@ -348,9 +1084,11 @@ body {
 
 @media screen and (min-width:768px) {
   .awards {
+    text-align: center;
+
     .awards-container {
       width: 80%;
-      max-width: 800px;
+      margin-left: 10%;
     }
 
     .text-content {
@@ -543,6 +1281,11 @@ body {
   .awards {
     .text-content {
       width: 280px;
+    }
+
+    .awards-container {
+      width: 60%;
+      margin-left: 20%;
     }
 
     .awards-icons li {

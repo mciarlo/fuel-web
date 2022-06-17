@@ -39,35 +39,176 @@ a.button,
 button {
   background:transparent;
   cursor: pointer;
-  font-size: 0.85em;
-  padding: 1em 2em;
-  border: 1px solid $borderColor;
-  color: $textColorPrimary;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 1.2rem 3rem;
   display: inline-block;
   box-shadow: 0 3px 3px rgba(0, 0, 0, 0);
-  @include transition(all, 200ms, ease-in-out);
-
-  &.dark {
-    border-color: $textColorPrimary;
-    color: $textColorPrimary;
-  }
+  @include borderRadius(2em);
+  @include transition(all, 150ms, ease-in-out);
 
   &:hover {
-    background: $darkBackground;
-    color: white;
-    border-color: $darkBackground;
     text-decoration: none;
+    transform: translate3d(0, -2px, 0);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
   }
 
-  &.mobile {
-    background: $darkBackground;
+  &.black {
+    border-color: transparent;
+    background: #000;
     color: white;
-    border-color: $darkBackground;
-    text-decoration: none;
 
     &:hover {
-      background-color: #454545;
+      background: #333;
     }
+  }
+
+  &.white {
+    border-color: transparent;
+    background: #fff;
+    color: $blue;
+  }
+
+  &.primary {
+    border-color: transparent;
+    background: $blue;
+    color: white;
+
+    &:hover {
+      background: #0059C1;
+    }
+  }
+
+  &.secondary {
+    border: 1px solid $blue;
+    background: transparent;
+    color: $blue;
+
+    &:hover {
+      background: $blue;
+      color: white;
+    }
+  }
+}
+
+/* Lists */
+li {
+  .item-title,
+  .item-subtitle {
+    display: block;
+  }
+
+  .item-title {
+    font-size: 1.75rem;
+    padding: 1rem 0;
+  }
+}
+
+/* 1 Number fix */
+.one-number-fix {
+  margin-left: -0.5rem;
+}
+
+/* Dashboard Icons */
+$trendIconPadding: 10px;
+
+.dashboard-icons {
+  width: 1200px;
+  text-align: center;
+  position: relative;
+  left: 50%;
+  transform: translate3d(-50%, 0, 0);
+
+  li {
+    display: inline-block;
+    margin: 0 $trendIconPadding;
+    padding: 1rem 2rem;
+    font-size: 0;
+    @include borderRadius(3rem);
+
+    img {
+      width: 20px;
+      height: 20px;
+    }
+
+    &.trend-icon {
+      background-color: #0040E6;
+      margin-bottom: $trendIconPadding;
+    }
+
+    &.insight-icon {
+      background-color: #8F00FF;
+      margin-bottom: $trendIconPadding;
+    }
+
+    &.dumbbell-icon {
+      background-color: #33A986;
+      margin-bottom: $trendIconPadding;
+    }
+
+    &.watcher-icon {
+      background-color: #5E616B;
+      margin-bottom: $trendIconPadding;
+    }
+
+    &.fire-icon {
+      background-color: #B42E48;
+    }
+
+    &.cupcake-icon {
+      background-color: #0040E6;
+    }
+
+    &.award-icon {
+      background-color: #A58000;
+    }
+  }
+}
+
+/* Container */
+.container {
+  &.light-blue {
+    background: $lightBlue;
+  }
+
+  &.blue {
+    background: $blue;
+  }
+
+  &.light-blue-accessible {
+    background: #036BE5;
+  }
+
+  &.blue-accessible {
+    background: $blueAccessible;
+  }
+
+  &.purple {
+    background: #8F00FF;
+  }
+
+  &.pink {
+    background: #CE1DC7;
+  }
+
+  &.sky-blue {
+    background: #BFD9FF;
+  }
+
+  &.dark-purple {
+    background: #6E00C4;
+  }
+
+  &.cream {
+    background: #FEF9F7;
+  }
+
+  &.white {
+    background: white;
+  }
+
+  &.baby-blue {
+    background: #CDDBFF;
   }
 }
 
@@ -193,12 +334,9 @@ img {
   &.invisible {
     opacity: 0;
   }
-
-  &.full-width {
-    width: 100%;
-  }
 }
 
+/* Device */
 .iphone {
   position: relative;
 }
@@ -217,30 +355,6 @@ img {
   padding: 11% 11.6% 5%;
   width: 100%;
   @include box-sizing;
-}
-
-.device-bezel {
-  width: 100%;
-}
-
-.left-content,
-.right-content {
-  > img,
-  noscript > img {
-    width: 100%;
-  }
-}
-
-.mobile {
-  display: block;
-}
-
-.desktop {
-  display: none;
-}
-
-.display-block {
-  display: block;
 }
 
 /* Selection */

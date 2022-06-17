@@ -1,0 +1,44 @@
+$col-1: 9%;
+$col-2: 17%;
+$col-3: 25.5%;
+$col-4: 33.88%;
+$col-5: 40.45%;
+
+$col-2-content: 12.5%;
+$col-3-content: 21.5%;
+$col-4-content: 29.4%;
+$col-5-content: 37.2%;
+$col-6-content: 45%;
+
+section {
+  overflow: hidden;
+  padding: 4em 0;
+  position: relative;
+  z-index: 1;
+  @include overflowfix;
+}
+
+.content-wrapper {
+  @include overflowfix;
+  max-width: 1440px;
+  margin: 0 25px;
+  position: relative;
+  @include box-sizing;
+}
+
+@media screen and (min-width:768px) {
+  .content-wrapper {
+    margin: 0 auto;
+    width: 88%;
+  }
+
+  section {
+    padding: 6em 0;
+  }
+}
+
+@media screen and (min-width:1200px) {
+  section {
+    padding: 8em 0;
+  }
+}

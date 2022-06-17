@@ -1,0 +1,147 @@
+html, body {
+  font-size: 16px;
+}
+
+h1 {
+  font-size: 3rem;
+  line-height: 1.2;
+  letter-spacing: -0.05em;
+}
+
+h2 {
+  font-size: 2rem;
+  line-height: 1.2;
+  letter-spacing: -.04em;
+}
+
+h3  {
+  font-size: 1.5rem;
+  line-height: 1.3;
+  letter-spacing: -.04em;
+}
+
+h4 {
+  font-size: 1.2rem;
+  line-height: 1.4;
+  font-weight: 600;
+}
+
+h6 {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+p, li, a, blockquote {
+  font-size: 1rem;
+}
+
+p, blockquote {
+  line-height: 1.5;
+}
+
+a {
+  text-decoration: none;
+  color: $textColorPrimary;
+
+  &:hover {
+    text-decoration: underline;
+    color: $textColorPrimary;
+  }
+}
+
+p, ul {
+  margin-bottom: 1.5em;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+blockquote {
+  border-left: 4px solid #cdcdcd;
+  padding-left: 1.5em;
+  color: $textColorSecondary;
+  line-height: 1.5;
+  margin-bottom: 1.5em;
+}
+
+code {
+  font-family: monospace;
+  background: #f7f7f7;
+  @include borderRadius(4px);
+  font-size: 0.8rem;
+  padding: 4px 6px;
+}
+
+// h1 + h2 {
+//   margin-top: 1em;
+// }
+//
+// h1 + p {
+//   margin-top: 1em;
+// }
+//
+// h2 + p,
+// h2 + ul {
+//   margin-top: 1em;
+// }
+//
+// h4 + p {
+//   margin-top: 0.5em;
+// }
+//
+// h2 + h4 {
+//   margin-top: 2em;
+// }
+//
+// p + h4,
+// ul + h4 {
+//   margin-top: 1em;
+// }
+//
+// p + h2,
+// ul + h2 {
+//   margin-top: 2em;
+// }
+//
+// p, li {
+//   color: $textColorSecondary;
+// }
+//
+// p + .large-link {
+//   margin-top: 1em;
+// }
+//
+// p + .button {
+//   margin-top: 1em;
+// }
+
+.paragraphs {
+  padding-top: 6em;
+
+  h1 {
+    margin-bottom: 2em;
+  }
+
+  h1, h2, h3, h4, h5, p {
+    width: 100%;
+  }
+
+  p, li {
+    line-height: 1.7;
+  }
+
+  li {
+    margin-bottom: 0.5em;
+    position: relative;
+    padding-left: 20px;
+
+    &:before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: block;
+      content: "•";
+    }
+  }
+}

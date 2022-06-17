@@ -8,10 +8,11 @@ $menuDuration: 1200ms;
 nav {
   li {
     display: inline-block;
-    margin-right: 2rem;
+    margin-right: 1rem;
 
     a {
-      padding: 2rem 0;
+      font-size: 0.8rem;
+      padding: 1em 0;
       display: inline-block;
     }
 
@@ -25,27 +26,39 @@ nav {
   }
 
   .button {
+    font-size: 0.8rem;
     display: none;
   }
 
   .content-wrapper {
-    padding: 1em 0;
-    width: 100%;
+    padding: 2em 0;
+  }
+}
+
+@media screen and (min-width: 500px) {
+  nav {
+    .button {
+      display: inline-block;
+      position: absolute;
+      right: -5px;
+      top: 2.5em;
+    }
   }
 }
 
 @media screen and (min-width: 768px) {
   nav {
-    .content-wrapper {
-      margin: 0 auto;
-      width: 88%;
+    li {
+      margin-right: 2rem;
     }
 
     .button {
-      display: inline-block;
-      position: absolute;
       right: 0;
-      top: 2rem;
+      top: 1.25em;
+    }
+
+    .content-wrapper {
+      padding: 1em 0;
     }
   }
 }

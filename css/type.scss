@@ -1,23 +1,29 @@
 html, body {
-  font-size: 16px;
+  font-size: 14px;
 }
 
 h1 {
-  font-size: 3.63rem;
+  font-size: 2.8rem;
   line-height: 1.2;
+  font-weight: 500;
   letter-spacing: -0.05em;
 }
 
 h2 {
   font-size: 2rem;
-  line-height: 1.2;
+  line-height: 1.3;
   letter-spacing: -.04em;
+  max-width: 600px;
+  font-weight: 500;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 h3  {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   line-height: 1.3;
-  letter-spacing: -.04em;
+  letter-spacing: -.02em;
+  font-weight: 500;
 }
 
 h4 {
@@ -79,49 +85,6 @@ h2 + p {
   margin-top: 2rem;
 }
 
-// h1 + h2 {
-//   margin-top: 1em;
-// }
-//
-// h1 + p {
-//   margin-top: 1em;
-// }
-//
-// h2 + p,
-// h2 + ul {
-//   margin-top: 1em;
-// }
-//
-// h4 + p {
-//   margin-top: 0.5em;
-// }
-//
-// h2 + h4 {
-//   margin-top: 2em;
-// }
-//
-// p + h4,
-// ul + h4 {
-//   margin-top: 1em;
-// }
-//
-// p + h2,
-// ul + h2 {
-//   margin-top: 2em;
-// }
-//
-// p, li {
-//   color: $textColorSecondary;
-// }
-//
-// p + .large-link {
-//   margin-top: 1em;
-// }
-//
-// p + .button {
-//   margin-top: 1em;
-// }
-
 .paragraphs {
   padding-top: 6em;
 
@@ -152,23 +115,41 @@ h2 + p {
   }
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 375px) {
+  html, body {
+    font-size: 16px;
+  }
+}
+
+@media screen and (min-width: 1023px) {
+  h1 {
+    font-size: 3.63rem;
+    line-height: 1.2;
+    letter-spacing: -0.05em;
+  }
+
   h2 {
     font-size: 2.8rem;
     line-height: 1.2;
     letter-spacing: -0.05em;
   }
-}
 
-@media screen and (min-width:1200px) {
-  html, body {
-    font-size: 18px;
+  h3 {
+    font-size: 1.6rem;
   }
 }
 
 @media screen and (min-width:1400) {
+  h2 {
+    font-size: 3.63rem;
+    line-height: 1.2;
+    letter-spacing: -0.05em;
+  }
+}
+
+@media screen and (min-width:1440px) {
   html, body {
-    font-size: 20px;
+    font-size: 18px;
   }
 
   h2 {

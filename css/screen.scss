@@ -614,18 +614,20 @@ footer {
   .food-library {
     ul {
       margin-top: 14em;
-    }
+      margin-bottom: 0;
 
-    li {
-      display: inline-block;
-      width: 50%;
-      padding-right: 4rem;
-      box-sizing: border-box;
-      vertical-align: top;
+      li {
+        display: inline-block;
+        width: 50%;
+        padding-right: 4rem;
+        box-sizing: border-box;
+        vertical-align: top;
+        padding-bottom: 0;
 
-      &:nth-child(1),
-      &:nth-child(2) {
-        padding-bottom: 6rem;
+        &:nth-child(1),
+        &:nth-child(2) {
+          padding-bottom: 6rem;
+        }
       }
     }
   }
@@ -989,6 +991,17 @@ footer {
 }
 
 @media screen and (min-width:1200px) {
+  .introduction .container {
+    padding-left: 100px;
+    padding-right: 100px;
+    text-align: center;
+
+    img {
+      max-width: 400px;
+      margin: 0 auto;
+    }
+  }
+
   .why-fuel {
     padding-top: $sectionPadding1200;
 

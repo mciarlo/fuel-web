@@ -51,7 +51,11 @@ input[type="submit"] {
   display: inline-block;
   box-shadow: 0 12px 20px rgba(0, 0, 0, 0.03);
   @include borderRadius(3em);
-  @include transition(all, 150ms, ease-in-out);
+  transition: color 150ms, ease-in-out, border-color 150ms, ease-in-out, box-shadow 150ms, ease-in-out, background-color 150ms ease-in-out, transform 150ms ease-in-out;
+  -webkit-transition: color 150ms, ease-in-out, border-color 150ms, ease-in-out, box-shadow 150ms, ease-in-out, background-color 150ms ease-in-out, transform 150ms ease-in-out;
+  -moz-transition: color 150ms, ease-in-out, border-color 150ms, ease-in-out, box-shadow 150ms, ease-in-out, background-color 150ms ease-in-out, transform 150ms ease-in-out;
+  -ms-transition: color 150ms, ease-in-out, border-color 150ms, ease-in-out, box-shadow 150ms, ease-in-out, background-color 150ms ease-in-out, transform 150ms ease-in-out;
+  -o-transition: color 150ms, ease-in-out, border-color 150ms, ease-in-out, box-shadow 150ms, ease-in-out, background-color 150ms ease-in-out, transform 150ms ease-in-out;
 
   &:hover {
     text-decoration: none;

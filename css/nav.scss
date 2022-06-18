@@ -11,6 +11,25 @@ nav {
       font-size: 0.8rem;
       padding: 1em 0;
       display: inline-block;
+
+      &.active {
+        position: relative;
+        transform: translate3d(0, 1px, 0);
+
+        &::before {
+          content: "";
+          font-size: 0;
+          text-indent: -9999px;
+          width: 4px;
+          height: 4px;
+          @include borderRadius(2px);
+          background: $blue;
+          position: absolute;
+          bottom: 6px;
+          left: 50%;
+          transform: translate3d(-2px, 0, 0);
+        }
+      }
     }
 
     &:first-child {

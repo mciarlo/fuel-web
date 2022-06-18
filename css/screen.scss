@@ -1161,20 +1161,54 @@ footer {
   */
 .features-intro {
   text-align: center;
-  padding-top: 0;
   padding-bottom: 0;
 
-  p {
-    margin: 1em 0 2em;
-  }
-
-  .left-content {
-    padding-top: 4em;
+  h1, p {
+    max-width: 440px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   img {
-    width: 140%;
-    margin-left: -25%;
+    width: 100%;
+    max-width: 500px;
+    display: block;
+    margin: 0 auto 4rem auto;
+  }
+}
+
+.feature {
+  text-align: center;
+  width: 100%;
+  @include itemSpacingWithMargin(5rem);
+
+  .image-container {
+    position: relative;
+    margin-bottom: 2rem;
+    font-size: 0;
+    overflow: hidden;
+    background: #D5DCED;
+    @include borderRadius(20px);
+    @include maskBorderRadiusWebkit;
+
+    img {
+      width: 140%;
+      margin-left: -20%;
+    }
+  }
+
+  h4 {
+    margin-bottom: 0.5rem;
+  }
+
+  h4, p {
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  p {
+    color: $textColorSecondary;
   }
 }
 
@@ -1182,48 +1216,22 @@ footer {
   text-transform: uppercase;
   letter-spacing: 0.04em;
   font-weight: 500;
-  font-size: 0.6em;
-  display: block;
-  margin-top: 1rem;
-}
-
-.main-features-list {
-  margin-bottom: 0;
-
-  &:last-child {
-    margin-bottom: 0;
-  }
-
-  li {
-    @include box-sizing;
-    margin-bottom: 6em;
-
-    img {
-      width: 100%;
-      @include borderRadius(20px);
-      overflow: hidden;
-    }
-
-    h3 {
-      font-size: 1em;
-      color: $textColorPrimary;
-      margin-top: 1.2em;
-      letter-spacing: -0.01em;
-    }
-
-    p {
-      margin: 0.5em 0;
-      font-size: 0.9em;
-      line-height: 1.6;
-    }
-
-    h3, p {
-      max-width: 300px;
-    }
-  }
+  font-size: 0.75rem;
+  display: inline-block;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
 }
 
 .features-continued {
+  padding-top: 0;
+
+  h2 {
+    margin-left: 0;
+  }
+
+  text-align: left;
+
   ul {
     padding-top: 4em;
     display: flex;
@@ -1234,12 +1242,46 @@ footer {
       line-height: 1.5;
       @include box-sizing;
       color: $textColorSecondary;
+      @include itemSpacingWithMargin(2rem);
 
       strong {
         font-weight: 500;
         display: block;
+        font-size: 1.2rem;
+        margin-bottom: 0.5rem;
         color: $textColorPrimary;
       }
+    }
+  }
+}
+
+.supported-platforms {
+  h3 {
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+
+  ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    max-width: 450px;
+    margin: 0 auto;
+  }
+
+  li {
+    flex: 1;
+    text-align: center;
+    display: inline-block;
+    width: 33%;
+    padding: 0 20px;
+    box-sizing: border-box;
+
+    img {
+      display: block;
+      margin: 0 auto 1rem auto;
+      width: 100%;
+      max-width: 80px;
     }
   }
 }
@@ -1330,97 +1372,37 @@ footer {
   ****** FEATURES **********
   **************
   ***************/
-  .features-intro {
-    text-align: left;
-    padding-top: 0em;
-
-    .right-content {
-      margin-left: 5%;
-      width: 70%;
-    }
-
-    p {
-      margin-top: 2em;
-      font-size: 0.9em;
-      margin-left: 0;
-      margin-right: 0;
-    }
-
-    img {
-      width: 100%;
-      margin: 0;
-      padding-top: 2em;
-    }
-  }
-
-  .main-features-list {
-    padding-bottom: 6em;
-
-    &:last-child {
-      margin-bottom: 0;
-    }
-
-    li {
-      margin-bottom: 0;
-
-      h3 {
-        font-size: 1em;
-        letter-spacing: -0.01em;
+  .feature {
+    .image-container {
+      img {
+        width: 100%;
+        margin-left: 0;
       }
-
-      p {
-        font-size: 0.9em;
-      }
-    }
-
-    &.one-col {
-      li {
-        position: relative;
-        background: #f8f8f8;
-        margin: 0 15%;
-        padding: 40px 0;
-      }
-    }
-
-    &.two-col {
-      li {
-        width: 40%;
-        margin: 0 5%;
-      }
-    }
-
-    &.three-col {
-      li {
-        width: 33.3%;
-
-        &:nth-child(2) {
-          margin: 0 3%;
-        }
-      }
-    }
-
-    .feature-content {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 40%;
-      transform: translate3d(0,-50%, 0);
     }
   }
 
   .features-continued {
     ul {
-      padding-top: 8em;
+      padding-top: 6em;
 
       li {
-        width: 25%;
-        padding-bottom: 0;
-        padding-right: 60px;
+        width: 50%;
+        @include itemSpacingWithMargin(3rem);
 
-        &:first-child {
-          padding-bottom: 4em;
+        &:nth-child(odd) {
+          padding-right: 30px;
+        }
+
+        &:nth-child(even) {
+          padding-left: 30px;
         }
       }
+    }
+  }
+
+  .supported-platforms {
+    h3 {
+      margin-bottom: 4rem;
     }
   }
 }
@@ -1446,84 +1428,44 @@ footer {
     }
   }
 
-  .tips {
-    text-align: center;
-
-    h1 {
-      margin-bottom: 1rem;
-    }
-
-    h1 + p {
-      margin-bottom: 8rem;
-    }
-
-    h2 {
-      padding: 3rem 0 6rem;
-    }
+  .feature {
+    @include itemSpacingWithMargin(8rem);
   }
 
-  .main-features-list {
-    padding-bottom: 10em;
-  }
+  .features-continued {
+    ul {
+      padding-top: 8rem;
 
-  .features-intro {
-    padding-top: 2em;
-
-    p {
-      font-size: 1em;
-    }
-
-    .left-content {
-      padding-top: 6em;
-    }
-
-    .right-content {
-      margin-left: 0%;
-      width: 75%;
-    }
-  }
-
-  .main-features-list {
-    &.one-col {
       li {
-        padding: 0;
+        width: 33%;
+
+        &:nth-child(odd) {
+          padding-right: 0;
+        }
+
+        &:nth-child(even) {
+          padding-left: 0;
+        }
+
+        &:nth-child(3n + 1) {
+          padding-right: 50px;
+        }
+
+        &:nth-child(3n + 2) {
+          padding-left: 25px;
+          padding-right: 25px;
+        }
+
+        &:nth-child(3n + 3) {
+          padding-left: 50px;
+        }
       }
     }
   }
 }
 
 @media screen and (min-width:1200px) {
-  .features-intro {
-    .left-content {
-      padding-top: 6em;
-    }
-
-    .right-content {
-      width: 80%;
-    }
+  .feature {
+    @include itemSpacingWithMargin(10rem);
   }
-
-  .backstory {
-    .left-content h2.large {
-      max-width: 480px;
-    }
-
-    .content-wrapper.border-top {
-      h2 {
-        max-width: 350px;
-      }
-    }
-  }
-}
-
-@media screen and (min-width:1440px) {
-  .features-intro {
-    .left-content {
-      padding-top: 8em;
-    }
-  }
-}
-
-@media screen and (min-width:1600px) {
-
 }

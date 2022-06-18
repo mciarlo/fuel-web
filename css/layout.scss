@@ -37,10 +37,11 @@ footer {
 }
 
 .container {
-  @include borderRadius(20px);
   overflow: hidden;
   padding: 40px;
   box-sizing: border-box;
+  @include borderRadius(20px);
+  @include maskBorderRadiusWebkit;
 
   > img {
     width: 100%;

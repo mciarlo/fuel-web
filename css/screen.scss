@@ -513,6 +513,10 @@ body {
       background-size: 24px auto;
     }
 
+    .answer {
+      padding-top: 2rem;
+    }
+
     &.active {
       > a {
         background: transparent url("/images/faq_icon_expanded.png") top right no-repeat;
@@ -520,7 +524,6 @@ body {
       }
 
       .answer {
-        padding-top: 2rem;
         display: block;
       }
     }
@@ -820,6 +823,7 @@ footer {
 
       img {
         width: 100%;
+        @include borderRadius(40px);
       }
     }
   }
@@ -1061,6 +1065,12 @@ footer {
   .watch-lay-flat {
     width: 130%;
   }
+
+  .pricing {
+    li {
+      @include borderRadius(20px);
+    }
+  }
 }
 
 /*********************************************
@@ -1093,7 +1103,6 @@ footer {
   select-container,
   textarea {
     width: 100%;
-    border-color: #cbcbcb;
   }
 
   .select-container {
@@ -1123,10 +1132,6 @@ footer {
   textarea {
     width: 100%;
     height: 200px;
-
-    &:focus {
-      border-color: $textColorPrimary;
-    }
   }
 
   form {
@@ -1213,14 +1218,11 @@ footer {
 }
 
 .subscription-label {
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  font-weight: 500;
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   display: inline-block;
-  position: absolute;
-  bottom: 20px;
-  right: 20px;
+  border: 1px solid $borderColor;
+  padding: .8em 1em;
+  @include borderRadius(6px);
 }
 
 .features-continued {
@@ -1233,7 +1235,7 @@ footer {
   text-align: left;
 
   ul {
-    padding-top: 4em;
+    padding: 4em 0 2em;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -1252,6 +1254,10 @@ footer {
         color: $textColorPrimary;
       }
     }
+  }
+
+  .disclosure {
+    text-align: center;
   }
 }
 
@@ -1365,6 +1371,10 @@ footer {
     .right-content {
       width: 40%;
     }
+
+    input[type="submit"]{
+      width: auto;
+    }
   }
 
   /************
@@ -1467,5 +1477,8 @@ footer {
 @media screen and (min-width:1200px) {
   .feature {
     @include itemSpacingWithMargin(10rem);
+    margin-left: $col-1;
+    margin-right: $col-1;
+    width: auto;
   }
 }

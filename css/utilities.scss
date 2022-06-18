@@ -26,6 +26,11 @@ em {
   }
 }
 
+.disclosure {
+  font-size: 0.8rem;
+  color: $textColorSecondary;
+}
+
 .optional-new-line {
   display: inline;
 }
@@ -45,7 +50,7 @@ input[type="submit"] {
   padding: 1.5em 3em;
   display: inline-block;
   box-shadow: 0 12px 20px rgba(0, 0, 0, 0.03);
-  @include borderRadius(2em);
+  @include borderRadius(3em);
   @include transition(all, 150ms, ease-in-out);
 
   &:hover {
@@ -265,13 +270,13 @@ textarea {
   &:focus {
     -webkit-outline: none;
     outline: none;
-    border-color: $textColorPrimary;
+    border-color: $blue;
   }
 }
 
 input[type=file] {
   font-size: 1rem;
-  border: 1px solid #e5e5e5;
+  border: 1px solid $borderColor;
   padding: 15px;
   @include box-sizing;
   color: $textColorSecondary;
@@ -287,7 +292,7 @@ input[type=file] {
   }
 
   .faq {
-    li:after {
+    li a {
       background-image: none;
     }
 

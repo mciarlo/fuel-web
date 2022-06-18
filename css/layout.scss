@@ -114,4 +114,8 @@ footer {
       padding-bottom: 0;
     }
   }
+
+  .container {
+    @include borderRadius(40px);
+  }
 }

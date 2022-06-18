@@ -8,7 +8,7 @@
 html,
 body {
   color: $textColorPrimary;
-  background-color: #E4E9F5;
+  background-color: $pageBackground;
   @include fontFamily;
   /* Fix for bolder font rendering on Firefox */
   -moz-osx-font-smoothing: grayscale;
@@ -77,6 +77,10 @@ body {
   }
 }
 
+.dashboard-container {
+  background: $blackBackground;
+}
+
 .dashboard {
   background: $blackBackground;
 
@@ -107,6 +111,7 @@ body {
   background: $blackBackground;
   margin-top: -5px;
   padding-top: 0;
+  overflow: hidden;
 
   h2 ,
   .large-number,
@@ -455,8 +460,9 @@ body {
       background: #FFBC6C;
       color: #000;
       font-weight: 500;
+      font-size: 14px;
       padding: 0.2rem 0.5rem;
-      @include borderRadius(4px);
+      @include borderRadius(6px);
     }
 
     .membership-price {
@@ -580,6 +586,7 @@ footer {
        box-sizing: border-box;
        padding-right: $col-1;
        margin-top: auto;
+       margin-bottom: 40px;
      }
 
      .right-content {
@@ -631,6 +638,10 @@ footer {
 
     .right-content {
       margin-bottom: -40%;
+
+      .iphone {
+        margin-top: -28%;
+      }
     }
   }
 
@@ -669,25 +680,31 @@ footer {
   }
 
   .weekly-review {
-    margin: 0 $col-1;
-
     .left-content {
       margin-top: 10%;
+      margin-left: $col-1;
       width: $col-4;
     }
 
     .right-content {
       margin-left: $col-3;
+      margin-right: $col-1;
       flex: 1;
+
+      .iphone {
+        width: 120%;
+        margin-left: -10%;
+      }
     }
   }
 
   .food-library {
     h2 {
       width: 40%;
-      max-width: 400px;
+      max-width: 440px;
       margin: 0;
-      font-size: 4rem;
+      font-size: 5rem;
+      padding-bottom: 6rem;
     }
 
     li {
@@ -773,10 +790,11 @@ footer {
 
   .watch-lay-flat {
     left: 80%;
-    width: 120%;
+    width: 140%;
     position: absolute;
     bottom: 0;
     right: 0;
+    transform: translate3d(-50%, -25%, 0);
   }
 
   .sharing {
@@ -895,6 +913,10 @@ footer {
       flex: 1;
       margin-top: 0;
       margin-right: $col-1;
+
+      &:last-child {
+        margin-right: 0;
+      }
     }
 
     .left-content,
@@ -920,15 +942,19 @@ footer {
       }
     }
   }
+
+  .integrations {
+    width: 100%;
+    overflow: hidden;
+
+    .watch-faces {
+      padding: 10rem 0 12rem;
+    }
+  }
 }
 
 @media screen and (min-width:1400px) {
-  .food-library {
-    h2 {
-      font-size: 5rem;
-      padding-bottom: 6rem;
-    }
-  }
+
 }
 
 /*********************************************
@@ -999,12 +1025,22 @@ footer {
 
   form {
     margin-top: 4em;
+    text-align: left;
+  }
+
+  .primary {
+    margin-top: 2rem;
   }
 }
 
 .thank-you {
   padding: 8em 0;
   max-height: 100vh;
+  text-align: center;
+
+  .primary {
+    margin-top: 2rem;
+  }
 }
 
  /*********************************************
@@ -1042,6 +1078,7 @@ footer {
   font-weight: 500;
   font-size: 0.6em;
   display: block;
+  margin-top: 1rem;
 }
 
 .main-features-list {
@@ -1057,6 +1094,8 @@ footer {
 
     img {
       width: 100%;
+      @include borderRadius(20px);
+      overflow: hidden;
     }
 
     h3 {
@@ -1109,29 +1148,38 @@ footer {
   *********************************************
   *********************************************
   */
-.tips-header {
-  .right-content {
-    flex: 1;
+.tips {
+  text-align: center;
+
+  h1 {
+    margin-bottom: 1rem;
   }
 
-  .border-top {
-    padding-bottom: 6em;
+  h1 + p {
+    margin-bottom: 8rem;
+  }
 
-    &:nth-child(2) {
-      margin-top: 12em;
+  .container {
+    margin: 0 0 2rem 0;
+    background: white;
+    text-align: center;
+
+    h2 {
+      padding: 2rem 0 3rem;
     }
-  }
-
-  h2 {
-    position: relative;
-    padding-left: 2.2em;
-    padding-bottom: 4em;
 
     img {
-      position: absolute;
-      top: -0.4em;
-      left: -.2em;
-      transform: scale3d(0.8,0.8,1);
+      width: 50px;
+      height: 50px;
+      display: inline-block;
+    }
+
+    p, ul, blockquote {
+      text-align: left;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
     }
   }
 }
@@ -1240,7 +1288,7 @@ footer {
         width: 33.3%;
 
         &:nth-child(2) {
-          margin: 0 1%;
+          margin: 0 3%;
         }
       }
     }
@@ -1269,66 +1317,6 @@ footer {
       }
     }
   }
-
-  .pricing-trial {
-    &.display-flex {
-      padding: 0 40px;
-
-      .left-content {
-        padding: 40px 0;
-        width: 40%;
-        flex:none;
-
-        h3 {
-          max-width: 180px;
-          font-size: 1.3em;
-          display: inline-block;
-          line-height: 1.2;
-        }
-
-        .button {
-          position: absolute;
-          bottom: 40px;
-          left: 40px;
-          display: inline-block;
-        }
-      }
-
-      .right-content {
-        flex: 1;
-        margin-top: 0;
-        text-align: right;
-
-        img {
-          width: 70%;
-          float: right;
-          margin-right: 40px;
-
-          &.desktop {
-            display: inline-block;
-          }
-        }
-      }
-    }
-  }
-
-  .tips-header {
-    .left-content {
-      width: $col-5-content;
-      margin-right: $col-3;
-    }
-
-    h2 {
-      padding-left: 3em;
-      padding-bottom: 0;
-
-      img {
-        top: -0.35em;
-        left: 0;
-        transform: scale3d(1,1,1);
-      }
-    }
-  }
 }
 
 @media screen and (min-width:1024px) {
@@ -1352,13 +1340,19 @@ footer {
     }
   }
 
-  .tips-header {
-    h2 {
-      max-width: 400px;
+  .tips {
+    text-align: center;
 
-      img {
-        top: -0.2em;
-      }
+    h1 {
+      margin-bottom: 1rem;
+    }
+
+    h1 + p {
+      margin-bottom: 8rem;
+    }
+
+    h2 {
+      padding: 3rem 0 6rem;
     }
   }
 

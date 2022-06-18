@@ -1,12 +1,29 @@
 $(function () {
 	var $window = $(window),
-		SCROLL_DEBOUNCE_MS = 10,
+		MAX_PHONE_TRANSLATION_OFFSET = 100,
 		SCROLL_ANIMATION_DURATION = 1200,
 		$body = $("body"),
-		$burgerIcon = $("#hamburger-icon"),
-		$howItWorks = $(".scroll-container:first"),
-		$textContent = $(".text-content:first"),
-		$storyContainer = $("#story-container"),
+		$sectionZero = $(".page-top"),
+		$sectionOne = $("div.dashboard-container"),
+		$sectionTwo = $("section.weekly-review"),
+		$sectionThree = $("section.food-library"),
+		$sectionFour = $("section.repeat-use"),
+		$sectionFive = $("section.integrations"),
+		$sectionSix = $("section.sharing"),
+		sectionOneTop = 0,
+		sectionTwoTop = 0,
+		sectionThreeTop = 0,
+		sectionFourTop = 0,
+		sectionFiveTop = 0,
+		sectionSixTop = 0,
+		windowHeight = 0,
+		phoneTranslationDistance = 0,
+		windowHeight = $(window).outerHeight(),
+		$trendPhone01 = $("#trend-01"),
+		$trendPhone02 = $("#trend-02"),
+		$trendPhone03 = $("#trend-03"),
+		$trendPhone04 = $("#trend-04"),
+		scrollTop = 0,
 		preventDefaultFormAction = function (ev) {
 			ev.preventDefault();
 			ev.stopPropagation();
@@ -25,17 +42,9 @@ $(function () {
     	return (rect.bottom > 0 && rect.bottom < window.innerWidth) ||
         	(rect.top < (window.innerHeight || document.documentElement.clientHeight) && rect.top > 0);
 	},
-	handleJSAbilities = function () {.15
+	handleJSAbilities = function () {
 		$body.removeClass("no-js");
 	};
-
-	$burgerIcon.click(function (ev) {
-		ev.preventDefault();
-		ev.stopPropagation();
-
-		$burgerIcon.toggleClass("active");
-		$("nav").toggleClass("active");
-	});
 
 	$(".faq li > a").click(function (ev) {
 		ev.preventDefault();
@@ -45,95 +54,88 @@ $(function () {
 		$(ev.target).parent().toggleClass("active");
 	});
 
-	var handleDashboardPreset = function (ev) {
-		ev.preventDefault();
-		ev.stopPropagation();
-
-		var $target = $(ev.target);
-		$(".dashboard-presets a").removeClass("active");
-		$target.addClass("active");
-
-		var targetClass = $target.attr("data-attr-class");
-		$("img.dashboard-preset").removeClass("active");
-		$("img." + targetClass).addClass("active");
-	};
-
-	$(".dashboard-presets a").click(function (ev) {
-		handleDashboardPreset(ev);
-	});
-
-	$(".dashboard-presets a").hover(function (ev) {
-		handleDashboardPreset(ev);
-	});
-
-	var scrollHandling = {
-	    allow: true,
-	    reallow: function() {
-	        scrollHandling.allow = true;
-	    },
-	    delay: SCROLL_DEBOUNCE_MS
-	},
-	updateIntro = function () {
-		if ($howItWorks.length == 0) {
+	var updatePanels = function () {
+		if ($sectionOne.length == 0) {
 			return;
 		}
 
-		$("#loading-bar")[$window.scrollTop() > 30 ? "addClass" : "removeClass"]("animate-out");
+		$sectionZero.removeClass("sticky");
+		$sectionOne.removeClass("sticky");
+		$sectionTwo.removeClass("sticky");
+		$sectionThree.removeClass("sticky");
+		$sectionFour.removeClass("sticky");
+		$sectionFive.removeClass("sticky");
+		$sectionSix.removeClass("sticky");
 
-		$("#loading-bar")[$window.scrollTop() > 500 ? "addClass" : "removeClass"]("hidden");
-
-		var windowBottomY = $window.scrollTop() + $window.outerHeight();
-		var viewportHeight = $window.outerHeight();
-		var scrollContainerHeight = $howItWorks.outerHeight();
-		var scrollContainerThreshold = $howItWorks.position().top + (scrollContainerHeight * .80);
-
-		if ($(".guided-setup:first").position().top + (viewportHeight / 4) <= windowBottomY) {
-				$(".user-stats li").removeClass("will-animate");
+		if (scrollTop > sectionOneTop && scrollTop < sectionTwoTop) {
+			$sectionZero.addClass("sticky");
 		}
 
-		var iPhoneHeight = $(".sticky-container .iphone").outerHeight();
-		var scrollDistanceFromLockingStoryText = $window.scrollTop() - $textContent.position().top;
-
-		if (scrollDistanceFromLockingStoryText > - viewportHeight) {
-			var percent = -1 * ((scrollDistanceFromLockingStoryText / iPhoneHeight) * 100);
-
-			$(".mask-container").css("height", percent + "%");
-
-		} else {
-			$(".mask-container").css("height", "100%");
+		else if (scrollTop > sectionTwoTop && scrollTop < sectionThreeTop) {
+			$sectionOne.addClass("sticky");
 		}
 
-		$(".callouts")[windowBottomY >= scrollContainerThreshold ? "addClass" : "removeClass"]("active");
+		else if (scrollTop > sectionThreeTop && scrollTop < sectionFourTop) {
+			$sectionTwo.addClass("sticky");
+		}
+
+		else if (scrollTop > sectionFourTop && scrollTop < sectionFiveTop) {
+			$sectionThree.addClass("sticky");
+		}
+
+		else if (scrollTop > sectionFiveTop && scrollTop < sectionSixTop) {
+			$sectionFour.addClass("sticky");
+		}
+
+		else if (scrollTop > sectionSixTop) {
+			$sectionFive.addClass("sticky");
+		}
+	},
+	updatePhone = function (phoneEL) {
+		var phoneDistanceFromTop = phoneEL.parent().offset().top - scrollTop,
+		phoneTranslationDistance = $trendPhone01.outerHeight() / 3,
+		percentFromTop = phoneDistanceFromTop / windowHeight;
+		percentFromTop = percentFromTop > 1.0 ? 1.0 : percentFromTop;
+		percentFromTop = percentFromTop < 0 ? 0 : percentFromTop;
+		phoneOffset1 = percentFromTop * -phoneTranslationDistance;
+		phoneEL.css("transform", "translate3d(0," + phoneOffset1 + "px,0)");
+	},
+	updateOffsets = function () {
+		windowHeight = $window.outerHeight();
+
+		if ($sectionOne.length == 0) {
+			return;
+		}
+
+		sectionOneTop = $sectionOne.offset().top - windowHeight;
+		sectionTwoTop = $sectionTwo.offset().top - windowHeight;
+		sectionThreeTop = $sectionThree.offset().top - windowHeight;
+		sectionFourTop = $sectionFour.offset().top - windowHeight;
+		sectionFiveTop = $sectionFive.offset().top - windowHeight;
+		sectionSixTop = $sectionSix.offset().top - windowHeight;
+
+		updatePhone($trendPhone01);
+		updatePhone($trendPhone02);
+		updatePhone($trendPhone03);
+		updatePhone($trendPhone04);
 	},
   onScroll = function () {
-		updateIntro();
+		scrollTop = $window.scrollTop();
+		updateOffsets();
+		updatePanels();
 	},
 	onResize = function () {
-		updateIntro();
+		updateOffsets();
+		updatePanels();
 	};
 
 	$window.resize(function () {
 		onResize();
+		updateOffsets();
 	});
 
 	$window.scroll(function () {
-		if (scrollHandling.allow) {
-			onScroll();
-			scrollHandling.allow = false;
-			setTimeout(scrollHandling.reallow, scrollHandling.delay);
-		}
-	});
-
-	$(".user-stats li").addClass("will-animate");
-
-	$(".jump-link").click(function (ev) {
-		ev.preventDefault();
-		ev.stopPropagation();
-
-		var $target = $(ev.target);
-		var targetID = $target.attr("data-attr-id");
-		var scrollTop = $("#" + targetID).offset().top;
-		$("html, body").animate({scrollTop: scrollTop}, SCROLL_ANIMATION_DURATION);
+		onScroll();
 	});
 
 	onResize();

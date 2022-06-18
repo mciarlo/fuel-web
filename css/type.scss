@@ -80,24 +80,58 @@ code {
   padding: 4px 6px;
 }
 
-h1 + p,
-h2 + p {
+h1 + p {
   margin-top: 2rem;
+}
+
+h2 + p {
+  margin-top: 1.4rem;
+}
+
+h2 + ul,
+h3 + ul,
+h4 + ul,
+h2 + p,
+h3 + p,
+h4 + p {
+  margin-bottom: 2rem;
+}
+
+ul + h2,
+p + h2,
+ul + h4 {
+  margin-top: 6rem;
 }
 
 .paragraphs {
   padding-top: 6em;
 
   h1 {
-    margin-bottom: 2em;
+    margin-bottom: 6rem;
+  }
+
+  h2 {
+    margin-bottom: 3rem;
+  }
+
+  h3 {
+    margin-bottom: 2rem;
+  }
+
+  h4 {
+   margin-bottom: 1rem;
   }
 
   h1, h2, h3, h4, h5, p {
     width: 100%;
+    text-align: left;
+    margin-left: 0;
+    max-width: 600px;
   }
 
   p, li {
     line-height: 1.7;
+    max-width: 600px;
   }
 
   li {
@@ -139,11 +173,12 @@ h2 + p {
   }
 }
 
-@media screen and (min-width:1400) {
+@media screen and (min-width:1400px) {
   h2 {
     font-size: 3.63rem;
     line-height: 1.2;
     letter-spacing: -0.05em;
+    max-width: 800px;
   }
 }
 

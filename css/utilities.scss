@@ -42,7 +42,7 @@ input[type="submit"] {
   cursor: pointer;
   font-size: 1rem;
   font-weight: 600;
-  padding: 1.2em 3em;
+  padding: 1.5em 3em;
   display: inline-block;
   box-shadow: 0 12px 20px rgba(0, 0, 0, 0.03);
   @include borderRadius(2em);
@@ -85,6 +85,8 @@ input[type="submit"] {
     background: transparent;
     color: $blue;
     box-shadow: 0 12px 20px rgba(0, 0, 0, 0.0);
+    padding-top: 1.2em;
+    padding-bottom: 1.2em;
 
     &:hover {
       background: $blue;
@@ -465,7 +467,7 @@ img {
   }
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 767px) {
   .display-block {
     display: block;
   }
@@ -473,6 +475,11 @@ img {
   .dashboard-icons {
     li {
       margin: 0 $trendIconPadding768;
+
+      img {
+        width: 40px;
+        height: 40px;
+      }
     }
   }
 }

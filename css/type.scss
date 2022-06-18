@@ -17,6 +17,12 @@ h2 {
   font-weight: 500;
   margin-left: auto;
   margin-right: auto;
+
+  &.posterized {
+    font-size: 3rem;
+    text-align: left;
+    margin-left: 0;
+  }
 }
 
 h3  {
@@ -155,7 +161,7 @@ ul + h4 {
   }
 }
 
-@media screen and (min-width: 1023px) {
+@media screen and (min-width: 767px) {
   h1 {
     font-size: 3.63rem;
     line-height: 1.2;
@@ -166,6 +172,10 @@ ul + h4 {
     font-size: 2.8rem;
     line-height: 1.2;
     letter-spacing: -0.05em;
+
+    &.posterized {
+      font-size: 4rem;
+    }
   }
 
   h3 {

@@ -17,6 +17,22 @@
   font-family: "Avenir Next", "Lato", -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Helvetica", sans-serif;
 }
 
+@mixin itemSpacingWithPadding($padding) {
+  padding-bottom: $padding;
+
+  &:last-child {
+    padding-bottom: 0;
+  }
+}
+
+@mixin itemSpacingWithMargin($margin) {
+  margin-bottom: $margin;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
 @mixin transition($property, $duration, $easing) {
   transition: $property $duration $easing;
   -webkit-transition: $property $duration $easing;

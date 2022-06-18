@@ -36,20 +36,11 @@ body {
   text-align: left;
 
   h1, p {
-    max-width: 400px;
+    max-width: 520px;
   }
 
   p + .button {
-    margin-top: 2rem;
-  }
-
-  .right-content {
-    padding-top: $sectionPadding375;
-  }
-
-  .container {
-    padding-bottom: 0;
-    font-size: 0;
+    margin: 2rem 0 4rem;
   }
 }
 
@@ -100,6 +91,10 @@ body {
     &:last-child {
       margin-bottom: 0;
     }
+
+    .right-content {
+      margin-bottom: -60%;
+    }
   }
 }
 
@@ -124,32 +119,28 @@ body {
   text-align: left;
 
   li {
-    padding-bottom: 2rem;
-    display: inline-block;
-    width: 50%;
-
-    &:last-child {
-      padding-bottom: 0;
-    }
+    display: block;
+    @include itemSpacingWithPadding(2rem);
   }
 
   .large-number {
     font-size: 4rem;
+    line-height: 1.1;
     display: block;
     letter-spacing: -0.06em;
   }
 }
 
 .dashboard-cards {
-  margin-top: 8rem;
+  margin-top: $sectionPadding375;
   color: $textColorSecondaryOnDark;
 
   ul {
     text-align: left;
-    padding-bottom: 3rem;
+    @include itemSpacingWithPadding(3rem);
 
-    &:last-child {
-      padding-bottom: 0;
+    li {
+      margin: 0.5em 0;
     }
 
     strong {
@@ -165,9 +156,21 @@ body {
   background: #E9E7F0;
 
   .left-content {
+    p {
+      margin-bottom: 0;
+    }
+
     img {
       width: 100%;
-      margin: $sectionPadding375 0;
+      max-width: 500px;
+      margin: $sectionPadding375 0 $sectionPadding375 / 2;
+    }
+  }
+
+  .right-content {
+    .iphone {
+      max-width: 600px;
+      margin: 0 auto;
     }
   }
 }
@@ -176,21 +179,12 @@ body {
   background: #036BE5;
   color: white;
 
-  h2 {
-    text-align: left;
-    font-size: 2.5rem;
-  }
-
   ul {
     text-align: left;
     margin-top: 10rem;
 
     li {
-      padding-bottom: 3rem;
-
-      &:last-child {
-        padding-bottom: 0;
-      }
+      @include itemSpacingWithPadding(4rem);
     }
   }
 }
@@ -218,6 +212,7 @@ body {
 
   p {
     padding-bottom: $sectionPadding375;
+    margin-bottom: 0;
   }
 }
 
@@ -239,7 +234,9 @@ body {
 }
 
 .watch-faces {
-  padding: $sectionPadding375 / 2 0 $sectionPadding375;
+  padding: $sectionPadding375 *1.5 0 $sectionPadding375*1.5;
+  width: 100vw;
+  overflow: hidden;
 
   h3 {
     padding-top: $sectionPadding375 / 2;
@@ -248,7 +245,6 @@ body {
   img {
     width: 180%;
     margin-left: -40%;
-    padding-top: $sectionPadding375;
   }
 }
 
@@ -272,6 +268,10 @@ body {
     width: 60px;
     height: 60px;
   }
+
+  .right-content {
+    margin-bottom: -60%;
+  }
 }
 
 .sharing {
@@ -280,12 +280,15 @@ body {
   padding-bottom: 0;
   text-align: center;
 
+  p {
+    margin-bottom: $sectionPadding375;
+  }
+
   img {
     position: relative;
     width: 80%;
     max-width: 405px;
     z-index: 2;
-    padding-top: $sectionPadding375;
   }
 
   svg {
@@ -304,12 +307,6 @@ body {
 }
 
 .awards {
-  padding: 0;
-
-  .content-wrapper {
-    padding: 6em 0;
-  }
-
   .text-content {
     position: absolute;
     top: 50%;
@@ -398,6 +395,7 @@ body {
 }
 
 .private-by-design {
+  padding: 0;
   text-align: center;
 
   img {
@@ -410,10 +408,6 @@ body {
 }
 
 .pricing {
-  .button {
-    margin-top: $sectionPadding375 / 2;
-  }
-
   .footnote {
     padding-top: 2rem;
     display: block;
@@ -421,10 +415,13 @@ body {
 }
 
 .membership-table {
+  margin: $sectionPadding375 / 2 0;
+
   li {
     color: white;
     text-align: left;
     margin-bottom: 1rem;
+    padding: 30px;
 
     &:last-child {
       margin-bottom: 0;
@@ -476,6 +473,7 @@ body {
 }
 
 .recirculation {
+  padding: 0;
   text-align: center;
 
   img {
@@ -494,7 +492,7 @@ body {
 
 .frequently-asked-questions {
   h2 {
-    margin-bottom: $sectionPadding375;
+    margin-bottom: $sectionPadding375 / 2;
   }
 }
 
@@ -574,25 +572,160 @@ footer {
   }
 }
 
-/* TODO: Portrait iPad */
-@media screen and (min-width:768px) {
+@media screen and (min-width:767px) {
+  .container {
+    padding: 60px 120px;
+  }
 
+  .dashboard-stats {
+    margin-bottom: $sectionPadding768;
+
+    li {
+      display: inline-block;
+      padding-bottom: 0;
+      width: 33%;
+    }
+  }
+
+  .dashboard-cards {
+    vertical-align: top;
+    text-align: left;
+
+    ul {
+      vertical-align: top;
+      width: 33%;
+      box-sizing: border-box;
+      display: inline-block;
+      padding-bottom: 4rem;
+
+      &:nth-child(3),
+      &:nth-child(6),
+      &:nth-child(9) {
+        padding-right: 0;
+      }
+
+      &:nth-child(10),
+      &:nth-child(11) {
+        padding-bottom: 0;
+      }
+    }
+  }
+
+  .food-library {
+    ul {
+      margin-top: 14em;
+    }
+
+    li {
+      display: inline-block;
+      width: 50%;
+      padding-right: 4rem;
+      box-sizing: border-box;
+      vertical-align: top;
+
+      &:nth-child(1),
+      &:nth-child(2) {
+        padding-bottom: 6rem;
+      }
+    }
+  }
+
+  .repeat-use {
+    padding-left: $col-1;
+    padding-right: $col-1;
+    box-sizing: border-box;
+  }
+
+  .integrations {
+    .left-content,
+    .right-content {
+      margin: 0 $col-2;
+    }
+
+    .container {
+      padding: 80px;
+      display: flex;
+
+      .iphone {
+        width: 200%;
+        position: absolute;
+        right: 0;
+        top: -80px;
+        transform: translate3d(50%, 0, 0);
+      }
+    }
+
+    .left-content {
+      width: 30%;
+      text-align: left;
+      margin-left: 0;
+      margin-right: 20%;
+    }
+
+    .right-content {
+      flex: 1;
+      position: relative;
+      margin: 0;
+    }
+  }
+
+  .watch-faces {
+    padding: $sectionPadding768 * 1.5 0;
+  }
+
+  .membership-table  {
+    li {
+      padding: 40px;
+    }
+  }
+
+  .recirculation  {
+    padding: 0;
+
+    .container {
+      padding: 80px;
+      box-sizing: border-box;
+    }
+
+    img {
+      padding-top: 0;
+      width: 60px;
+      height: 60px;
+    }
+
+    h3 {
+      padding: 3rem 0;
+    }
+  }
 }
 
 @media screen and (min-width:1023px) {
-   .introduction {
-     .left-content {
-       width: 50%;
-       box-sizing: border-box;
-       padding-right: $col-1;
-       margin-top: auto;
-       margin-bottom: 40px;
-     }
+  .container {
+    padding: 80px;
+  }
 
-     .right-content {
-       flex: 1;
-     }
-   }
+  .introduction {
+    .container {
+      padding-left: 40px;
+      padding-right: 40px;
+    }
+
+    p + .button {
+      margin-bottom: 0;
+    }
+
+    .left-content {
+      width: 50%;
+      box-sizing: border-box;
+      padding-right: $col-1;
+      margin-top: auto;
+    }
+
+    .right-content {
+      padding-top: 40px;
+      flex: 1;
+    }
+  }
 
   .why-fuel {
     padding-top: $sectionPadding768;
@@ -622,60 +755,32 @@ footer {
     }
 
     .container {
-      padding: 40px 80px;
+      padding: 60px 80px;
       margin-bottom: 80px;
 
       &:last-child {
         margin-bottom: 0;
       }
-    }
 
-    .left-content {
-      margin: auto 0;
-      padding-right: $col-1;
-      box-sizing: border-box;
-    }
+      .left-content {
+        margin: auto 20% auto 0;
+        width: 40%;
+      }
 
-    .right-content {
-      margin-bottom: -40%;
+      .right-content {
+        margin-bottom: -40%;
+        flex: 1;
 
-      .iphone {
-        margin-top: -28%;
+        .iphone {
+          margin-top: -28%;
+        }
       }
     }
   }
 
-  .dashboard-stats {
-    width: $col-4;
-
-    li {
-      width: 100%;
-    }
-  }
-
-  .dashboard-cards {
-    margin-top: 0.5rem;
-    vertical-align: top;
-    margin-left: 40px;
-    width: $col-8;
-
-    ul {
-      vertical-align: top;
-      width: 33%;
-      padding-right: $col-1;
-      box-sizing: border-box;
-      display: inline-block;
-      padding-bottom: 4rem;
-
-      &:nth-child(3),
-      &:nth-child(6),
-      &:nth-child(9) {
-        padding-right: 0;
-      }
-
-      li {
-        margin-bottom: 1rem;
-      }
+  .dashboard-overview {
+    .display-flex {
+      display: block;
     }
   }
 
@@ -692,43 +797,21 @@ footer {
       flex: 1;
 
       .iphone {
-        width: 120%;
-        margin-left: -10%;
+        width: 140%;
+        margin-left: -20%;
       }
-    }
-  }
-
-  .food-library {
-    h2 {
-      width: 40%;
-      max-width: 440px;
-      margin: 0;
-      font-size: 5rem;
-      padding-bottom: 6rem;
-    }
-
-    li {
-      display: inline-block;
-      width: 50%;
-      padding-right: 80px;
-      box-sizing: border-box;
-      vertical-align: top;
-
-      &:nth-child(1),
-      &:nth-child(2) {
-        padding-bottom: 80px;
-      }
-
     }
   }
 
   .repeat-use {
+    padding-left: 0;
+    padding-right: 0;
+
     .left-content {
       flex: 1;
     }
 
     .right-content {
-      margin-top: 10%;
       margin-left: $col-2;
       margin-right: $col-1;
       width: $col-4;
@@ -743,24 +826,29 @@ footer {
     .integrations-intro {
       .left-content {
         margin-left: $col-2 / 2;
-        width: $col-5;
+        margin-right: 0;
+        flex: 1;
+
+        .iphone {
+          width: 120%;
+        }
       }
 
       .right-content {
         margin-top: 10%;
-        flex: 1;
-        margin-left: $col-1;
-        margin-right: $col-2 / 2;
+        width: $col-5;
+        margin-left: $col-1 * 1.5;
+        margin-right: $col-1 / 2;
       }
     }
 
     .watch-faces {
       text-align: center;
-      padding-bottom: $sectionPadding768;
+      padding: $sectionPadding768 * 1.5 0;
 
       img {
-        width: 120%;
-        margin-left: -10%;
+        width: 110%;
+        margin-left: -5%;
       }
 
       h3 {
@@ -770,20 +858,17 @@ footer {
     }
 
     .container {
-      padding: 80px;
-
-      .left-content {
-        width: $col-4;
+      .right-content {
+        min-height: 400px;
       }
 
-      .right-content {
-        margin-bottom: -100%;
-        flex: 1;
-
-        .iphone {
-          width: 120%;
-          transform: translate3d(25%, -20%, 0);
-        }
+      .iphone {
+        width: 160%;
+        position: absolute;
+        left: 0;
+        right: auto;
+        top: 0;
+        transform: translate3d(0, -20%, 0);
       }
     }
   }
@@ -791,9 +876,6 @@ footer {
   .watch-lay-flat {
     left: 80%;
     width: 140%;
-    position: absolute;
-    bottom: 0;
-    right: 0;
     transform: translate3d(-50%, -25%, 0);
   }
 
@@ -810,8 +892,6 @@ footer {
   }
 
   .private-by-design {
-    padding: 0;
-
     .container {
       padding: 80px 140px;
       margin: 0 $col-1;
@@ -830,14 +910,10 @@ footer {
 
   .pricing {
     text-align: center;
-
-    .button {
-      margin-top: $sectionPadding375;
-    }
   }
 
   .membership-table {
-    margin-top: $sectionPadding768 / 2;
+    margin: $sectionPadding768 / 2 0;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -861,22 +937,8 @@ footer {
   }
 
   .recirculation  {
-    padding: 0;
-
     .container {
-      padding: 80px;
-      box-sizing: border-box;
       margin: 0 $col-1;
-    }
-
-    img {
-      padding-top: 0;
-      width: 60px;
-      height: 60px;
-    }
-
-    h3 {
-      padding: 3rem 0;
     }
   }
 
@@ -943,18 +1005,49 @@ footer {
     }
   }
 
-  .integrations {
-    width: 100%;
-    overflow: hidden;
-
-    .watch-faces {
-      padding: 10rem 0 12rem;
+  .dashboard {
+    .container {
+      .left-content {
+        margin: auto 20% auto 0;
+        width: 30%;
+      }
     }
   }
-}
 
-@media screen and (min-width:1400px) {
+  .dashboard-overview {
+    .display-flex {
+      display: flex;
+    }
+  }
 
+  .dashboard-stats {
+    width: 40%;
+
+    li {
+      display: block;
+      width: 100%;
+      @include itemSpacingWithPadding(4rem);
+    }
+  }
+
+  .dashboard-cards {
+    flex: 1;
+    margin-top: -0.6em;
+  }
+
+  .integrations {
+    .integrations-intro {
+      .left-content {
+        .iphone {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .watch-lay-flat {
+    width: 130%;
+  }
 }
 
 /*********************************************

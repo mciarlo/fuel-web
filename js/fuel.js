@@ -18,7 +18,8 @@ $(function () {
 		sectionSixTop = 0,
 		windowHeight = 0,
 		phoneTranslationDistance = 0,
-		windowHeight = $(window).outerHeight(),
+		windowWidth = $window.outerWidth(),
+		windowHeight = $window.outerHeight(),
 		$trendPhone01 = $("#trend-01"),
 		$trendPhone02 = $("#trend-02"),
 		$trendPhone03 = $("#trend-03"),
@@ -92,6 +93,10 @@ $(function () {
 		}
 	},
 	updatePhone = function (phoneEL) {
+		if (!isLargeViewport()) {
+			return;
+		}
+
 		var phoneDistanceFromTop = phoneEL.parent().offset().top - scrollTop,
 		phoneTranslationDistance = $trendPhone01.outerHeight() / 3,
 		percentFromTop = phoneDistanceFromTop / windowHeight;
@@ -101,8 +106,6 @@ $(function () {
 		phoneEL.css("transform", "translate3d(0," + phoneOffset1 + "px,0)");
 	},
 	updateOffsets = function () {
-		windowHeight = $window.outerHeight();
-
 		if ($sectionOne.length == 0) {
 			return;
 		}
@@ -119,12 +122,18 @@ $(function () {
 		updatePhone($trendPhone03);
 		updatePhone($trendPhone04);
 	},
+	isLargeViewport = function () {
+		return windowWidth > 768;
+	},
   onScroll = function () {
 		scrollTop = $window.scrollTop();
 		updateOffsets();
 		updatePanels();
 	},
 	onResize = function () {
+		windowHeight = $window.outerHeight();
+		windowWidth = $window.outerWidth();
+
 		updateOffsets();
 		updatePanels();
 	};

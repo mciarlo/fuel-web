@@ -35,15 +35,10 @@ em {
   display: inline;
 }
 
-.will-reveal {
-  opacity: 0;
-  transform: translate3d(0px, 50px, 0px);
-}
-
 .button,
 button,
 input[type="submit"] {
-  background:transparent;
+  background: transparent;
   cursor: pointer;
   font-size: 1rem;
   font-weight: 600;
@@ -51,11 +46,12 @@ input[type="submit"] {
   display: inline-block;
   box-shadow: 0 12px 20px rgba(0, 0, 0, 0.03);
   @include borderRadius(3em);
-  transition: color 150ms, ease-in-out, border-color 150ms, ease-in-out, box-shadow 150ms, ease-in-out, background-color 150ms ease-in-out, transform 150ms ease-in-out;
-  -webkit-transition: color 150ms, ease-in-out, border-color 150ms, ease-in-out, box-shadow 150ms, ease-in-out, background-color 150ms ease-in-out, transform 150ms ease-in-out;
-  -moz-transition: color 150ms, ease-in-out, border-color 150ms, ease-in-out, box-shadow 150ms, ease-in-out, background-color 150ms ease-in-out, transform 150ms ease-in-out;
-  -ms-transition: color 150ms, ease-in-out, border-color 150ms, ease-in-out, box-shadow 150ms, ease-in-out, background-color 150ms ease-in-out, transform 150ms ease-in-out;
-  -o-transition: color 150ms, ease-in-out, border-color 150ms, ease-in-out, box-shadow 150ms, ease-in-out, background-color 150ms ease-in-out, transform 150ms ease-in-out;
+  @include fontFamily;
+  transition: color 150ms ease-in-out, border-color 150ms ease-in-out, box-shadow 150ms ease-in-out, background-color 150ms ease-in-out, transform 150ms ease-in-out;
+  -webkit-transition: color 150ms ease-in-out, border-color 150ms ease-in-out, box-shadow 150ms ease-in-out, background-color 150ms ease-in-out, transform 150ms ease-in-out;
+  -moz-transition: color 150ms ease-in-out, border-color 150ms ease-in-out, box-shadow 150ms ease-in-out, background-color 150ms ease-in-out, transform 150ms ease-in-out;
+  -ms-transition: color 150ms ease-in-out, border-color 150ms ease-in-out, box-shadow 150ms ease-in-out, background-color 150ms ease-in-out, transform 150ms ease-in-out;
+  -o-transition: color 150ms ease-in-out, border-color 150ms ease-in-out, box-shadow 150ms ease-in-out, background-color 150ms ease-in-out, transform 150ms ease-in-out;
 
   &:hover {
     text-decoration: none;
@@ -285,6 +281,7 @@ input[type=file] {
   @include box-sizing;
   color: $textColorSecondary;
   @include borderRadius(8px);
+  @include fontFamily;
 }
 
 /**
@@ -387,6 +384,11 @@ section.sharing {
 
 .lazy-load {
   transition: opacity .25s ease-in-out;
+}
+
+.will-reveal {
+  opacity: 0;
+  transform: translate3d(0px, 50px, 0px);
 }
 
 img {

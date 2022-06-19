@@ -151,8 +151,9 @@ $(function () {
 	handleJSAbilities();
 
 	if ($('img.lazy-load').length > 0) {
-		// Lazy load major image assets
-	  $("img.lazy-load").unveil(200, function() {
+		$('img.lazy-load').addClass("invisible");
+
+		$("img.lazy-load").unveil(200, function() {
 			var $image = $(this);
 	  	$image.on("load", function() {
 	    	$image.removeClass('invisible');

@@ -34,6 +34,7 @@ body {
 
 .introduction {
   text-align: left;
+  overflow: visible;
 
   h1, p {
     max-width: 520px;
@@ -768,7 +769,7 @@ footer {
       }
 
       .left-content {
-        margin: auto 20% auto 0;
+        margin: auto 10% auto 0;
         width: 40%;
       }
 
@@ -1025,8 +1026,8 @@ footer {
   .dashboard {
     .container {
       .left-content {
-        margin: auto 20% auto 0;
-        width: 30%;
+        margin: auto 10% auto 0;
+        width: 35%;
       }
     }
   }
@@ -1094,39 +1095,13 @@ footer {
   }
 
   label + input,
-  textarea,
-  .select-container {
+  textarea {
     margin-bottom: 2em;
   }
 
   input,
-  select-container,
   textarea {
     width: 100%;
-  }
-
-  .select-container {
-    width: 100%;
-    border-radius: 3px;
-    border: 1px solid #cbcbcb;
-    overflow: hidden;
-    background: #ffffff url("../images/arrow_down.svg") 96% 49% no-repeat;
-    position: relative;
-  }
-
-  select {
-    width: 100%;
-    border: none;
-    box-shadow: none;
-    background-color: transparent;
-    background-image: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-
-    &:focus {
-      outline: none;
-    }
   }
 
   textarea {
@@ -1176,7 +1151,7 @@ footer {
 
   img {
     width: 100%;
-    max-width: 500px;
+    max-width: 460px;
     display: block;
     margin: 0 auto 4rem auto;
   }
@@ -1336,6 +1311,14 @@ footer {
       margin-bottom: 0;
     }
   }
+
+  .references {
+    margin-top: 4rem;
+
+    a {
+      font-size: 0.8rem;
+    }
+  }
 }
 
 @media screen and (min-width:768px) {
@@ -1358,30 +1341,18 @@ footer {
   }
 
   .contact {
-    form {
-      margin-top: 1em;
-    }
+    width: auto;
+    text-align: center;
+    margin-left: $col-3;
+    margin-right: $col-3;
+  }
 
-    .left-content {
-      width: 30%;
-      margin-right: 30%;
-      flex: none;
-    }
-
-    .right-content {
-      width: 40%;
-    }
-
+  .contact {
     input[type="submit"]{
       width: auto;
     }
   }
 
-  /************
-  **************
-  ****** FEATURES **********
-  **************
-  ***************/
   .feature {
     .image-container {
       img {
@@ -1470,6 +1441,13 @@ footer {
           padding-left: 50px;
         }
       }
+    }
+  }
+
+  .tips {
+    .container {
+      margin-left: $col-1;
+      margin-right: $col-1;
     }
   }
 }

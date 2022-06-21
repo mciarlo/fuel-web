@@ -1,7 +1,7 @@
 $(function () {
 	var $window = $(window),
 		MAX_PHONE_TRANSLATION_OFFSET = 100,
-		SCROLL_ANIMATION_DURATION = 1200,
+		MIN_WINDOW_WIDTH_FOR_PARALLAX = 1024,
 		$body = $("body"),
 		$sectionZero = $(".page-top"),
 		$sectionOne = $("div.dashboard-container"),
@@ -123,7 +123,7 @@ $(function () {
 		updatePhone($trendPhone04);
 	},
 	isLargeViewport = function () {
-		return windowWidth > 768;
+		return windowWidth >= MIN_WINDOW_WIDTH_FOR_PARALLAX;
 	},
   onScroll = function () {
 		scrollTop = $window.scrollTop();

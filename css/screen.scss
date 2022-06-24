@@ -581,6 +581,12 @@ footer {
     padding: 60px 120px;
   }
 
+  .dashboard {
+    .container {
+      @include itemSpacingWithMargin(6rem);
+    }
+  }
+
   .dashboard-stats {
     margin-bottom: $sectionPadding768;
 
@@ -762,11 +768,7 @@ footer {
 
     .container {
       padding: 60px 80px;
-      margin-bottom: 80px;
-
-      &:last-child {
-        margin-bottom: 0;
-      }
+      @include itemSpacingWithMargin(10rem);
 
       .left-content {
         margin: auto 10% auto 0;
@@ -824,7 +826,7 @@ footer {
 
       img {
         width: 100%;
-        @include borderRadius(40px);
+        @include borderRadius(30px);
       }
     }
   }
@@ -1025,6 +1027,8 @@ footer {
 
   .dashboard {
     .container {
+      @include itemSpacingWithMargin(14rem);
+
       .left-content {
         margin: auto 10% auto 0;
         width: 35%;

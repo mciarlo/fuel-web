@@ -35,6 +35,17 @@ em {
   display: inline;
 }
 
+.beta-badge {
+  font-size: 11px;
+  padding: 0.1em 0.4em;
+  background: white;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  vertical-align: middle;
+  display: inline-block;
+  @include borderRadius(4px);
+}
+
 .button,
 button,
 input[type="submit"] {

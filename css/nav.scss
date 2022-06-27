@@ -5,6 +5,15 @@
 nav {
   position: relative;
   z-index: 12;
+
+  &.fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: $pageBackground;
+  }
+
   li {
     display: inline-block;
     margin-right: 1rem;

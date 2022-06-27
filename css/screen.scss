@@ -33,15 +33,22 @@ body {
  */
 
 .introduction {
-  text-align: left;
   overflow: visible;
 
   h1, p {
     max-width: 520px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   p + .button {
     margin: 2rem 0 4rem;
+  }
+
+  .container {
+    img {
+      max-width: 440px;
+    }
   }
 }
 
@@ -406,6 +413,10 @@ body {
   h2 {
     margin-top: 2rem;
   }
+
+  p {
+    color: #6D625C;
+  }
 }
 
 .pricing {
@@ -501,7 +512,7 @@ body {
   text-align: left;
 
   li {
-    padding: 2rem 0;
+    padding: 2.5rem 0;
     border-bottom: 1px solid $borderColor;
 
     &:last-child {
@@ -532,6 +543,16 @@ body {
 
   .answer {
     display: none;
+    margin-bottom: 0;
+    max-width: $col-8;
+
+    a {
+      color: $blueAccessible;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
   }
 }
 
@@ -649,9 +670,11 @@ footer {
   }
 
   .integrations {
-    .left-content,
-    .right-content {
-      margin: 0 $col-2;
+    .integrations-intro {
+      .left-content,
+      .right-content {
+        margin: 0 $col-2;
+      }
     }
 
     .container {
@@ -665,19 +688,19 @@ footer {
         top: -80px;
         transform: translate3d(50%, 0, 0);
       }
-    }
 
-    .left-content {
-      width: 30%;
-      text-align: left;
-      margin-left: 0;
-      margin-right: 20%;
-    }
+      .left-content {
+        width: 30%;
+        text-align: left;
+        margin-left: 0;
+        margin-right: 20%;
+      }
 
-    .right-content {
-      flex: 1;
-      position: relative;
-      margin: 0;
+      .right-content {
+        flex: 1;
+        position: relative;
+        margin: 0;
+      }
     }
   }
 
@@ -717,26 +740,7 @@ footer {
   }
 
   .introduction {
-    .container {
-      padding-left: 40px;
-      padding-right: 40px;
-    }
-
-    p + .button {
-      margin-bottom: 0;
-    }
-
-    .left-content {
-      width: 50%;
-      box-sizing: border-box;
-      padding-right: $col-1;
-      margin-top: auto;
-    }
-
-    .right-content {
-      padding-top: 40px;
-      flex: 1;
-    }
+    text-align: center;
   }
 
   .why-fuel {
@@ -796,11 +800,16 @@ footer {
     .left-content {
       margin-top: 10%;
       margin-left: $col-1;
+      margin-right: $col-1;
       width: $col-4;
+
+      img {
+        width: 80%;
+      }
     }
 
     .right-content {
-      margin-left: $col-3;
+      margin-left: $col-1;
       margin-right: $col-1;
       flex: 1;
 
@@ -1057,6 +1066,12 @@ footer {
     margin-top: -0.6em;
   }
 
+  .food-library {
+    h2 {
+      max-width: 720px;
+    }
+  }
+
   .integrations {
     .integrations-intro {
       .left-content {
@@ -1064,6 +1079,15 @@ footer {
           width: 100%;
         }
       }
+    }
+
+    .container {
+      margin: 0 $col-1;
+    }
+
+    .left-content {
+      width: 40%;
+      margin-right: 10%;
     }
   }
 
@@ -1171,7 +1195,7 @@ footer {
     margin-bottom: 2rem;
     font-size: 0;
     overflow: hidden;
-    background: #D5DCED;
+    background: #EFF2F9;
     @include borderRadius(20px);
     @include maskBorderRadiusWebkit;
 

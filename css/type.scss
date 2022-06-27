@@ -11,7 +11,7 @@ h1 {
 
 h2 {
   font-size: 2rem;
-  line-height: 1.3;
+  line-height: 1.2;
   letter-spacing: -.03em;
   max-width: 600px;
   font-weight: 500;
@@ -27,7 +27,7 @@ h2 {
 
 h3  {
   font-size: 1.4rem;
-  line-height: 1.3;
+  line-height: 1.2;
   letter-spacing: -.02em;
   font-weight: 500;
 }
@@ -183,6 +183,10 @@ ul + h4 {
   h2 {
     font-size: 3.63rem;
     max-width: 800px;
+
+    &.posterized {
+      font-size: 5rem;
+    }
   }
 }
 

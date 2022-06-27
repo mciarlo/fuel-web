@@ -1,17 +1,14 @@
-$col-1: 9%;
-$col-2: 17%;
-$col-3: 25.5%;
-$col-4: 28.6%;
-$col-5: 40.45%;
-$col-6: 40.45%;
-$col-7: 40.45%;
-$col-8: 65.6%;
-
-$col-2-content: 12.5%;
-$col-3-content: 21.5%;
-$col-4-content: 29.4%;
-$col-5-content: 37.2%;
-$col-6-content: 45%;
+$col-1: 8.56%;
+$col-2: $col-1 * 2;
+$col-3: $col-1 * 3;
+$col-4: $col-1 * 4;
+$col-5: $col-1 * 5;
+$col-6: $col-1 * 6;
+$col-7: $col-1 * 7;
+$col-8: $col-1 * 8;
+$col-9: $col-1 * 9;
+$col-10: $col-1 * 10;
+$col-11: $col-1 * 11;
 
 $sectionPadding375: 6rem;
 $sectionPadding768: 8rem;
@@ -86,6 +83,10 @@ footer {
     &.introduction {
       padding-top:  $sectionPadding768 / 2;
     }
+
+    &.why-fuel {
+      padding-bottom: $sectionPadding768 * 1.5;
+    }
   }
 }
 
@@ -112,6 +113,10 @@ footer {
     &.introduction {
       padding-top: 4rem;
       padding-bottom: 0;
+    }
+
+    &.why-fuel {
+      padding-bottom: $sectionPadding1200 * 1.5;
     }
   }
 

@@ -241,8 +241,8 @@ $trendIconPadding768: 10px;
     background: $pink;
   }
 
-  &.sky-blue {
-    background: #BFD9FF;
+  &.salmon {
+    background: #ffdede;
   }
 
   &.dark-purple {
@@ -503,5 +503,11 @@ img {
         height: 40px;
       }
     }
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .device-media {
+    width: 76.8%;
   }
 }

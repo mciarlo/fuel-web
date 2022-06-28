@@ -47,7 +47,7 @@ body {
 
   .container {
     img {
-      max-width: 440px;
+      max-width: 400px;
     }
   }
 }
@@ -771,7 +771,7 @@ footer {
     }
 
     .container {
-      padding: 60px 80px;
+      padding: 120px 80px;
       @include itemSpacingWithMargin(10rem);
 
       .left-content {
@@ -784,7 +784,7 @@ footer {
         flex: 1;
 
         .iphone {
-          margin-top: -28%;
+          margin-top: -40%;
         }
       }
     }
@@ -855,8 +855,12 @@ footer {
       .right-content {
         margin-top: 10%;
         width: $col-5;
-        margin-left: $col-1 * 1.5;
+        margin-left: $col-1;
         margin-right: $col-1 / 2;
+
+        p {
+          max-width: 400px;
+        }
       }
     }
 
@@ -1013,7 +1017,7 @@ footer {
     text-align: center;
 
     img {
-      max-width: 400px;
+      max-width: 440px;
       margin: 0 auto;
     }
   }
@@ -1077,6 +1081,12 @@ footer {
       .left-content {
         .iphone {
           width: 100%;
+        }
+      }
+
+      .right-content {
+        p {
+          max-width: 460px;
         }
       }
     }

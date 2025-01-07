@@ -1,201 +1,91 @@
+@font-face {
+  font-family: 'Satoshi-Variable';
+  src: url('/fonts/Satoshi-Variable.woff2') format('woff2'),
+       url('/fonts/Satoshi-Variable.woff') format('woff'),
+       url('/fonts/Satoshi-Variable.ttf') format('truetype');
+  font-weight: 300 900;
+  font-display: swap;
+  font-style: normal;
+}
+
 html, body {
-  font-size: 14px;
+  font-size: 16px;
+  @include fontFamily;
 }
 
 h1 {
-  font-size: 2.8rem;
-  line-height: 1.2;
-  font-weight: 500;
+  font-size: 68px;
+  max-width: 1000px;
+  font-weight: 600;
   letter-spacing: -0.03em;
 }
 
 h2 {
-  font-size: 2rem;
-  line-height: 1.2;
-  letter-spacing: -.03em;
-  max-width: 600px;
-  font-weight: 500;
-  margin-left: auto;
-  margin-right: auto;
+  font-size: 38px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
 
-  &.posterized {
-    font-size: 3rem;
-    text-align: left;
-    margin-left: 0;
+  &.large {
+    font-size: 58px;
   }
 }
 
-h3  {
-  font-size: 1.4rem;
-  line-height: 1.2;
-  letter-spacing: -.02em;
-  font-weight: 500;
+h3 {
+  font-size: 24px;
+  font-weight: normal;
+  line-height: 145%;
 }
 
 h4 {
-  font-size: 1.2rem;
-  line-height: 1.4;
-  font-weight: 600;
-}
-
-h6 {
-  font-size: 1.1rem;
-  font-weight: 600;
-}
-
-p, li, a, blockquote {
-  font-size: 1rem;
-}
-
-p, blockquote, li {
-  line-height: 1.5;
-}
-
-a {
-  text-decoration: none;
-  color: $textColorPrimary;
-  transition: color 100ms ease-in-out;
-
-  &:hover {
-    text-decoration: none;
-    color: $textColorSecondary;
-  }
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 145%;
 }
 
 p {
-  margin-bottom: 1.5em;
-
-  &:last-child {
-    margin-bottom: 0;
-  }
+  line-height: 145%;
 }
 
-blockquote {
-  border-left: 4px solid #cdcdcd;
-  padding-left: 1.5em;
-  color: $textColorSecondary;
-  line-height: 1.5;
-  margin-bottom: 1.5em;
-}
-
-code {
-  font-family: monospace;
-  background: #f7f7f7;
-  @include borderRadius(4px);
-  font-size: 0.8rem;
-  padding: 4px 6px;
-}
-
-h1 + p {
-  margin-top: 2rem;
-}
-
-h2 + p {
-  margin-top: 1.4rem;
-}
-
-h2 + ul,
-h3 + ul,
-h4 + ul,
-h2 + p,
-h3 + p,
-h4 + p {
-  margin-bottom: 2rem;
-}
-
-ul + h2,
-p + h2,
-ul + h4 {
-  margin-top: 6rem;
-}
-
-.paragraphs {
-  padding-top: 6em;
-
+@media screen and (min-width:768px) {
   h1 {
-    margin-bottom: 6rem;
+    font-size: 90px;
   }
 
   h2 {
-    margin-bottom: 3rem;
+    font-size: 48px;
+
+    &.large {
+      font-size: 90px;
+    }
   }
 
   h3 {
-    margin-bottom: 2rem;
+    font-size: 28px;
   }
 
   h4 {
-   margin-bottom: 1rem;
-  }
-
-  h1, h2, h3, h4, h5, p {
-    width: 100%;
-    text-align: left;
-    margin-left: 0;
-    max-width: 600px;
-  }
-
-  p, li {
-    line-height: 1.7;
-    max-width: 600px;
-  }
-
-  li {
-    margin-bottom: 0.5em;
-    position: relative;
-    padding-left: 20px;
-
-    &:before {
-      position: absolute;
-      top: 0;
-      left: 0;
-      display: block;
-      content: "•";
-    }
+    font-size: 22px;
   }
 }
 
-@media screen and (min-width: 375px) {
-  html, body {
-    font-size: 16px;
-  }
-}
-
-@media screen and (min-width: 767px) {
+@media screen and (min-width:1024px) {
   h1 {
-    font-size: 3.63rem;
+    font-size: 120px;
   }
 
   h2 {
-    font-size: 2.8rem;
+    font-size: 68px;
 
-    &.posterized {
-      font-size: 4rem;
+    &.large {
+      font-size: 120px;
     }
   }
 
   h3 {
-    font-size: 1.6rem;
-  }
-}
-
-@media screen and (min-width:1400px) {
-  h2 {
-    font-size: 3.63rem;
-    max-width: 800px;
-
-    &.posterized {
-      font-size: 5rem;
-    }
-  }
-}
-
-@media screen and (min-width:1440px) {
-  html, body {
-    font-size: 18px;
+    font-size: 38px;
   }
 
-  h2 {
-    font-size: 3.63rem;
+  h4 {
+    font-size: 24px;
   }
 }

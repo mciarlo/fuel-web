@@ -1,198 +1,129 @@
-/* Awards Animation */
-$awardsRotation: 25s;
+$curve : cubic-bezier( 0.445, 0.05, 0.55, 0.95 );
+$transformDuration : 1200ms;
 
-@keyframes rotating {
-  from {
-    -ms-transform: rotate(0deg);
-    -moz-transform: rotate(0deg);
-    -webkit-transform: rotate(0deg);
-    -o-transform: rotate(0deg);
-    transform: rotate(0deg);
-  }
-  to {
-    -ms-transform: rotate(360deg);
-    -moz-transform: rotate(360deg);
-    -webkit-transform: rotate(360deg);
-    -o-transform: rotate(360deg);
-    transform: rotate(360deg);
-  }
+.will-animate {
+  opacity: 0;
+  transform: translate3d(60px, 0, 0);
+  transition: none;
 }
 
-@keyframes rotatingCounter {
-  from {
-    -ms-transform: rotate(0deg);
-    -moz-transform: rotate(0deg);
-    -webkit-transform: rotate(0deg);
-    -o-transform: rotate(0deg);
-    transform: rotate(0deg);
-  }
-  to {
-    -ms-transform: rotate(-360deg);
-    -moz-transform: rotate(-360deg);
-    -webkit-transform: rotate(-360deg);
-    -o-transform: rotate(-360deg);
-    transform: rotate(-360deg);
-  }
-}
-
-/* Sharing */
-.Ellipse01 {
-  animation: 1s linear 0s infinite normal forwards running Ellipse01;
-    transform: translateX(400px) translateY(400px);
-    rx: 250px;
-    ry: 250px;
-    opacity: 0.38;
-}
-
-.Ellipse02 {
-  animation: 1s linear 0s infinite normal forwards running Ellipse02;
-    transform: translateX(400px) translateY(400px);
-    rx: 300px;
-    ry: 300px;
-    opacity: 0.25;
-}
-
-.Ellipse03 {
-  animation: 1s linear 0s infinite normal forwards running Ellipse03;
-    transform: translateX(400px) translateY(400px);
-    rx: 350px;
-    ry: 350px;
-    opacity: 0.13;
-}
-
-.Ellipse04 {
-  animation: 1s linear 0s infinite normal forwards running Ellipse04;
-    transform: translateX(400px) translateY(400px);
-    rx: 400px;
-    ry: 400px;
-    opacity: 0;
-}
-
-.Ellipse05 {
-  animation: 1s linear 0s infinite normal forwards running Ellipse05;
-    transform: translateX(400px) translateY(400px);
-    rx: 200px;
-    ry: 200px;
-    opacity: 0.5;
-}
-
-.Ellipse06 {
-  animation: 1s linear 0s infinite normal forwards running Ellipse06;
-    transform: translateX(400px) translateY(400px);
-    rx: 150px;
-    ry: 150px;
-    opacity: 0.63;
-}
-
-.Ellipse07 {
-  animation: 1s linear 0s infinite normal forwards running Ellipse07;
-    transform: translateX(400px) translateY(400px);
-    rx: 100px;
-    ry: 100px;
-    opacity: 0.88;
-}
-
-@keyframes Ellipse01 {
-  0% {
-    transform: translateX(400px) translateY(400px);
-    rx: 250px;
-    ry: 250px;
-    opacity: 0.38;
-  }
-  100% {
-    transform: translateX(400px) translateY(400px);
-    rx: 200px;
-    ry: 200px;
-    opacity: 0.5;
-  }
-}
-
-@keyframes Ellipse02 {
-  0% {
-    transform: translateX(400px) translateY(400px);
-    rx: 300px;
-    ry: 300px;
-    opacity: 0.25;
-  }
-  100% {
-    transform: translateX(400px) translateY(400px);
-    rx: 250px;
-    ry: 250px;
-    opacity: 0.38;
-  }
-}
-
-@keyframes Ellipse03 {
-  0% {
-    transform: translateX(400px) translateY(400px);
-    rx: 350px;
-    ry: 350px;
-    opacity: 0.13;
-  }
-  100% {
-    transform: translateX(400px) translateY(400px);
-    rx: 300px;
-    ry: 300px;
-    opacity: 0.25;
-  }
-}
-
-@keyframes Ellipse04 {
-  0% {
-    transform: translateX(400px) translateY(400px);
-    rx: 400px;
-    ry: 400px;
-    opacity: 0;
-  }
-  100% {
-    transform: translateX(400px) translateY(400px);
-    rx: 350px;
-    ry: 350px;
-    opacity: 0.13;
-  }
-}
-
-@keyframes Ellipse05 {
-  0% {
-    transform: translateX(400px) translateY(400px);
-    rx: 200px;
-    ry: 200px;
-    opacity: 0.5;
-  }
-  100% {
-    transform: translateX(400px) translateY(400px);
-    rx: 150px;
-    ry: 150px;
-    opacity: 0.63;
-  }
-}
-
-@keyframes Ellipse06 {
-  0% {
-    transform: translateX(400px) translateY(400px);
-    rx: 150px;
-    ry: 150px;
-    opacity: 0.63;
-  }
-  100% {
-    transform: translateX(400px) translateY(400px);
-    rx: 100px;
-    ry: 100px;
-    opacity: 0.88;
-  }
-}
-
-@keyframes Ellipse07 {
-  0% {
-    transform: translateX(400px) translateY(400px);
-    rx: 100px;
-    ry: 100px;
-    opacity: 0.88;
-  }
-  100% {
-    transform: translateX(400px) translateY(400px);
-    rx: 50px;
-    ry: 50px;
+#introduction {
+  h1, h2 {
     opacity: 1;
+    transform: translate3d(0, 0, 0);
+    transition: opacity $transformDuration $curve, transform $transformDuration $curve;
   }
+
+  .content-wrapper h2 {
+    &:nth-child(2) {
+      transition-delay: 1000ms;
+    }
+    &:nth-child(3) {
+      transition-delay: 1500ms;
+    }
+    &:nth-child(4) {
+      transition-delay: 2000ms;
+    }
+    &:nth-child(5) {
+      transition-delay: 2500ms;
+    }
+  }
+
+  &.will-animate {
+    h1, h2 {
+      opacity: 0;
+      transform: translate3d(60px, 0, 0);
+      transition: none;
+    }
+  }
+}
+
+.metrics-intro,
+.triple-grid,
+.how-it-works-intro,
+.how-it-works {
+  &.will-animate {
+    h2, h3, .card, .bezeled {
+      opacity: 0;
+      transform: translate3d(60px, 0, 0);
+      transition: none;
+    }
+  }
+
+  h2:nth-child(1) {
+    transition-delay: 100ms;
+  }
+
+  h2:nth-child(2) {
+    transition-delay: 200ms;
+  }
+
+  h2:nth-child(3) {
+    transition-delay: 300ms;
+  }
+
+  h2:nth-child(4) {
+    transition-delay: 400ms;
+  }
+
+  h3:nth-child(5) {
+    transition-delay: 500ms;
+  }
+
+  h3:nth-child(6) {
+    transition-delay: 1400ms;
+  }
+
+  .card:nth-child(1) {
+    transition-delay: 100ms;
+  }
+
+  .card:nth-child(2) {
+    transition-delay: 120ms;
+  }
+
+  .card:nth-child(3) {
+    transition-delay: 140ms;
+  }
+
+  .card:nth-child(4) {
+    transition-delay: 300ms;
+  }
+
+  .card:nth-child(5) {
+    transition-delay: 320ms;
+  }
+
+  .card:nth-child(6) {
+    transition-delay: 340ms;
+  }
+
+  .media-gallery div:nth-child(1) .bezeled {
+    transition-delay: 600ms;
+  }
+
+  .media-gallery div:nth-child(2) .bezeled {
+    transition-delay: 650ms;
+  }
+
+  .media-gallery div:nth-child(3) .bezeled {
+    transition-delay: 700ms;
+  }
+
+  .media-gallery div:nth-child(4) .bezeled {
+    transition-delay: 750ms;
+  }
+  
+  h2, h3, .card, .bezeled {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+    transition: opacity $transformDuration $curve, transform $transformDuration $curve;
+  }
+}
+
+.how-it-works-intro,
+.how-it-works {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+  transition: opacity $transformDuration $curve, transform $transformDuration $curve;
 }

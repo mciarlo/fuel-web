@@ -1,34 +1,81 @@
 $(function () {
 	var $window = $(window),
-		MAX_PHONE_TRANSLATION_OFFSET = 100,
-		MIN_WINDOW_WIDTH_FOR_PARALLAX = 1024,
 		$body = $("body"),
-		$sectionZero = $(".page-top"),
-		$sectionOne = $("div.dashboard-container"),
-		$sectionTwo = $("section.weekly-review"),
-		$sectionThree = $("section.food-library"),
-		$sectionFour = $("section.repeat-use"),
-		$sectionFive = $("section.integrations"),
-		$sectionSix = $("section.sharing"),
-		sectionOneTop = 0,
-		sectionTwoTop = 0,
-		sectionThreeTop = 0,
-		sectionFourTop = 0,
-		sectionFiveTop = 0,
-		sectionSixTop = 0,
-		windowHeight = 0,
-		phoneTranslationDistance = 0,
 		windowWidth = $window.outerWidth(),
 		windowHeight = $window.outerHeight(),
-		$trendPhone01 = $("#trend-01"),
-		$trendPhone02 = $("#trend-02"),
-		$trendPhone03 = $("#trend-03"),
-		$trendPhone04 = $("#trend-04"),
 		scrollTop = 0,
+		revealClass = "will-animate",
+		MIN_ANIMATE_WIDTH = 1024,
 		preventDefaultFormAction = function (ev) {
 			ev.preventDefault();
 			ev.stopPropagation();
 		};
+
+	const AnimationPixelDuration = Math.min(window.innerHeight * 0.25, 400);
+	const AnimationDistanceY = 40;
+	const AnimationDistanceX = 60;
+	const VISIBLE_OFFSET = 50;
+	class Incrementor {
+		constructor(el, max, delay) {
+  			this.el = el;
+  			this.max = max;
+  			this.delay = delay;
+
+  			var that = this;
+  			$window.scroll(function () {
+				scrollTop = $window.scrollTop();
+				that.update(scrollTop);
+			});
+  		}
+  		
+  		update(scrollTop) {
+  			var animationDuration = Math.min(window.innerHeight * 0.4, 400);
+			var rect = this.el.getBoundingClientRect();
+			var distanceFromBottom = rect.top + this.delay - window.innerHeight + VISIBLE_OFFSET;
+			var percent = Math.min(1, Math.abs(distanceFromBottom / -(animationDuration)));
+
+			if (windowWidth < MIN_ANIMATE_WIDTH) {
+				percent = 1;
+				distanceFromBottom = 0;
+			}
+
+			var price = 99 - (Math.round(percent * 99));
+
+			if (distanceFromBottom > 0) {
+				price = 99;
+			}
+
+			$(this.el).text("$" + Math.max(12, price));
+		}
+	};
+	class CSSReveal {
+		constructor(el, delay) {
+  			this.el = el;
+  			this.delay = delay;
+
+  			var that = this;
+
+  			$(this.el).addClass(revealClass);
+
+  			$window.scroll(function () {
+				scrollTop = $window.scrollTop();
+				that.update(scrollTop);
+			});
+  		}
+  		
+  		update(scrollTop) {
+			var rect = this.el.getBoundingClientRect();
+			var distanceFromBottom = rect.top + this.delay - window.innerHeight + VISIBLE_OFFSET;
+
+			if (windowWidth < MIN_ANIMATE_WIDTH) {
+				distanceFromBottom = 0;
+			}
+
+			if (distanceFromBottom < 0) {
+				$(this.el).removeClass(revealClass);
+			}
+		}
+	};
 
 	var timeout;
 
@@ -37,110 +84,49 @@ $(function () {
 		window.location = $(anchor).attr("href")
 	}
 
+	const PriceIncrement = new Incrementor($(".price")[0], 12, 200);
+	const MetricsIntro = new CSSReveal($(".metrics-intro")[0], 200);
+	const MetricCards = new CSSReveal($(".triple-grid")[0], 400);
+	const HowItWorksIntro = new CSSReveal($(".how-it-works-intro")[0], 300);
+
+	const HowItWorks1 = new CSSReveal($(".how-it-works")[0], 400);
+	const HowItWorks2 = new CSSReveal($(".how-it-works")[1], 400);
+	const HowItWorks3 = new CSSReveal($(".how-it-works")[2], 400);
+	const HowItWorks4 = new CSSReveal($(".how-it-works")[3], 400);
+	const HowItWorks5 = new CSSReveal($(".how-it-works")[4], 400);
+
 	var isElementInViewport = function (el) {
 		var rect = el.getBoundingClientRect();
+		var rectBottom = rect.bottom + (window.innerHeight / 4);
+		var rectTop = rect.top + (window.innerHeight / 4);
 
-    	return (rect.bottom > 0 && rect.bottom < window.innerWidth) ||
-        	(rect.top < (window.innerHeight || document.documentElement.clientHeight) && rect.top > 0);
+    	return (rectBottom > 0 && rectBottom < window.innerWidth) ||
+        	(rectTop < (window.innerHeight || document.documentElement.clientHeight) && rectTop > 0);
 	},
 	handleJSAbilities = function () {
 		$body.removeClass("no-js");
-	};
 
-	$(".faq li > a").click(function (ev) {
-		ev.preventDefault();
-		ev.stopPropagation();
+		if (windowWidth >= MIN_ANIMATE_WIDTH) {
+			$("#introduction").addClass(revealClass);
 
-		$(ev.target).toggleClass("active");
-		$(ev.target).parent().toggleClass("active");
-	});
+			setTimeout(function () {
+				$("#introduction").removeClass(revealClass);
 
-	var updatePanels = function () {
-		if ($sectionOne.length == 0) {
-			return;
-		}
-
-		$sectionZero.removeClass("sticky");
-		$sectionOne.removeClass("sticky");
-		$sectionTwo.removeClass("sticky");
-		$sectionThree.removeClass("sticky");
-		$sectionFour.removeClass("sticky");
-		$sectionFive.removeClass("sticky");
-		$sectionSix.removeClass("sticky");
-
-		if (scrollTop > sectionOneTop && scrollTop < sectionTwoTop) {
-			$sectionZero.addClass("sticky");
-		}
-
-		else if (scrollTop > sectionTwoTop && scrollTop < sectionThreeTop) {
-			$sectionOne.addClass("sticky");
-		}
-
-		else if (scrollTop > sectionThreeTop && scrollTop < sectionFourTop) {
-			$sectionTwo.addClass("sticky");
-		}
-
-		else if (scrollTop > sectionFourTop && scrollTop < sectionFiveTop) {
-			$sectionThree.addClass("sticky");
-		}
-
-		else if (scrollTop > sectionFiveTop && scrollTop < sectionSixTop) {
-			$sectionFour.addClass("sticky");
-		}
-
-		else if (scrollTop > sectionSixTop) {
-			$sectionFive.addClass("sticky");
+			}, 1000 * 1);
 		}
 	},
-	updatePhone = function (phoneEL) {
-		if (!isLargeViewport()) {
-			return;
-		}
-
-		var phoneDistanceFromTop = phoneEL.parent().offset().top - scrollTop,
-		phoneTranslationDistance = $trendPhone01.outerHeight() / 3,
-		percentFromTop = phoneDistanceFromTop / windowHeight;
-		percentFromTop = percentFromTop > 1.0 ? 1.0 : percentFromTop;
-		percentFromTop = percentFromTop < 0 ? 0 : percentFromTop;
-		phoneOffset1 = percentFromTop * -phoneTranslationDistance;
-		phoneEL.css("transform", "translate3d(0," + phoneOffset1 + "px,0)");
-	},
-	updateOffsets = function () {
-		if ($sectionOne.length == 0) {
-			return;
-		}
-
-		sectionOneTop = $sectionOne.offset().top - windowHeight;
-		sectionTwoTop = $sectionTwo.offset().top - windowHeight;
-		sectionThreeTop = $sectionThree.offset().top - windowHeight;
-		sectionFourTop = $sectionFour.offset().top - windowHeight;
-		sectionFiveTop = $sectionFive.offset().top - windowHeight;
-		sectionSixTop = $sectionSix.offset().top - windowHeight;
-
-		updatePhone($trendPhone01);
-		updatePhone($trendPhone02);
-		updatePhone($trendPhone03);
-		updatePhone($trendPhone04);
-	},
-	isLargeViewport = function () {
-		return windowWidth >= MIN_WINDOW_WIDTH_FOR_PARALLAX;
-	},
-  onScroll = function () {
+	onScroll = function () {
 		scrollTop = $window.scrollTop();
-		updateOffsets();
-		updatePanels();
 	},
 	onResize = function () {
 		windowHeight = $window.outerHeight();
 		windowWidth = $window.outerWidth();
-
-		updateOffsets();
-		updatePanels();
+		Incrementor.delay = windowHeight * 0.4;
+		HowItWorksIntro.delay = windowHeight * 0.35;
 	};
 
 	$window.resize(function () {
 		onResize();
-		updateOffsets();
 	});
 
 	$window.scroll(function () {
@@ -150,14 +136,33 @@ $(function () {
 	onResize();
 	handleJSAbilities();
 
+	$(".switcher input").click(function (el) {
+		var index = $(".switcher input").index($(".switcher input:checked"));
+
+		$("body").removeClass("light-mode dark-mode light-green-mode dark-green-mode");
+
+		if (index == 0) {
+			$("body").addClass("light-mode");
+		
+		} else if (index == 1) {
+			$("body").addClass("dark-mode");
+		
+		} else if (index == 2) {
+			$("body").addClass("light-green-mode");
+		
+		} else {
+			$("body").addClass("dark-green-mode");
+		}
+	});
+
 	if ($('img.lazy-load').length > 0) {
 		$('img.lazy-load').addClass("invisible");
 
 		$("img.lazy-load").unveil(200, function() {
 			var $image = $(this);
-	  	$image.on("load", function() {
-	    	$image.removeClass('invisible');
-	  	});
+		  	$image.on("load", function() {
+		    	$image.removeClass('invisible');
+		  	});
 		});
 	}
 });

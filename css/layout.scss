@@ -1,18 +1,12 @@
-$col-1: 8.56%;
-$col-2: $col-1 * 2;
-$col-3: $col-1 * 3;
-$col-4: $col-1 * 4;
-$col-5: $col-1 * 5;
-$col-6: $col-1 * 6;
-$col-7: $col-1 * 7;
-$col-8: $col-1 * 8;
-$col-9: $col-1 * 9;
-$col-10: $col-1 * 10;
-$col-11: $col-1 * 11;
-
 $sectionPadding375: 6rem;
 $sectionPadding768: 8rem;
 $sectionPadding1200: 10rem;
+
+$defaultPagePadding375: 20px;
+$defaultPagePadding768: 30px;
+$defaultPagePadding1200: 40px;
+
+$cardRadius: 20px;
 
 section,
 footer {
@@ -20,17 +14,20 @@ footer {
   padding: $sectionPadding375 0;
   position: relative;
   z-index: 10;
-  text-align: center;
   @include overflowfix;
   background: $pageBackground;
 }
 
-.content-wrapper {
+.content-wrapper,
+footer {
   @include overflowfix;
-  max-width: 1440px;
-  margin: 0 20px;
+  margin: 0 $defaultPagePadding375;
   position: relative;
   @include box-sizing;
+}
+
+footer {
+  margin-bottom: $defaultPagePadding375;
 }
 
 .container {
@@ -39,85 +36,142 @@ footer {
   box-sizing: border-box;
   @include borderRadius(20px);
   @include maskBorderRadiusWebkit;
+}
 
-  > img {
+.media-gallery {
+  text-align: center;
+  .bezeled,
+  video {
+    border: 4px solid #04271E;
+    @include borderRadius(20px);
     width: 100%;
-    margin: 0;
-    border: 0;
+    max-width: 400px;
+    box-sizing: border-box;
+    margin-bottom: 40px;
+  }
+}
+
+.card {
+  background-color: $cardBackground;
+  @include borderRadius($cardRadius);
+  padding: 60px;
+  @include box-sizing;
+  flex: 1;
+
+  img {
+    width: 32px;
   }
 
-  &.bottom-clip {
-    padding-bottom: 0;
-    font-size: 0;
+  strong {
+    display: block;
+    font-size: 24px;
+    margin: 3em 0 .5em;
+  }
+
+  p {
+    color: $textColorSecondary;
+    max-width: 300px;
+  }
+}
+
+.display-flex.triple-grid {
+  .card {
+    margin-bottom: 10px;
   }
 }
 
 @media screen and (min-width: 375px) {
   .content-wrapper {
-    margin: 0 auto;
-    width: 85%;
-  }
-}
-
-@media screen and (min-width: 414px) {
-  .content-wrapper {
-    width: 80%;
-  }
-}
-
-@media screen and (min-width: 500px) {
-  .content-wrapper {
-    width: 70%;
+    margin: 0 20px;
   }
 }
 
 @media screen and (min-width:767px) {
   .content-wrapper {
-    width: 88%;
+    margin: 0 30px;
+  }
+
+  .content-wrapper,
+  footer {
+    margin: 0 $defaultPagePadding768;
   }
 
   section,
   footer {
     padding: $sectionPadding768 0;
+  }
 
-    &.introduction {
-      padding-top:  $sectionPadding768 / 2;
+  footer {
+    margin-bottom: $defaultPagePadding768;
+  }
+
+  .display-flex.triple-grid {
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    .card {
+      width: auto;
+      margin-bottom: 20px;
+      flex: 0 1 calc(33.7% - 20px);
     }
+  }
 
-    &.why-fuel {
-      padding-bottom: $sectionPadding768 * 1.5;
+  .media-gallery {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    gap: 20px;
+    margin: auto;
+
+    .bezeled {
+      border-width: 8px;
+      @include borderRadius(30px);
+      margin-bottom: 0;
     }
   }
 }
 
 @media screen and (min-width: 1023px) {
+  .left-content {
+    width: 50%;
+  }
+
+  .right-content {
+    width: 50%;
+  }
+
+  .half-width {
+    max-width: 50%;
+  }
+
+  .content-wrapper {
+    margin: 0 $defaultPagePadding1200;
+  }
+
+  footer {
+    margin-bottom: $defaultPagePadding1200;
+  }
+
+  .display-flex.triple-grid {
+    .card {
+      margin-bottom: 0;
+    }
+  }
+
   .display-flex {
     display: flex;
     flex-wrap: nowrap;
     flex-direction: row;
-  }
-
-  section, footer {
-    text-align: left;
-
-    &.introduction {
-      padding-bottom: 0;
-    }
+    gap: 20px;
   }
 }
 
 @media screen and (min-width:1200px) {
   section {
     padding: $sectionPadding1200 0;
-
-    &.introduction {
-      padding-top: 4rem;
-      padding-bottom: 0;
-    }
-
-    &.why-fuel {
-      padding-bottom: $sectionPadding1200 * 1.5;
-    }
   }
 
   .container {

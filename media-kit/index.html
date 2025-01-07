@@ -6,8 +6,7 @@
 
     <meta name="Author" content="Michael Ciarlo">
     <meta name="robots" content="noodp">
-    <title itemprop="name">Contact &ndash; Fuel: Modern Calorie Tracking</title>
-    
+    <title itemprop="name">Fuel: Modern Calorie Tracking</title>
     <meta name="Description" content="No scores. No false promises. Just the essentials. Track your diet, exercise, hydration, and sleep. Accountability without the pressure." />
     <meta name="Keywords" content="calories, tracker, tracking, nutrition, food, diary, water, hydration, diet, macros, macronutrient, vitamins, minerals, weight loss, weight gain, exercise, sleep, pregnancy, lactation, symptoms, allergies, bodybuilding, fitness, bulking" />
     <meta property="og:title" content="Fuel: Modern Calorie Tracking" />
@@ -34,41 +33,66 @@
     <nav>
       <div class="content-wrapper display-flex">
         <div class="logo-link">
-          <a href="/" title="Visit the homepage"><img class="logo" src="/images/logo.png"/><a/>
+          <a href="/" title="Visit the homepage"><img class="logo" src="/images/logo.png"/></a>
         </div>
-        
-        <a class="button primary download-link" href="https://apps.apple.com/app/id1562577085" title="Download on the App Store">Download</a>
-      </div>
-    </nav>
 
-    <section class="contact">
-      <div class="content-wrapper display-flex">
-        <div class="left-content">
-          <h1>Get in touch</h1>
-          <p>Have a feature suggestion, bug report, or question? I aim to reply to all messages within two business days.</p>
-
-          <form id="ioreplies_contactForm" method="POST" enctype="multipart/form-data" accept-charset="UTF-8" autocomplete="off">
-            <label for="name">Name</label>
-            <input type="text" name="name" placeholder="Name"></input>
-
-            <label for="email">Email</label>
-            <input type="email" placeholder="your@email.com" name="email" required="true">
-
-            <label for="body">Message</label>
-            <textarea name="body" rows="5" required="true" placeholder="How can I help?"></textarea>
-
-            <input type="file" name="attachments" multiple="true" />
-
-  				  <input class="button bluebtn primary" type="submit" value="Send" onclick="this.form.action = RepliesContactForm.endpoint">
-
-            <input type="hidden" name="product_name" value="Fuel">
-            <input type="hidden" name="metadata" value="{}">
-            <input type="hidden" name="language" value="en">
-            <input type="hidden" name="success_url" value="https://fuelcalories.app/contact/thank-you">
+        <div class="switcher">
+          <p>Choose a theme</p>
+          <form>
+            <label><input type="radio" name="theme"></input>
+            <span class="checkmark"></span>Light</label>
+            <label><input type="radio" name="theme"></input>
+            <span class="checkmark"></span>Dark</label>
+            <label><input type="radio" name="theme" checked></input>
+            <span class="checkmark"></span>Light Green</label>
+            <label><input type="radio" name="theme"></input>
+            <span class="checkmark"></span>Dark Green</label>
           </form>
         </div>
       </div>
-    </section>
+    </nav>
+
+    <div class="main-content">
+      <section>
+        <div class="content-wrapper">
+          <h1>Meda Kit</h1>
+        </div>
+      </section>
+
+      <section id="media-kit">
+        <div class="content-wrapper display-flex">
+          <div class="left-content">
+            <h3>Logos</h3>
+            <p>PNG logo assets in color and grayscale</p>
+            <ul>
+              <li>Color logo (1024px x 1024px)</li>
+              <li>Grayscale logo (1024px x 1024px)</li>
+            </ul>
+            <a class="button primary" href="#" title="Download logo assers">Download</a>
+          </div>
+
+          <div class="right-content card">
+            <img src="/images/logo_preview.png">
+          </div>
+        </div>
+
+        <div class="content-wrapper display-flex">
+          <div class="left-content">
+            <h3>Media Assets</h3>
+            <p>JPEG media assets</p>
+            <ul>
+              <li>High quality renders (4K)</li>
+              <li>App Store screenshots (2345 x 1352px)</li>
+              <li>App Store Preview (30s, 4K)</li>
+            </ul>
+            <a class="button primary" href="#" title="Download logo assers">Download</a>
+          </div>
+
+          <div class="right-content card">
+            <img src="/images/media_preview.jpg">
+          </div>
+        </div>
+      </section>
 
     <footer>      
       <div class="content display-flex">
@@ -101,7 +125,7 @@
         </div>
       </div>
     </footer>
-    
+
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-BKXNT81YWL"></script>
     <script>
@@ -112,8 +136,20 @@
       gtag('config', 'G-BKXNT81YWL');
     </script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
-    <script src="https://1.replies.io/api-js/contact_form_4.min.js"></script>
-    <script>RepliesContactForm.endpoint = "https://1.replies.io/api/contact_forms/2uqc35h3qfre2a6p57gp4dfm1g";</script>
+    <script type="application/ld+json">
+      {
+        "@context": "http://www.schema.org",
+        "@type": "product",
+        "logo": "https://www.fuelcalories.app/images/favicon192.png",
+        "name": "Fuel: Modern Calorie Tracking",
+        "category": "iOS",
+        "url": "https://www.fuelcalories.app",
+        "image": "https://www.fuelcalories.app/images/FuelImage.jpg",
+        "description": "No nonsense. No false promises. Just the essentials. Track your diet, exercise, hydration, and sleep. Accountability without the pressure."
+      }
+    </script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="/js/fuel.js"></script>
   </body>
 </html>

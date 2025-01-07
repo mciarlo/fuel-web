@@ -1,8 +1,14 @@
 @import "colors";
 @import "mixins";
+@import "layout";
 
 li {
   list-style: none;
+  line-height: 145%;
+}
+
+p {
+  line-height: 145%;
 }
 
 em {
@@ -10,40 +16,8 @@ em {
   text-transform: none;
 }
 
-.diff {
-  padding: 0 6px;
-  @include borderRadius(6px);
-
-  &.removed {
-    background: #FEE5E5;
-    color: #6F0000;
-    margin-bottom: 2px;
-  }
-
-  &.added {
-    background: #D1F6D5;
-    color: #002F0D;
-  }
-}
-
-.disclosure {
-  font-size: 0.8rem;
-  color: $textColorSecondary;
-}
-
-.optional-new-line {
-  display: inline;
-}
-
-.beta-badge {
-  font-size: 11px;
-  padding: 0.1em 0.4em;
-  background: white;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  vertical-align: middle;
-  display: inline-block;
-  @include borderRadius(4px);
+.dimmed {
+  color: #7CD4B0;
 }
 
 .button,
@@ -52,213 +26,58 @@ input[type="submit"] {
   background: transparent;
   cursor: pointer;
   font-size: 1rem;
+  text-decoration: none;
   font-weight: 600;
-  padding: 1.5em 3em;
+  padding: 1em 4em;
   display: inline-block;
-  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.03);
-  @include borderRadius(3em);
-  @include fontFamily;
-  transition: color 150ms ease-in-out, border-color 150ms ease-in-out, box-shadow 150ms ease-in-out, background-color 150ms ease-in-out, transform 150ms ease-in-out;
-  -webkit-transition: color 150ms ease-in-out, border-color 150ms ease-in-out, box-shadow 150ms ease-in-out, background-color 150ms ease-in-out, transform 150ms ease-in-out;
-  -moz-transition: color 150ms ease-in-out, border-color 150ms ease-in-out, box-shadow 150ms ease-in-out, background-color 150ms ease-in-out, transform 150ms ease-in-out;
-  -ms-transition: color 150ms ease-in-out, border-color 150ms ease-in-out, box-shadow 150ms ease-in-out, background-color 150ms ease-in-out, transform 150ms ease-in-out;
-  -o-transition: color 150ms ease-in-out, border-color 150ms ease-in-out, box-shadow 150ms ease-in-out, background-color 150ms ease-in-out, transform 150ms ease-in-out;
+  @include borderRadius(10px);
+  transition: color 150ms ease-in-out, border-color 150ms ease-in-out, background-color 150ms ease-in-out, transform 150ms ease-in-out;
+  -webkit-transition: color 150ms ease-in-out, border-color 150ms ease-in-out, background-color 150ms ease-in-out, transform 150ms ease-in-out;
+  -moz-transition: color 150ms ease-in-out, border-color 150ms ease-in-out, background-color 150ms ease-in-out, transform 150ms ease-in-out;
+  -ms-transition: color 150ms ease-in-out, border-color 150ms ease-in-out, background-color 150ms ease-in-out, transform 150ms ease-in-out;
+  -o-transition: color 150ms ease-in-out, border-color 150ms ease-in-out, background-color 150ms ease-in-out, transform 150ms ease-in-out;
 
   &:hover {
     text-decoration: none;
-    transform: translate3d(0, -2px, 0);
-    box-shadow: 0 18px 30px rgba(0, 0, 0, 0.1);
-  }
-
-  &.black {
-    border-color: transparent;
-    background: #000;
-    color: white;
-
-    &:hover {
-      background: #333;
-    }
-  }
-
-  &.white {
-    border-color: transparent;
-    background: #fff;
-    color: $blue;
+    transform: translate3d(0, 2px, 0);
   }
 
   &.primary {
     border-color: transparent;
-    background: $blue;
-    color: white;
+    background: $yellowColor;
+    color: $pageBackground;
+    padding: 20px 80px;
 
     &:hover {
-      background: #0059C1;
+      background: $accentColor;
+      color: $textColorPrimary;
     }
   }
 
   &.secondary {
-    border: 1px solid $blue;
+    border: 1px solid $accentColor;
     background: transparent;
-    color: $blue;
+    color: white;
     box-shadow: 0 12px 20px rgba(0, 0, 0, 0.0);
     padding-top: 1.2em;
     padding-bottom: 1.2em;
 
     &:hover {
-      background: $blue;
+      background: $accentColor;
       color: white;
       box-shadow: 0 18px 30px rgba(0, 0, 0, 0.1);
     }
   }
-}
 
-.color-bar {
-  width: 100%;
-  display: flex;
-  flex-direction: row;;
-  flex-wrap: nowrap;
-
-  span {
-    flex: 1;
-    height: 6px;
-  }
-
-  span:first-child {
-    background: $blue;
-  }
-
-  span:nth-child(2) {
-    background: $purple;
-  }
-
-  span:last-child {
-    background: $pink;
-  }
-}
-
-/* Lists */
-li {
-  .item-title,
-  .item-subtitle {
-    display: block;
-  }
-
-  .item-title {
-    font-size: 1.75rem;
-    padding: 1rem 0;
-  }
-}
-
-/* 1 Number fix */
-.one-number-fix {
-  margin-left: -0.5rem;
-}
-
-.force-new-line {
-  display: block;
-}
-
-/* Dashboard Icons */
-$trendIconPadding: 5px;
-$trendIconPadding768: 10px;
-
-.dashboard-icons {
-  width: 1200px;
-  text-align: center;
-  position: relative;
-  left: 50%;
-  transform: translate3d(-50%, 0, 0);
-
-  li {
-    display: inline-block;
-    margin: 0 $trendIconPadding;
-    padding: 0.5rem 1rem;
-    font-size: 0;
-    @include borderRadius(3rem);
-
-    img {
-      width: 20px;
-      height: 20px;
-    }
-
-    &.trend-icon {
-      background-color: #0040E6;
-      margin-bottom: $trendIconPadding;
-    }
-
-    &.insight-icon {
-      background-color: #8F00FF;
-      margin-bottom: $trendIconPadding;
-    }
-
-    &.dumbbell-icon {
-      background-color: #33A986;
-      margin-bottom: $trendIconPadding;
-    }
-
-    &.watcher-icon {
-      background-color: #5E616B;
-      margin-bottom: $trendIconPadding;
-    }
-
-    &.fire-icon {
-      background-color: #B42E48;
-    }
-
-    &.cupcake-icon {
-      background-color: #0040E6;
-    }
-
-    &.award-icon {
-      background-color: #A58000;
-    }
-  }
-}
-
-/* Container */
-.container {
-  &.light-blue {
-    background: $lightBlue;
-  }
-
-  &.blue {
-    background: $blue;
-  }
-
-  &.light-blue-accessible {
-    background: #036BE5;
-  }
-
-  &.blue-accessible {
-    background: $blueAccessible;
-  }
-
-  &.purple {
-    background: $purple;
-  }
-
-  &.pink {
-    background: $pink;
-  }
-
-  &.salmon {
-    background: #ffdede;
-  }
-
-  &.dark-purple {
-    background: #6E00C4;
-  }
-
-  &.cream {
-    background: #FEF9F7;
-  }
-
-  &.white {
-    background: white;
-  }
-
-  &.baby-blue {
-    background: #CDDBFF;
+  &.floating-btn {
+    position: sticky;
+    position: -webkit-sticky;
+    padding: 20px 30px;
+    top: calc(100vh - 20px);
+    left: 50%;
+    transform: translate3d(-50%, -100%, 0);
+    z-index: 9999;
+    display: none;
   }
 }
 
@@ -268,26 +87,28 @@ input[type="email"],
 #support-input,
 select,
 textarea {
-  padding: 15px;
+  padding: 1em 0;
   font-size: 1.1em;
-  border: 1px solid $borderColor;
-  background: #fff;
+  border: 0;
+  border-bottom: 1px solid $dividerColor;
+  background: transparent;
   -webkit-appearance: none;
   -webkit-border-radius: 0;
   @include fontFamily;
   @include box-sizing;
-  @include borderRadius(8px);
+  color: white;
 
   &:focus {
     -webkit-outline: none;
     outline: none;
-    border-color: $blue;
+    color: white;
+    border-color: $accentColor;
   }
 }
 
 input[type=file] {
   font-size: 1rem;
-  border: 1px solid $borderColor;
+  border: 1px solid $dividerColor;
   padding: 15px;
   @include box-sizing;
   color: $textColorSecondary;
@@ -303,89 +124,10 @@ input[type=file] {
     display: none;
   }
 
-  .faq {
-    li a {
-      background-image: none;
-    }
-
-    a {
-      pointer-events: none;
-    }
+  .copyright-text,
+  .switcher {
+    display: none;
   }
-
-  .faq .answer {
-    display: block;
-  }
-}
-
-.references {
-  li {
-    margin-bottom: 1.5em;
-    padding-left: 24px;
-    font-size: 0.8rem;
-    position: relative;
-
-    &:last-child {
-      margin-bottom: 0;
-    }
-
-    &::before {
-      position: absolute;
-      top: 50%;
-      transform: translate3d(0, -50%, 0);
-      left: 0;
-      content: url("../images/link_icon.svg");
-      width: 16px;
-      height: 16px;
-    }
-  }
-
-  a {
-    color: $textColorSecondary;
-    line-height: 1.5;
-
-    &:hover {
-      color: $textColorPrimary;
-      text-decoration: none;
-    }
-  }
-}
-
-/* Sticky Scroll Effect */
-.sticky {
-  position: -webkit-sticky;
-  position: sticky;
-  overflow: visible;
-  top: 100vh;
-  width: 100vw;
-  transform: translate(0, -100%);
-}
-
-section {
-  position: relative;
-  width: 100vw;
-}
-
-section.page-top {
-  z-index: 1;
-}
-div.dashboard-container {
-  z-index: 2;
-}
-section.weekly-review {
-  z-index: 3;
-}
-section.food-library {
-  z-index: 4;
-}
-section.repeat-use {
-  z-index: 5;
-}
-section.integrations {
-  z-index: 6;
-}
-section.sharing {
-  z-index: 7;
 }
 
 /* Removed with JS for noscript support*/
@@ -412,28 +154,6 @@ img {
   }
 }
 
-/* Device */
-.iphone {
-  position: relative;
-}
-
-.device-bezel {
-  width: 100%;
-  position: relative;
-  z-index: 2;
-}
-
-.device-media {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 1;
-  margin: 11% 11.6% 5%;
-  width: 76.6%;
-  @include borderRadius(7%);
-  @include box-sizing;
-}
-
 /* Selection */
 ::selection {
   background: $selectionColor;
@@ -444,25 +164,25 @@ img {
 }
 
 ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
-  color: #b1b1b1;
+  color: #83E7CD;
 }
 
 :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-  color: #b1b1b1;
+  color: #83E7CD;
   opacity: 1;
 }
 
 ::-moz-placeholder { /* Mozilla Firefox 19+ */
-  color: #b1b1b1;
+  color: #83E7CD;
   opacity: 1;
 }
 
 :-ms-input-placeholder { /* Internet Explorer 10-11 */
-  color: #b1b1b1;
+  color: #83E7CD;
 }
 
 :placeholder-shown {
-  color: #b1b1b1;
+  color: #83E7CD;
 }
 
 .noselect {
@@ -475,39 +195,17 @@ img {
                                   supported by Chrome and Opera */
 }
 
-@media screen and (max-width:768px) {
-  .text-wrap {
-    display: inline-block;
-  }
-}
-
-@media screen and (min-width: 375px) {
-  .dashboard-icons {
-    li {
-      padding: 1rem 2rem;
-    }
-  }
-}
-
-@media screen and (min-width: 767px) {
-  .display-block {
+@media screen and (min-width:768px) {
+  .block {
     display: block;
   }
-
-  .dashboard-icons {
-    li {
-      margin: 0 $trendIconPadding768;
-
-      img {
-        width: 40px;
-        height: 40px;
-      }
+  
+  .button {
+    &.floating-btn {
+      display: inline-block;
+      top: calc(100vh - 40px);
+      left: 100%;
+      transform: translate3d(-40px, -100%, 0);
     }
-  }
-}
-
-@media screen and (min-width: 1280px) {
-  .device-media {
-    width: 76.8%;
   }
 }

@@ -46,7 +46,9 @@ input[type="submit"] {
     border-color: transparent;
     background: $yellowColor;
     color: $pageBackground;
-    padding: 20px 80px;
+    padding: 20px 20px;
+    display: block;
+    text-align: center;
 
     &:hover {
       background: $accentColor;
@@ -72,10 +74,7 @@ input[type="submit"] {
   &.floating-btn {
     position: sticky;
     position: -webkit-sticky;
-    padding: 20px 30px;
-    top: calc(100vh - 20px);
-    left: 50%;
-    transform: translate3d(-50%, -100%, 0);
+    padding: 10px 20px;
     z-index: 9999;
     display: none;
   }
@@ -201,11 +200,17 @@ img {
   }
   
   .button {
+    &.primary {
+      padding: 20px 80px;
+      display: inline-block;
+    }
+
     &.floating-btn {
       display: inline-block;
       top: calc(100vh - 40px);
       left: 100%;
       transform: translate3d(-40px, -100%, 0);
+      padding: 20px 60px;
     }
   }
 }

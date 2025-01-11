@@ -84,16 +84,16 @@ $(function () {
 		window.location = $(anchor).attr("href")
 	}
 
-	const PriceIncrement = new Incrementor($(".price")[0], 12, 200);
 	const MetricsIntro = new CSSReveal($(".metrics-intro")[0], 200);
 	const MetricCards = new CSSReveal($(".triple-grid")[0], 400);
-	const HowItWorksIntro = new CSSReveal($(".how-it-works-intro")[0], 300);
+	const HowItWorksIntro = new CSSReveal($(".how-it-works-intro")[0], 100);
 
-	const HowItWorks1 = new CSSReveal($(".how-it-works")[0], 400);
-	const HowItWorks2 = new CSSReveal($(".how-it-works")[1], 400);
-	const HowItWorks3 = new CSSReveal($(".how-it-works")[2], 400);
-	const HowItWorks4 = new CSSReveal($(".how-it-works")[3], 400);
-	const HowItWorks5 = new CSSReveal($(".how-it-works")[4], 400);
+	const HowItWorks1 = new CSSReveal($(".how-it-works")[0], 200);
+	const HowItWorks2 = new CSSReveal($(".how-it-works")[1], 200);
+	const HowItWorks3 = new CSSReveal($(".how-it-works")[2], 200);
+	const HowItWorks4 = new CSSReveal($(".how-it-works")[3], 200);
+	const HowItWorks5 = new CSSReveal($(".how-it-works")[4], 200);
+	const PriceIncrement = new Incrementor($(".price")[0], 12, 200);
 
 	var isElementInViewport = function (el) {
 		var rect = el.getBoundingClientRect();
@@ -104,8 +104,6 @@ $(function () {
         	(rectTop < (window.innerHeight || document.documentElement.clientHeight) && rectTop > 0);
 	},
 	handleJSAbilities = function () {
-		$body.removeClass("no-js");
-
 		if (windowWidth >= MIN_ANIMATE_WIDTH) {
 			$("#introduction").addClass(revealClass);
 
@@ -123,6 +121,10 @@ $(function () {
 		windowWidth = $window.outerWidth();
 		Incrementor.delay = windowHeight * 0.4;
 		HowItWorksIntro.delay = windowHeight * 0.35;
+
+		if (windowWidth < MIN_ANIMATE_WIDTH) {
+			$("." + revealClass).removeClass(revealClass);
+		}
 	};
 
 	$window.resize(function () {

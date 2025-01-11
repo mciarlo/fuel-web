@@ -18,9 +18,6 @@
     <meta property="og:site_name" content="Fuel: Modern Calorie Tracking" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap" rel="stylesheet">
     <link href='/css/screen.css' rel='stylesheet' type='text/css' />
     <link rel="shortcut icon" type="image/png" href="/images/favicon.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.png">
@@ -30,24 +27,16 @@
     <link rel="icon" type="image/png" sizes="192x192" href="/images/favicon192.png">
   </head>
   <body class="no-js">
+    <script>document.body.className = ''</script>
+
     <nav>
       <div class="content-wrapper display-flex">
         <div class="logo-link">
           <a href="/" title="Visit the homepage"><img class="logo" src="/images/logo.png"/></a>
         </div>
 
-        <div class="switcher">
-          <p>Choose a theme</p>
-          <form>
-            <label><input type="radio" name="theme"></input>
-            <span class="checkmark"></span>Light</label>
-            <label><input type="radio" name="theme"></input>
-            <span class="checkmark"></span>Dark</label>
-            <label><input type="radio" name="theme" checked></input>
-            <span class="checkmark"></span>Light Green</label>
-            <label><input type="radio" name="theme"></input>
-            <span class="checkmark"></span>Dark Green</label>
-          </form>
+        <div class="right-content">
+          <a class="button primary download-link mobile" href="https://apps.apple.com/app/id1562577085" title="Download on the App Store"><img src="/images/download_icon.svg"></a>
         </div>
       </div>
     </nav>
@@ -64,15 +53,11 @@
           <h2>Just the essentials</h2>
           <h2 class="dimmed">Accountability without the pressure</h2>
 
-          <div class="video-container media-gallery">
-            <div>
-              <video id="video-element" poster="/images/video_poster.jpg" muted playsinline autoplay loop>
-                <source src="/video/preview.mp4" type="video/mp4">
-                <source src="/video/preview.ogv" type="video/ogv">
-                <source src="/video/preview.webm" type="video/webm">
-              </video>
-            </div>
-          </div>
+          <noscript>
+            <img class="fuel-hero" src="/images/fuel_hero.jpg">
+          </noscript>
+          
+          <img class="lazy-load invisible fuel-hero" src="/images/hero_thumbnail.jpg" data-src="/images/fuel_hero.jpg" />
         </div>
       </section>
 
@@ -84,7 +69,7 @@
             <h2 class="large">Sleep</h2>
             <h2 class="large">Hydration</h2>
             <h3 class="half-width">Fuel is a modern approach to calorie and activity tracking based on these four core areas. Our 100% verified, purpose-built food library invites you to explore deep insights on your terms.</h3>
-            <h3 class="half-width">Aim to maximize thse six areas to help improve your overall health.</h3>
+            <h3 class="half-width">Aim to maximize these six areas to help improve your overall health.</h3>
           </div>
 
           <div class="display-flex triple-grid">
@@ -156,7 +141,7 @@
 
       <section class="how-it-works">
         <div class="content-wrapper">
-          <h2 class="half-width">A more complete <span class="block">health picture</span></h2>
+          <h2 class="half-width">Track physical <span class="block">health with ease</span></h2>
 
           <div class="media-gallery">
             <div><img class="bezeled first" src="/images/tracking-1.jpg"/></div>
@@ -169,7 +154,7 @@
 
       <section class="how-it-works">
         <div class="content-wrapper">
-          <h2>Feedback delivered <span class="block">for busy lives</span></h2>
+          <h2>Feedback crafted <span class="block">for busy lives</span></h2>
 
           <div class="media-gallery">
             <div><img class="bezeled first" src="/images/feedback-1.jpg"/></div>
@@ -216,35 +201,39 @@
       </div>
     </section>
 
-    <footer>      
-      <div class="content display-flex">
-        <div class="left-content">
-          <h3><img class="logo" src="/images/logo.png"/> fuel</h3>
-          <ul>
-            <li>No scores</li>
-            <li>No false promises</li>
-            <li>Just the essentials</li>
-            <li class="dimmed">Accountability without the pressure</li>
-          </ul>
+    <footer>
+      <div class="content">
+        <div class="display-flex">
 
-          <p>&copy; 2021&ndash;<span id="copyright"><script>document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()))</script></span> Ciarlo Software, LLC</p>
+          <div class="left-content">
+            <img class="logo-full" src="/images/fuel_calories_logo_full.svg"/>
+            <ul>
+              <li>No scores</li>
+              <li>No false promises</li>
+              <li>Just the essentials</li>
+              <li class="dimmed">Accountability without the pressure</li>
+            </ul>
+          </div>
+
+          <div class="right-content">
+            <ul class="links">
+              <li>Resources</li>
+              <li><a href="/media-kit">Media Kit</a></li>
+              <li><a href="/terms">Terms of Use</a></li>
+              <li><a href="/privacy">Privacy Policy</a></li>
+            </ul>
+
+            <ul class="links">
+              <li>Get in touch</li>
+              <li><a href="/contact">Contact</a></li>
+              <li><a href="https://x.com/fuelcalories">@fuelcalories</a></li>
+              <li><a href="https://x.com/mciarlo">@mciarlo</a></li>
+            </ul>
+          </div>
         </div>
 
-        <div class="right-content">
-          <ul class="links">
-            <li>Resources</li>
-            <li><a href="/media-kit">Media Kit</a></li>
-            <li><a href="/terms">Terms of Use</a></li>
-            <li><a href="/privacy">Privacy Policy</a></li>
-          </ul>
+        <p>&copy; 2021&ndash;<noscript>2025</noscript><span id="copyright"><script>document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()))</script></span> Ciarlo Software, LLC</p>
 
-          <ul class="links">
-            <li>Get in touch</li>
-            <li><a href="/contact">Contact</a></li>
-            <li><a href="https://www.twitter.com/fuelcalories">@fuelcalories</a></li>
-            <li><a href="https://www.twitter.com/mciarlo">@mciarlo</a></li>
-          </ul>
-        </div>
       </div>
     </footer>
 
@@ -272,6 +261,7 @@
     </script>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="/js/lib.js"></script>
     <script src="/js/fuel.js"></script>
   </body>
 </html>

@@ -465,8 +465,21 @@ footer {
   }
 }
 
-@media screen and (min-width:1200px) {
 
+@media screen and (min-width: 1360px) {
+  #introduction {
+    padding-top: 140px;
+  }
+  
+  .content-wrapper {
+    max-width: 1360px;
+    margin: 0 auto;
+  }
+
+  .how-it-works-intro {
+    max-width: 1360px;
+    margin: 16em auto;
+  }
 }
 
 /************************************/

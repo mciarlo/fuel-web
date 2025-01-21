@@ -114,7 +114,7 @@ footer {
     .card {
       width: auto;
       margin-bottom: 20px;
-      flex: 0 1 calc(33.7% - 20px);
+      flex: 0 1 calc(33.3% - 20px);
     }
   }
 
@@ -176,5 +176,12 @@ footer {
 
   .container {
     @include borderRadius(30px);
+  }
+}
+
+@media screen and (min-width: 1360px) {
+  .content-wrapper {
+    max-width: 1360px;
+    margin: 0 auto;
   }
 }

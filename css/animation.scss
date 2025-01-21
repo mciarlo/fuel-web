@@ -7,6 +7,13 @@ $transformDuration : 1200ms;
   transition: none;
 }
 
+.no-js {
+  .will-animate {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
 #introduction {
   h1, h2 {
     opacity: 1;
@@ -33,6 +40,16 @@ $transformDuration : 1200ms;
     h1, h2 {
       opacity: 0;
       transform: translate3d(60px, 0, 0);
+      transition: none;
+    }
+  }
+}
+
+.no-js {
+  #introduction {
+    h1, h2 {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
       transition: none;
     }
   }

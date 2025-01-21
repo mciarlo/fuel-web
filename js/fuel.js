@@ -104,6 +104,8 @@ $(function () {
         	(rectTop < (window.innerHeight || document.documentElement.clientHeight) && rectTop > 0);
 	},
 	handleJSAbilities = function () {
+		$('body').removeClass("no-js");
+
 		if (windowWidth >= MIN_ANIMATE_WIDTH) {
 			$("#introduction").addClass(revealClass);
 

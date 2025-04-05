@@ -20,9 +20,11 @@ body {
 }
 
 a:link,
-a:visited {
+a:visited,
+.mailer {
   color: #6CAE9D;
   text-decoration: none;
+  transition: color 150ms ease-in-out;
 
   &:hover {
     color: white;

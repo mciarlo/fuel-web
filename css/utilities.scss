@@ -1,20 +1,14 @@
 @import "colors";
 @import "mixins";
-
-$col-1: 9%;
-$col-2: 17%;
-$col-3: 25.5%;
-$col-4: 33.88%;
-$col-5: 40.45%;
-
-$col-2-content: 12.5%;
-$col-3-content: 21.5%;
-$col-4-content: 29.4%;
-$col-5-content: 37.2%;
-$col-6-content: 45%;
+@import "layout";
 
 li {
   list-style: none;
+  line-height: 145%;
+}
+
+p {
+  line-height: 145%;
 }
 
 em {
@@ -22,70 +16,120 @@ em {
   text-transform: none;
 }
 
-.block {
-  display: block;
+.dimmed {
+  color: #7CD4B0;
 }
 
-.bold {
+span.blockspam {
+  display: none;
+}
+
+.button,
+button,
+input[type="submit"] {
+  background: transparent;
+  cursor: pointer;
+  font-size: 1rem;
+  text-decoration: none;
   font-weight: 600;
-}
-
-.optional-new-line {
-  display: inline;
-}
-
-.centered {
-  text-align: center;
-}
-
-section {
-  transition: transform 1s ease-in-out, opacity 1s ease-in-out;
-  opacity: 1;
-  transform: translate3d(0px, 0px, 0px);
-}
-
-.will-reveal {
-  opacity: 0;
-  transform: translate3d(0px, 50px, 0px);
-}
-
-a.button {
-  padding: 1em 2em;
-  background: $darkBackground;
-  color: white;
+  padding: 1em 4em;
   display: inline-block;
-  box-shadow: 0 3px 3px rgba(0, 0, 0, 0);
-  @include borderRadius(30px);
-  @include transition(all, 200ms, ease-in-out);
-
-  &.light {
-    background: $lightBackground;
-    color: $textColorPrimary;
-  }
+  @include borderRadius(10px);
+  transition: color 150ms ease-in-out, border-color 150ms ease-in-out, background-color 150ms ease-in-out, transform 150ms ease-in-out;
+  -webkit-transition: color 150ms ease-in-out, border-color 150ms ease-in-out, background-color 150ms ease-in-out, transform 150ms ease-in-out;
+  -moz-transition: color 150ms ease-in-out, border-color 150ms ease-in-out, background-color 150ms ease-in-out, transform 150ms ease-in-out;
+  -ms-transition: color 150ms ease-in-out, border-color 150ms ease-in-out, background-color 150ms ease-in-out, transform 150ms ease-in-out;
+  -o-transition: color 150ms ease-in-out, border-color 150ms ease-in-out, background-color 150ms ease-in-out, transform 150ms ease-in-out;
 
   &:hover {
-    background: #454545;
-    color: white;
     text-decoration: none;
-    box-shadow: 0 7px 20px rgba(0, 0, 0, 0.3);
+    transform: translate3d(0, 2px, 0);
   }
+
+  &.primary {
+    border-color: transparent;
+    background: $yellowColor;
+    color: $pageBackground;
+    padding: 20px 20px;
+    display: block;
+    text-align: center;
+
+    &:hover {
+      background: $accentColor;
+      color: $textColorPrimary;
+    }
+  }
+
+  &.secondary {
+    border: 1px solid $accentColor;
+    background: transparent;
+    color: white;
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.0);
+    padding-top: 1.2em;
+    padding-bottom: 1.2em;
+
+    &:hover {
+      background: $accentColor;
+      color: white;
+      box-shadow: 0 18px 30px rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  &.floating-btn {
+    position: sticky;
+    position: -webkit-sticky;
+    padding: 10px 20px;
+    z-index: 9999;
+    display: none;
+  }
+}
+
+/* Form fields */
+input[type="text"],
+input[type="email"],
+#support-input,
+select,
+textarea {
+  padding: 1em 0;
+  font-size: 1.1em;
+  border: 0;
+  border-bottom: 1px solid $dividerColor;
+  background: transparent;
+  -webkit-appearance: none;
+  -webkit-border-radius: 0;
+  @include fontFamily;
+  @include box-sizing;
+  color: white;
+
+  &:focus {
+    -webkit-outline: none;
+    outline: none;
+    color: white;
+    border-color: $accentColor;
+  }
+}
+
+input[type=file] {
+  font-size: 1rem;
+  border: 1px solid $dividerColor;
+  padding: 15px;
+  @include box-sizing;
+  color: $textColorSecondary;
+  @include borderRadius(8px);
+  @include fontFamily;
 }
 
 /**
  * No Script States
  */
 .no-js  {
-  .answer {
-    display: block;
-  }
-
-  .question .arrow,
-  .invisible {
+  .lazy-load {
     display: none;
   }
 
-  .introduction .large-text {
-    padding-top: 12em;
+  .copyright-text,
+  .switcher {
+    display: none;
   }
 }
 
@@ -98,6 +142,22 @@ a.button {
   transition: opacity .25s ease-in-out;
 }
 
+.will-reveal {
+  opacity: 0;
+  transform: translate3d(0px, 50px, 0px);
+}
+
+img {
+  transition: opacity .2s ease-out, transform .2s ease-in-out;
+  @include translate3d(0px, 0px, 0px);
+  opacity: 1;
+
+  &.invisible {
+    opacity: 0;
+  }
+}
+
+/* Selection */
 ::selection {
   background: $selectionColor;
 }
@@ -107,25 +167,25 @@ a.button {
 }
 
 ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
-  color: #b1b1b1;
+  color: #83E7CD;
 }
 
 :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-  color: #b1b1b1;
+  color: #83E7CD;
   opacity: 1;
 }
 
 ::-moz-placeholder { /* Mozilla Firefox 19+ */
-  color: #b1b1b1;
+  color: #83E7CD;
   opacity: 1;
 }
 
 :-ms-input-placeholder { /* Internet Explorer 10-11 */
-  color: #b1b1b1;
+  color: #83E7CD;
 }
 
 :placeholder-shown {
-  color: #b1b1b1;
+  color: #83E7CD;
 }
 
 .noselect {
@@ -138,108 +198,23 @@ a.button {
                                   supported by Chrome and Opera */
 }
 
-img {
-  transition: opacity .2s ease-out, transform .2s ease-in-out;
-  @include translate3d(0px, 0px, 0px);
-  opacity: 1;
-
-  &.invisible {
-    opacity: 0;
-  }
-
-  &.full-width {
-    width: 100%;
-  }
-}
-
-.iphone {
-  position: relative;
-}
-
-.device-bezel {
-  width: 100%;
-  position: relative;
-  z-index: 2;
-}
-
-.device-media {
-  position: absolute;
-  width: 76.8%;
-  left: 11.55%;
-  z-index: 1;
-  top: 6.15%;
-}
-
-/** Global Elements **/
-section {
-  overflow: hidden;
-  padding: 6em 0;
-  background: $lightBackground;
-  position: relative;
-  z-index: 1;
-  @include overflowfix;
-
-  &.has-background {
-    padding: 4em 0;
-  }
-
-  &.no-padding {
-    padding: 0;
-  }
-}
-
-.device-bezel {
-  width: 100%;
-}
-
-hr.light {
-  border: 0;
-  border-top: 1px solid #454545;
-}
-
-hr {
-  border: 0;
-  border-top: 1px solid $borderColor;
-}
-
 @media screen and (min-width:768px) {
-  .display-flex {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: no-wrap;
-
-    .left-content {
-      flex: 1;
+  .block {
+    display: block;
+  }
+  
+  .button {
+    &.primary {
+      padding: 20px 80px;
+      display: inline-block;
     }
 
-    .right-content {
-
+    &.floating-btn {
+      display: inline-block;
+      top: calc(100vh - 40px);
+      left: 100%;
+      transform: translate3d(-40px, -100%, 0);
+      padding: 20px 60px;
     }
-  }
-
-  section {
-    padding: 8em 0;
-
-    &.has-background {
-      padding: 5em 0;
-    }
-  }
-
-  .content-wrapper.padding-top {
-    padding-top: 5em;
-  }
-}
-
-@media screen and (min-width:1200px) {
-  section {
-    padding: 10em 0;
-
-    &.has-background {
-      padding: 6em 0;
-    }
-  }
-
-  .content-wrapper.padding-top {
-    padding-top: 6em;
   }
 }

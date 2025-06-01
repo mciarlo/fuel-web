@@ -1,0 +1,91 @@
+@font-face {
+  font-family: 'Satoshi-Variable';
+  src: url('/fonts/Satoshi-Variable.woff2') format('woff2'),
+       url('/fonts/Satoshi-Variable.woff') format('woff'),
+       url('/fonts/Satoshi-Variable.ttf') format('truetype');
+  font-weight: 300 900;
+  font-display: swap;
+  font-style: normal;
+}
+
+html, body {
+  font-size: 16px;
+  @include fontFamily;
+}
+
+h1 {
+  font-size: 68px;
+  max-width: 1000px;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+}
+
+h2 {
+  font-size: 38px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+
+  &.large {
+    font-size: 58px;
+  }
+}
+
+h3 {
+  font-size: 24px;
+  font-weight: normal;
+  line-height: 145%;
+}
+
+h4 {
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 145%;
+}
+
+p {
+  line-height: 145%;
+}
+
+@media screen and (min-width:768px) {
+  h1 {
+    font-size: 90px;
+  }
+
+  h2 {
+    font-size: 48px;
+
+    &.large {
+      font-size: 90px;
+    }
+  }
+
+  h3 {
+    font-size: 28px;
+  }
+
+  h4 {
+    font-size: 22px;
+  }
+}
+
+@media screen and (min-width:1024px) {
+  h1 {
+    font-size: 120px;
+  }
+
+  h2 {
+    font-size: 68px;
+
+    &.large {
+      font-size: 120px;
+    }
+  }
+
+  h3 {
+    font-size: 38px;
+  }
+
+  h4 {
+    font-size: 24px;
+  }
+}

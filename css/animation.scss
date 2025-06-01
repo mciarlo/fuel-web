@@ -1,0 +1,146 @@
+$curve : cubic-bezier( 0.445, 0.05, 0.55, 0.95 );
+$transformDuration : 1200ms;
+
+.will-animate {
+  opacity: 0;
+  transform: translate3d(60px, 0, 0);
+  transition: none;
+}
+
+.no-js {
+  .will-animate {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+#introduction {
+  h1, h2 {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+    transition: opacity $transformDuration $curve, transform $transformDuration $curve;
+  }
+
+  .content-wrapper h2 {
+    &:nth-child(2) {
+      transition-delay: 1000ms;
+    }
+    &:nth-child(3) {
+      transition-delay: 1500ms;
+    }
+    &:nth-child(4) {
+      transition-delay: 2000ms;
+    }
+    &:nth-child(5) {
+      transition-delay: 2500ms;
+    }
+  }
+
+  &.will-animate {
+    h1, h2 {
+      opacity: 0;
+      transform: translate3d(60px, 0, 0);
+      transition: none;
+    }
+  }
+}
+
+.no-js {
+  #introduction {
+    h1, h2 {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+      transition: none;
+    }
+  }
+}
+
+.metrics-intro,
+.triple-grid,
+.how-it-works-intro,
+.how-it-works {
+  &.will-animate {
+    h2, h3, .card, .bezeled {
+      opacity: 0;
+      transform: translate3d(60px, 0, 0);
+      transition: none;
+    }
+  }
+
+  h2:nth-child(1) {
+    transition-delay: 100ms;
+  }
+
+  h2:nth-child(2) {
+    transition-delay: 200ms;
+  }
+
+  h2:nth-child(3) {
+    transition-delay: 300ms;
+  }
+
+  h2:nth-child(4) {
+    transition-delay: 400ms;
+  }
+
+  h3:nth-child(5) {
+    transition-delay: 500ms;
+  }
+
+  h3:nth-child(6) {
+    transition-delay: 1400ms;
+  }
+
+  .card:nth-child(1) {
+    transition-delay: 100ms;
+  }
+
+  .card:nth-child(2) {
+    transition-delay: 120ms;
+  }
+
+  .card:nth-child(3) {
+    transition-delay: 140ms;
+  }
+
+  .card:nth-child(4) {
+    transition-delay: 300ms;
+  }
+
+  .card:nth-child(5) {
+    transition-delay: 320ms;
+  }
+
+  .card:nth-child(6) {
+    transition-delay: 340ms;
+  }
+
+  .media-gallery div:nth-child(1) .bezeled {
+    transition-delay: 600ms;
+  }
+
+  .media-gallery div:nth-child(2) .bezeled {
+    transition-delay: 650ms;
+  }
+
+  .media-gallery div:nth-child(3) .bezeled {
+    transition-delay: 700ms;
+  }
+
+  .media-gallery div:nth-child(4) .bezeled {
+    transition-delay: 750ms;
+  }
+  
+  h2, h3, .card, .bezeled {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+    transition: opacity $transformDuration $curve, transform $transformDuration $curve;
+  }
+}
+
+.how-it-works-intro,
+.how-it-works {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+  transition: opacity $transformDuration $curve, transform $transformDuration $curve;
+}
